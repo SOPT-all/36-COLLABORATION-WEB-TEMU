@@ -74,26 +74,12 @@ jobs:
               body: `빌드에 실패했습니다 ❌`
             });
 
-      # develop 브랜치로 푸시할 때 다른 레포로 결과물 전송
-      - name: Push to heesunee's repository (develop branch)
-        if: steps.build.outputs.status == 'success' && github.ref == 'refs/heads/develop'
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.AUTO_ACTIONS }}
-        with:
-          source-directory: 'output'
-          destination-github-username: heesunee
-          destination-repository-name: 36-COLLABORATION-WEB-TEMU
-          user-email: ${{ secrets.EMAIL }}
-          commit-message: ${{ github.event.head_commit.message }}
-          target-branch: develop
-
       # main 브랜치일 때만 포크 레포지토리와 동기화
       - name: Sync with forked repository
         if: steps.build.outputs.status == 'success' && github.ref == 'refs/heads/main'
         uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.AUTO_ACTIONS }}
+        # env:
+        #   API_TOKEN_GITHUB: ${{ secrets.AUTO_ACTIONS }}
         with:
           source-directory: 'output'
           destination-github-username: heesunee
