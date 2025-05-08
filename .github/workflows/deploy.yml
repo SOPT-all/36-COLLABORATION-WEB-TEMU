@@ -14,18 +14,23 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # pnpm 설치 (만약 pnpm이 없으면 설치)
           npm install -g pnpm
-          # 의존성 설치
           pnpm install
 
       - name: Build the project
+        id: build
         run: |
-          # pnpm build 실행
-          pnpm build
+          if pnpm build; then
+            echo "::set-output name=status::success"
+            echo "::set-output name=message::빌드에 성공했습니다 🎉"
+          else
+            echo "::set-output name=status::failed"
+            echo "::set-output name=message::빌드에 실패했습니다 😭"
+            exit 1
+          fi
 
       - name: Push to another repository
-        id: push_directory
+        if: steps.build.outputs.status == 'success'
         uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.AUTO_ACTIONS }}
@@ -35,30 +40,4 @@ jobs:
           destination-repository-name: 36-COLLABORATION-WEB-TEMU
           user-email: ${{ secrets.EMAIL }}
           commit-message: ${{ github.event.head_commit.message }}
-          target-branch: develop
-
-      - name: Comment on build result
-        id: comment-build-status
-        run: |
-          const { execSync } = require('child_process');
-          try {
-            // 빌드 성공
-            execSync('pnpm build', { stdio: 'inherit' });
-            core.setOutput("build_result", "Build successful");
-            core.setOutput("build_message", "빌드에 성공했습니다 🎉");  
-          } catch (error) {
-            // 빌드 실패
-            core.setFailed("Build failed");
-            core.setOutput("build_result", "Build failed");
-            core.setOutput("build_message", "빌드에 실패했습니다 😭");  
-          }
-
-      - name: Post a comment with the build status
-        uses: peter-evans/create-issue-comment@v3
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            ### Build Status
-            - Build result: ${{ steps.comment-build-status.outputs.build_result }}
-            - Commit message: ${{ github.event.head_commit.message }}
-            - Build message: ${{ steps.comment-build-status.outputs.build_message }}
+          target-branch: ${{ github.ref_name }}
