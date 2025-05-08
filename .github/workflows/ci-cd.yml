@@ -10,6 +10,10 @@ on:
       - develop
       - main
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -56,8 +60,6 @@ jobs:
               repo: context.repo.repo,
               body: `✅ 빌드가 성공적으로 완료되었습니다 `
             });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Add failure comment to PR
         if: failure() && github.event_name == 'pull_request'
@@ -71,8 +73,6 @@ jobs:
               repo: context.repo.repo,
               body: `❌ 빌드에 실패했습니다`
             });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # develop 브랜치로 푸시할 때 다른 레포로 결과물 전송
       - name: Push to heesunee's repository (develop branch)
