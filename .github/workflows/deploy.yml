@@ -1,6 +1,10 @@
 name: CI/CD for Develop and Main
 
 on:
+  pull_request:
+    branches:
+      - develop
+      - main
   push:
     branches:
       - develop
