@@ -44,6 +44,32 @@ jobs:
             exit 1
           fi
 
+      - name: Add bot comment to PR
+        if: success() && github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            await github.rest.issues.createComment({
+              issue_number: prNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `✅ 빌드가 성공적으로 완료되었습니다 `
+            });
+
+      - name: Add failure comment to PR
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            await github.rest.issues.createComment({
+              issue_number: prNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `❌ 빌드에 실패했습니다`
+            });
+
       # develop 브랜치로 푸시할 때 다른 레포로 결과물 전송
       - name: Push to heesunee's repository (develop branch)
         if: steps.build.outputs.status == 'success' && github.ref == 'refs/heads/develop'
