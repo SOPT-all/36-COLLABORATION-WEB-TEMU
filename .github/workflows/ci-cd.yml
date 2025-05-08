@@ -1,0 +1,95 @@
+name: CI/CD Pipeline
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+  push:
+    branches:
+      - develop
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build the project
+        id: build
+        run: |
+          if pnpm build; then
+            echo "status=success" >> $GITHUB_OUTPUT
+            echo "message=빌드에 성공했습니다 🎉" >> $GITHUB_OUTPUT
+          else
+            echo "status=failed" >> $GITHUB_OUTPUT
+            echo "message=빌드에 실패했습니다 😭" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+      - name: Add bot comment to PR
+        if: success() && github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            await github.rest.issues.createComment({
+              issue_number: prNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `빌드가 성공적으로 완료되었습니다 🎉`
+            });
+
+      - name: Add failure comment to PR
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            await github.rest.issues.createComment({
+              issue_number: prNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `빌드에 실패했습니다 ❌`
+            });
+
+      # main 브랜치일 때만 포크 레포지토리와 동기화
+      - name: Sync with forked repository
+        if: steps.build.outputs.status == 'success' && github.ref == 'refs/heads/main'
+        uses: cpina/github-action-push-to-another-repository@main
+        # env:
+        #   API_TOKEN_GITHUB: ${{ secrets.AUTO_ACTIONS }}
+        with:
+          source-directory: 'output'
+          destination-github-username: heesunee
+          destination-repository-name: 36-COLLABORATION-WEB-TEMU
+          user-email: ${{ secrets.EMAIL }}
+          commit-message: ${{ github.event.head_commit.message }}
+          target-branch: main
+
+      # main 브랜치일 때만 배포 실행
+      - name: Deploy to production
+        if: steps.build.outputs.status == 'success' && github.ref == 'refs/heads/main'
+        run: |
+          echo "배포를 진행합니다..."
