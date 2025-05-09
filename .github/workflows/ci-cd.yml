@@ -59,11 +59,12 @@ jobs:
         with:
           script: |
             const prNumber = context.payload.pull_request.number;
+            const buildStatusMessage = '${{ steps.status.outputs.message }}';
             await github.rest.issues.createComment({
               issue_number: prNumber,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `### 빌드 결과\n${steps.status.outputs.message}`
+              body: `### 빌드 결과\n${buildStatusMessage}`
             });
 
       - name: Check build status
