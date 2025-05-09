@@ -1,0 +1,38 @@
+name: git push into another repo to deploy to vercel
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: pandoc/latex
+
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v2
+
+      - name: Install mustache (to update the date)
+        run: apk add ruby && gem install mustache
+
+      - name: Run build script
+        run: sh ./build.sh
+
+      - name: Pushes to another repository
+        if: github.event_name == 'push'
+        id: push_directory
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.AUTO_ACTIONS }}
+        with:
+          source-directory: 'output'
+          destination-github-username: heesunee
+          destination-repository-name: 36-COLLABORATION-WEB-TEMU
+          user-email: ${{ secrets.EMAIL }}
+          user-name: github-actions
+          commit-message: ${{ github.event.head_commit.message }}
+          target-branch: main
+
+      - name: Output test
+        run: echo "Cloned to ${{ steps.push_directory.outputs.destination-cloned-directory }}"

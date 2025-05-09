@@ -73,23 +73,3 @@ jobs:
               repo: context.repo.repo,
               body: `빌드에 실패했습니다 ❌`
             });
-
-      # # main 브랜치일 때만 포크 레포지토리와 동기화
-      # - name: Sync with forked repository
-      #   if: steps.build.outputs.status == 'success' && github.ref == 'refs/heads/main'
-      #   uses: cpina/github-action-push-to-another-repository@main
-      #   # env:
-      #   #   API_TOKEN_GITHUB: ${{ secrets.AUTO_ACTIONS }}
-      #   with:
-      #     source-directory: 'output'
-      #     destination-github-username: heesunee
-      #     destination-repository-name: 36-COLLABORATION-WEB-TEMU
-      #     user-email: ${{ secrets.EMAIL }}
-      #     commit-message: ${{ github.event.head_commit.message }}
-      #     target-branch: main
-
-      # # main 브랜치일 때만 배포 실행
-      # - name: Deploy to production
-      #   if: steps.build.outputs.status == 'success' && github.ref == 'refs/heads/main'
-      #   run: |
-      #     echo "배포를 진행합니다..."
