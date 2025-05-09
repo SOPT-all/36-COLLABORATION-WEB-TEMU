@@ -1,27 +1,32 @@
-name: Sync main to heesunee repo
-
+name: Auto Sync
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   sync:
-    if: github.repository == 'SOPT-all/36-COLLABORATION-WEB-TEMU'
+    name: Sync forked repo
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source repo
-        uses: actions/checkout@v3
-
-      - name: Push to heesunee repo
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.AUTO_ACTIONS }}
+      - name: Checkout main
+        uses: actions/checkout@v4
         with:
-          source-directory: '.'
-          destination-github-username: heesunee
-          destination-repository-name: 36-COLLABORATION-WEB-TEMU
-          user-email: ${{ secrets.EMAIL }}
-          user-name: github-actions
-          target-branch: main
-          commit-message: '[sync][skip ci] ${{ github.event.head_commit.message }}'
+          token: ${{ secrets.AUTO_ACTIONS }}
+          fetch-depth: 0
+          ref: main
+
+      - name: Add remote-url
+        run: |
+          git remote add forked-repo https://heesunee:${{ secrets.AUTO_ACTIONS }}@github.com/heesunee/36-COLLABORATION-WEB-TEMU
+          git config user.name heesunee
+          git config user.email phs1585@naver.com
+
+      - name: Push changes to forked-repo
+        run: |
+          git push -f forked-repo main
+
+      - name: Clean up
+        run: |
+          git remote remove forked-repo
