@@ -19,14 +19,7 @@ export const vars = createGlobalTheme(':root', {
     point_green: '#0A8800',
   },
 
-  fontWeight: {
-    regular: '400',
-    medium: '500',
-    semiBold: '600',
-    bold: '700',
-  },
-
-  textStyle: {
+  font: {
     head_bold_60: { fontSize: '6rem', fontWeight: '600', lineHeight: '150%' },
     head_bold_28: { fontSize: '2.8rem', fontWeight: '700', lineHeight: '150%' },
     head_bold_24: { fontSize: '2.4rem', fontWeight: '700', lineHeight: '150%' },
