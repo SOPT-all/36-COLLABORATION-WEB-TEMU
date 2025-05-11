@@ -23,16 +23,16 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    /* 절대 경로 설정 추가 */
-    "baseUrl": "./",
+    /* path alias */
+    "baseUrl": ".",
     "paths": {
-      "@pages/*": ["src/pages/*"],
-      "@shared/*": ["src/shared/*"],
-      "@api/*": ["src/api/*"],
-      "@styles/*": ["src/styles/*"],
-      "@routes/*": ["src/routes/*"],
-      "@image/*": ["src/assets/image/*"],
-      "@svg/*": ["src/assets/svg"]
+      "@pages/*": ["./src/pages/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@api/*": ["./src/api/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@img/*": ["./src/assets/img/*"],
+      "@svg/*": ["./src/assets/svg"]
     }
   },
   "include": ["src"]
