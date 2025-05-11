@@ -32,7 +32,7 @@
       "@styles/*": ["./src/styles/*"],
       "@routes/*": ["./src/routes/*"],
       "@img/*": ["./src/assets/img/*"],
-      "@svg/*": ["./src/assets/svg"],
+      "@svg/*": ["./src/assets/svg/*"],
       "@/*": ["./src/*"]
     }
   },
