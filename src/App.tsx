@@ -1,9 +1,5 @@
 function App() {
-  return (
-    <>
-      <h1>테무</h1>
-    </>
-  );
+  return <></>;
 }
 
 export default App;
