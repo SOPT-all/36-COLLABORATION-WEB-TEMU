@@ -1,5 +1,25 @@
-import { createBrowserRouter } from "react-router-dom";
-
-const router = createBrowserRouter([{}]);
+import { createBrowserRouter } from 'react-router-dom';
+import Home from '../pages/home/Home';
+import ProductList from '../pages/productList/ProductList';
+import ProductDetail from '../pages/productDetail/ProductDetail';
+export const ROUTES = {
+  HOME: '/',
+  PRODUCT_LIST: '/products',
+  PRODUCT_DETAIL: '/products/:id',
+};
+const router = createBrowserRouter([
+  {
+    path: ROUTES.HOME,
+    element: <Home />,
+  },
+  {
+    path: ROUTES.PRODUCT_LIST,
+    element: <ProductList />,
+  },
+  {
+    path: ROUTES.PRODUCT_DETAIL,
+    element: <ProductDetail />,
+  },
+]);
 
 export default router;
