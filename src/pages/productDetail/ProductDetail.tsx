@@ -1,3 +1,5 @@
-export default function ProductDetail() {
+const ProductDetail = () => {
   return <div></div>;
-}
+};
+
+export default ProductDetail;
