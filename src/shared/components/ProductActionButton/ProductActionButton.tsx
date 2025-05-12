@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
-import * as styles from './ProductActionButtons.css';
+import * as styles from '@shared/components/ProductActionButton/ProductActionButton.css';
 
-interface ProductActionButtonsProps {
+interface ProductActionButtonProps {
   text: string;
   variant?: 'solid' | 'outline';
   size?: 'sm' | 'lg';
@@ -10,14 +10,14 @@ interface ProductActionButtonsProps {
   icon?: ReactNode;
 }
 
-const ProductActionButtons = ({
+const ProductActionButton = ({
   text,
   variant = 'solid',
   size = 'lg',
   radius = 'sm',
   fontSize = 'lg',
   icon,
-}: ProductActionButtonsProps) => {
+}: ProductActionButtonProps) => {
   return (
     <button
       className={`${styles.baseButton} ${styles.buttonVariant[variant]}
@@ -33,4 +33,4 @@ const ProductActionButtons = ({
   );
 };
 
-export default ProductActionButtons;
+export default ProductActionButton;

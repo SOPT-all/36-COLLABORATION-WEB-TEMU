@@ -2,6 +2,7 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { vars } from '@styles/theme.css';
 
 export const baseButton = style({
+  display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
 });
