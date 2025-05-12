@@ -29,7 +29,7 @@
       "@pages/*": ["./src/pages/*"],
       "@shared/*": ["./src/shared/*"],
       "@api/*": ["./src/api/*"],
-      "@styles/*": ["./src/styles/*"],
+      "@styles/*": ["./src/shared/styles/*"],
       "@routes/*": ["./src/routes/*"],
       "@img/*": ["./src/assets/img/*"],
       "@svg/*": ["./src/assets/svg/*"],
