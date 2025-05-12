@@ -1,6 +1,7 @@
 import { recipe } from '@vanilla-extract/recipes';
 
 import { vars } from '@styles/theme.css';
+import { style } from '@vanilla-extract/css';
 
 // 카드 전체 wrapper 스타일
 export const cardWrapper = recipe({
@@ -65,59 +66,70 @@ export const cardDesc = recipe({
 });
 
 // 타이틀 텍스트
-export const cardTitle = recipe({
-  base: {
-    color: vars.color.gray8,
-    ...vars.font.caption_regular_13,
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-  },
+export const cardTitle = style({
+  color: vars.color.gray8,
+  ...vars.font.caption_regular_13,
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 });
 
 // 가격/장바구니 라인
-export const cardRow = recipe({
-  base: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: '100%',
-    alignSelf: 'stretch',
-    gap: '0.6rem',
-  },
+export const priceRow = style({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  width: '100%',
+  alignSelf: 'stretch',
+  gap: '0.6rem',
 });
 
 // 가격 영역
-export const priceWrapper = recipe({
-  base: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.4rem',
+export const priceWrapper = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.4rem',
+});
+
+export const cardDiscount = style({
+  ...vars.font.body_bold_16,
+  color: vars.color.point_orange,
+});
+
+export const cardPrice = style({
+  ...vars.font.body_bold_16,
+  color: vars.color.black,
+});
+export const cartButton = style({
+  display: 'flex',
+  width: '3.6rem',
+  height: '2.4rem',
+  padding: '0rem 0.8rem 0rem 0.5rem',
+  alignItems: 'center',
+  gap: '1rem',
+  borderRadius: '1.8rem',
+  border: `1px solid ${vars.color.gray6}`,
+  background: vars.color.white,
+
+  selectors: {
+    '&:hover': {
+      border: `1px solid ${vars.color.point_orange}`,
+      color: vars.color.point_orange,
+    },
   },
 });
 
-export const cardDiscount = recipe({
-  base: {
-    ...vars.font.body_bold_16,
-    color: vars.color.point_orange,
-  },
+export const reviewRow = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.4rem',
 });
-
-export const cardPrice = recipe({
-  base: {
-    ...vars.font.body_bold_16,
-    color: vars.color.black,
-  },
+export const review = style({
+  ...vars.font.caption_regular_13,
 });
-export const reviewRow = recipe({
-  base: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.4rem',
-  },
-});
-export const review = recipe({
-  base: {
-    ...vars.font.caption_regular_13,
-  },
+export const repurchaseRow = style({
+  display: 'flex',
+  alignItems: 'flex-start',
+  gap: '0.4rem',
+  ...vars.font.body_regular_14,
 });
