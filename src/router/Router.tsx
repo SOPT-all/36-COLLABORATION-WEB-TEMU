@@ -2,7 +2,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '@pages/home/Home';
 import ProductList from '@pages/productList/ProductList';
 import ProductDetail from '@pages/productDetail/ProductDetail';
-import { ROUTES } from './constant/routes';
+import { ROUTES } from '@router/constant/routes';
+
 const router = createBrowserRouter([
   {
     path: ROUTES.HOME,

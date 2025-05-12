@@ -29,8 +29,8 @@
       "@pages/*": ["./src/pages/*"],
       "@shared/*": ["./src/shared/*"],
       "@api/*": ["./src/api/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@routes/*": ["./src/routes/*"],
+      "@styles/*": ["./src/shared/styles/*"],
+      "@router/*": ["./src/router/*"],
       "@img/*": ["./src/assets/img/*"],
       "@svg/*": ["./src/assets/svg/*"],
       "@/*": ["./src/*"]
