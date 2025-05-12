@@ -6,31 +6,31 @@ import Ic_cart from '@svg/ic_cart_black.svg?react';
 interface CardInterface {
   size?: 'l' | 'xl';
   repurchase?: boolean;
-  img: string;
-  title: string;
-  discount: number;
-  price: number;
+  imageUrl: string;
+  productName: string;
+  discountRate: number;
+  discountPrice: number;
   reviewCount?: number;
 }
 
 const Card = ({
   size = 'l',
   repurchase = false,
-  img,
-  title,
-  discount,
-  price,
+  imageUrl,
+  productName,
+  discountRate,
+  discountPrice,
   reviewCount,
 }: CardInterface) => {
   return (
     <div className={styles.cardWrapper({ size })}>
-      <img className={styles.cardImg({ size })} src={img} alt="card img" />
+      <img className={styles.cardImg({ size })} src={imageUrl} alt="card img" />
       <div className={styles.cardDesc({ size })}>
-        <h3 className={styles.cardTitle}>{title}</h3>
+        <h3 className={styles.cardTitle}>{productName}</h3>
         <div className={styles.priceRow}>
           <div className={styles.priceWrapper}>
-            <span className={styles.cardDiscount}>{discount}%</span>
-            <span className={styles.cardPrice}>{price}원</span>
+            <span className={styles.cardDiscount}>{discountRate}%</span>
+            <span className={styles.cardPrice}>{discountPrice}원</span>
           </div>
           <button type="button" className={styles.cartButton}>
             <Ic_cart width={'2.4rem'} height={'2.4rem'} />
