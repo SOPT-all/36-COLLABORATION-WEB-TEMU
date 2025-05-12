@@ -30,7 +30,7 @@
       "@shared/*": ["./src/shared/*"],
       "@api/*": ["./src/api/*"],
       "@styles/*": ["./src/shared/styles/*"],
-      "@routes/*": ["./src/routes/*"],
+      "@router/*": ["./src/router/*"],
       "@img/*": ["./src/assets/img/*"],
       "@svg/*": ["./src/assets/svg/*"],
       "@/*": ["./src/*"]
