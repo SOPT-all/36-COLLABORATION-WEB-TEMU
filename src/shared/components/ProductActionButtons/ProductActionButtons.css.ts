@@ -21,17 +21,21 @@ export const buttonVariant = styleVariants({
 export const buttonContainer = styleVariants({
   sm: {
     display: 'inline-flex',
+
     width: '22.4rem',
-    gap: '0.3rem',
     padding: '1.2rem 5rem',
+    gap: '0.3rem',
+
     whiteSpace: 'nowrap',
   },
   lg: {
     display: 'flex',
-    width: '23.7rem',
-    gap: '0.8rem',
-    padding: '1rem 8rem',
     flexDirection: 'column',
+
+    width: '23.7rem',
+    padding: '1rem 8rem',
+
+    gap: '0.8rem',
   },
 });
 
