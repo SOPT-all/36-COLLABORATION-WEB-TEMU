@@ -8,6 +8,8 @@ import {
   cardTitle,
   cardRow,
   priceWrapper,
+  review,
+  reviewRow,
 } from './Card.css';
 import ic_review_black from '@svg/ic_review_black.svg';
 import ic_regular_customer from '@svg/ic_regular_customer.svg';
@@ -20,8 +22,17 @@ interface CardInterface {
   title: string;
   discount: number;
   price: number;
+  reviewCount?: number;
 }
-const Card = ({ size = 'l', repurchase = false, img, title, discount, price }: CardInterface) => {
+const Card = ({
+  size = 'l',
+  repurchase = false,
+  img,
+  title,
+  discount,
+  price,
+  reviewCount,
+}: CardInterface) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div className={cardWrapper({ size })}>
@@ -38,13 +49,14 @@ const Card = ({ size = 'l', repurchase = false, img, title, discount, price }: C
           </div>
         </div>
         {size === 'xl' && (
-          <div className={cardRow()}>
-            <img src={ic_review_black} alt="리뷰" />
+          <div className={reviewRow()}>
+            <img src={ic_review_black} alt="review icon" />
+            <div className={review()}>{reviewCount}</div>
           </div>
         )}
         {size === 'xl' && repurchase && (
           <div className={cardRow()}>
-            <img src={ic_regular_customer} alt="review icon" />
+            <img src={ic_regular_customer} alt="재구매 icon" />
           </div>
         )}
       </div>

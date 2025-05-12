@@ -1,11 +1,11 @@
+import { vars } from '@styles/theme.css';
 interface CartButtonInterface {
   hover?: boolean;
   width?: string;
   height?: string;
 }
 const CartButton = ({ hover = false, width, height }: CartButtonInterface) => {
-  const color = hover ? '#FF7710' : '#666666';
-
+  const color = hover ? vars.color.point_orange : vars.color.gray6;
   // 너비/높이 기본값 설정
   const svgWidth = width || (hover ? '24' : '36');
   const svgHeight = height || '24';
