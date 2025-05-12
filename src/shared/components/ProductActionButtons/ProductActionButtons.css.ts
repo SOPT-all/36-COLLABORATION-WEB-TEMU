@@ -34,7 +34,6 @@ export const buttonContainer = styleVariants({
 
     width: '23.7rem',
     padding: '1rem 8rem',
-
     gap: '0.8rem',
   },
 });
