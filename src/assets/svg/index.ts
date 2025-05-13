@@ -77,3 +77,19 @@ export { default as IcStar5Sm } from '@svg/ic_star_5_sm.svg?react';
 // Miscellaneous icons
 export { default as IcTruckGreen } from '@svg/ic_truck_green.svg?react';
 export { default as IcUser } from '@svg/ic_user.svg?react';
+
+// Footer icons
+export { default as IcApple } from '@svg/ic_apple.svg?react';
+export { default as IcBoonWhite } from '@svg/ic_boon_white.svg?react';
+export { default as IcCoupon } from '@svg/ic_coupon_white.svg?react';
+export { default as IcfaceBook } from '@svg/ic_facebook.svg?react';
+export { default as IcFooterX } from '@svg/ic_footer_x.svg?react';
+export { default as IcGoogle } from '@svg/ic_google.svg?react';
+export { default as IcGraph } from '@svg/ic_graph_white.svg?react';
+export { default as IcHourGlass } from '@svg/ic_hourglass_white.svg?react';
+export { default as IcInstagram } from '@svg/ic_instagram.svg?react';
+export { default as IcPinterest } from '@svg/ic_pinterest.svg?react';
+export { default as IcShieldWhite } from '@svg/ic_shield_white.svg?react';
+export { default as IcTikTok } from '@svg/ic_tiktok.svg?react';
+export { default as IcTruckWhite } from '@svg/ic_truck_white_fill.svg?react';
+export { default as IcYoutebue } from '@svg/ic_youtube.svg?react';
