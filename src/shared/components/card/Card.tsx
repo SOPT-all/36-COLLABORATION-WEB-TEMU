@@ -1,4 +1,4 @@
-import * as styles from './Card.css';
+import * as styles from '@shared/components/card/Card.css';
 import Ic_review_black from '@svg/ic_review_black.svg?react';
 import Ic_regular_customer from '@svg/ic_regular_customer.svg?react';
 import Ic_cart from '@svg/ic_cart_black.svg?react';

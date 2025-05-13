@@ -108,6 +108,7 @@ export const cardPrice = style({
   color: vars.color.black,
   ...vars.font.body_bold_16,
 });
+
 export const cartButton = style({
   display: 'flex',
   alignItems: 'center',
@@ -134,6 +135,7 @@ export const cardReviewRow = style({
   alignItems: 'center',
   gap: '0.4rem',
 });
+
 export const review = style({
   ...vars.font.caption_regular_13,
 });
