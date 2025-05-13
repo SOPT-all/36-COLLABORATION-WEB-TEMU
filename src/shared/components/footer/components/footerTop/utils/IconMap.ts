@@ -1,0 +1,31 @@
+import {
+  IcApple,
+  IcBoonWhite,
+  IcCoupon,
+  IcGraph,
+  IcHourGlass,
+  IcShieldWhite,
+  IcTikTok,
+  IcTruckWhite,
+  IcInstagram,
+  IcfaceBook,
+  IcYoutube,
+  IcPinterest,
+  IcGoogle,
+} from '@svg/index';
+
+export const IconMap: Record<string, React.FunctionComponent<React.SVGProps<SVGSVGElement>>> = {
+  IcGraph,
+  IcShieldWhite,
+  IcBoonWhite,
+  IcTruckWhite,
+  IcHourGlass,
+  IcCoupon,
+  IcApple,
+  IcGoogle,
+  IcInstagram,
+  IcfaceBook,
+  IcYoutube,
+  IcTikTok,
+  IcPinterest,
+};

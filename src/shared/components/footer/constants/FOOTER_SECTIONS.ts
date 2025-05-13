@@ -31,7 +31,6 @@ export const FOOTER_SECTIONS = {
       { id: 'partnership', text: 'Temu와 제휴하기' },
     ],
   },
-
   APP_DOWNLOAD: {
     title: 'Temu 앱 다운로드',
     items: [
@@ -55,7 +54,7 @@ export const FOOTER_SECTIONS = {
         { id: 'facebook', svg: 'IcfaceBook' },
         { id: 'twitter', svg: 'IcFooterX' },
         { id: 'tiktok', svg: 'IcTikTok' },
-        { id: 'youtube', svg: 'IcYoutebue' },
+        { id: 'youtube', svg: 'IcYoutube' },
         { id: 'pinterest', svg: 'IcPinterest' },
       ],
     },

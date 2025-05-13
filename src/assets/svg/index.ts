@@ -92,4 +92,4 @@ export { default as IcPinterest } from '@svg/ic_pinterest.svg?react';
 export { default as IcShieldWhite } from '@svg/ic_shield_white.svg?react';
 export { default as IcTikTok } from '@svg/ic_tiktok.svg?react';
 export { default as IcTruckWhite } from '@svg/ic_truck_white_fill.svg?react';
-export { default as IcYoutebue } from '@svg/ic_youtube.svg?react';
+export { default as IcYoutube } from '@svg/ic_youtube.svg?react';
