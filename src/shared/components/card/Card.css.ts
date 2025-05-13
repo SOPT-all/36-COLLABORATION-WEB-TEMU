@@ -1,5 +1,4 @@
 import { recipe } from '@vanilla-extract/recipes';
-
 import { vars } from '@styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
@@ -9,9 +8,13 @@ export const cardWrapper = recipe({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
+
     borderRadius: '0.5rem',
-    border: `1px solid ${vars.color.gray1}`,
-    boxShadow: '0px 4px 10px 0px rgba(0, 0, 0, 0.10)',
+    selectors: {
+      '&:hover': {
+        boxShadow: '0px 4px 10px 0px rgba(0, 0, 0, 0.10)',
+      },
+    },
   },
   variants: {
     size: {
@@ -29,11 +32,12 @@ export const cardImg = recipe({
   base: {
     alignSelf: 'stretch',
     borderRadius: '0.5rem 0.5rem 0 0',
+
     objectFit: 'cover',
   },
   variants: {
     size: {
-      l: { height: '10.25rem' },
+      l: { height: '16.4rem' },
       xl: { height: '17.4rem' },
     },
   },
@@ -43,16 +47,18 @@ export const cardImg = recipe({
 });
 
 // 카드 설명 영역
-export const cardDesc = recipe({
+export const cardDescription = recipe({
   base: {
-    width: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',
     alignItems: 'flex-start',
-    background: vars.color.white,
+
+    width: '100%',
     padding: '0.8rem',
     borderRadius: '0rem 0rem 0.8rem 0.8rem',
+
+    background: vars.color.white,
   },
   variants: {
     size: {
@@ -69,19 +75,21 @@ export const cardDesc = recipe({
 export const cardTitle = style({
   color: vars.color.gray8,
   ...vars.font.caption_regular_13,
+
   whiteSpace: 'nowrap',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
 });
 
 // 가격/장바구니 라인
-export const priceRow = style({
+export const cardPriceRow = style({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  width: '100%',
   alignSelf: 'stretch',
   gap: '0.6rem',
+
+  width: '100%',
 });
 
 // 가격 영역
@@ -92,23 +100,25 @@ export const priceWrapper = style({
 });
 
 export const cardDiscount = style({
-  ...vars.font.body_bold_16,
   color: vars.color.point_orange,
+  ...vars.font.body_bold_16,
 });
 
 export const cardPrice = style({
-  ...vars.font.body_bold_16,
   color: vars.color.black,
+  ...vars.font.body_bold_16,
 });
 export const cartButton = style({
   display: 'flex',
+  alignItems: 'center',
+  gap: '1rem',
+
   width: '3.6rem',
   height: '2.4rem',
   padding: '0rem 0.8rem 0rem 0.5rem',
-  alignItems: 'center',
-  gap: '1rem',
   borderRadius: '1.8rem',
   border: `1px solid ${vars.color.gray6}`,
+
   background: vars.color.white,
 
   selectors: {
@@ -119,7 +129,7 @@ export const cartButton = style({
   },
 });
 
-export const reviewRow = style({
+export const cardReviewRow = style({
   display: 'flex',
   alignItems: 'center',
   gap: '0.4rem',
@@ -127,9 +137,11 @@ export const reviewRow = style({
 export const review = style({
   ...vars.font.caption_regular_13,
 });
-export const repurchaseRow = style({
+
+export const cardRepurchaseRow = style({
   display: 'flex',
   alignItems: 'flex-start',
   gap: '0.4rem',
+
   ...vars.font.body_regular_14,
 });
