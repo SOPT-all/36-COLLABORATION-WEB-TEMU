@@ -1,5 +1,11 @@
+import HeaderMid from '@shared/components/headerMid/HeaderMid';
+
 const Home = () => {
-  return <div></div>;
+  return (
+    <div>
+      <HeaderMid />
+    </div>
+  );
 };
 
 export default Home;
