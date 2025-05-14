@@ -2,10 +2,24 @@ import { vars } from '@shared/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const container = style({
+  position: 'sticky',
+  top: 0,
+
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
   padding: '4.8rem 14rem 0.6rem 14rem',
+
+  backgroundColor: vars.color.white,
+  transition: 'padding 0.3s ease-in-out',
+
+  selectors: {
+    '&.scrolled': {
+      padding: '0.3rem 14rem',
+    },
+  },
+
+  zIndex: vars.zIndex.header,
 });
 
 export const leftWrapper = style({

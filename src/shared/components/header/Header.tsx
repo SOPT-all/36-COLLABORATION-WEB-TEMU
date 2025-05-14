@@ -1,16 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { IcTemu, IcTemuLogo, IcSearch, IcUser, IcCartBlack } from '@svg/index';
 import * as styles from '@shared/components/header/Header.css';
-import { PLACEHOLDER } from '@shared/components/header/constant/PLACEHOLDER';
+import clsx from 'clsx';
+import { PLACEHOLDER, MIN_HEIGHT } from '@shared/components/header/constant';
 
 const Header = () => {
   const [keyword, setKeyword] = useState('');
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // 검색페이지로로 연결 시
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > MIN_HEIGHT);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // 검색페이지로연결 시
   // const handleSearch = () => {};
 
   return (
-    <header className={styles.container}>
+    <header className={clsx(styles.container, isScrolled && 'scrolled')}>
       <div className={styles.leftWrapper}>
         <nav className={styles.logowrapper}>
           <IcTemu width="5.2rem" height="5.2rem" />
