@@ -1,6 +1,6 @@
 import * as styles from '@shared/components/card/Card.css';
-import IcRegularCustomer from '@svg/ic_regular_customer.svg?react';
-import { IcCartBlack, IcReviewBlack } from '@svg/index';
+
+import { IcCartBlack, IcReviewBlack, IcRegularCustomer } from '@svg/index';
 
 interface CardProps {
   size?: 'l' | 'xl';
