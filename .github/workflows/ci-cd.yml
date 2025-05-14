@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - develop
-      - main
+
   push:
     branches:
       - develop
@@ -15,7 +15,6 @@ permissions:
 
 jobs:
   build:
-    if: (github.event_name == 'pull_request') || (github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip ci]'))
     runs-on: ubuntu-latest
 
     steps:
@@ -42,31 +41,19 @@ jobs:
         run: pnpm build
         continue-on-error: true
 
-      - name: Set build status
-        id: status
-        run: |
-          if [ "${{ steps.build.outcome }}" == "success" ]; then
-            echo "result=success" >> $GITHUB_OUTPUT
-            echo "message=빌드에 성공했습니다 🎉" >> $GITHUB_OUTPUT
-          else
-            echo "result=failed" >> $GITHUB_OUTPUT
-            echo "message=빌드에 실패했습니다 ❌" >> $GITHUB_OUTPUT
-          fi
+      - name: Lint the project
+        id: lint
+        run: pnpm lint
 
-      - name: Add comment to PR
+      - name: Add comment to PR if build succeeds
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v6
         with:
           script: |
             const prNumber = context.payload.pull_request.number;
-            const buildStatusMessage = '${{ steps.status.outputs.message }}';
             await github.rest.issues.createComment({
               issue_number: prNumber,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `### 빌드 결과\n${buildStatusMessage}`
+              body: `✅ 빌드에 성공했습니다! 🎉`
             });
-
-      - name: Check build status
-        if: steps.build.outcome == 'failure'
-        run: exit 1

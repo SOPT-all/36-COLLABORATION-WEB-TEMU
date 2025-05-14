@@ -14,8 +14,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.AUTO_ACTIONS }}
-          fetch-depth: 0
-          ref: main
 
       - name: Add remote-url
         run: |
@@ -23,7 +21,7 @@ jobs:
           git config user.name heesunee
           git config user.email phs1585@naver.com
 
-      - name: Push changes to forked-repo
+      - name: Push Changes to forked-repo
         run: |
           git push -f forked-repo main
 
