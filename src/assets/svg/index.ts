@@ -80,6 +80,7 @@ export { default as IcStar5Sm } from '@svg/ic_star_5_sm.svg?react';
 export { default as IcTruckGreen } from '@svg/ic_truck_green.svg?react';
 export { default as IcUser } from '@svg/ic_user.svg?react';
 
+
 // Footer icons
 export { default as IcApple } from '@svg/ic_apple.svg?react';
 export { default as IcBoonWhite } from '@svg/ic_boon_white.svg?react';
@@ -100,7 +101,12 @@ export { default as IcPayments } from '@svg/ic_payments.svg?react';
 export { default as IcCopyRight } from '@svg/ic_copyright_gray5.svg?react';
 export { default as IcFooterProtect } from '@svg/ic_footer_protect.svg?react';
 
-// header
+
 export { default as IcTemu } from '@svg/ic_temu.svg?react';
 export { default as IcTemuLogo } from '@svg/ic_temu_logo.svg?react';
 export { default as IcSearch } from '@svg/ic_search.svg?react';
+
+//Card component icons
+export { default as IcRegularCustomer } from '@svg/ic_regular_customer.svg?react';
+
+
