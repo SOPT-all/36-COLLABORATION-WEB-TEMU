@@ -78,3 +78,6 @@ export { default as IcStar5Sm } from '@svg/ic_star_5_sm.svg?react';
 // Miscellaneous icons
 export { default as IcTruckGreen } from '@svg/ic_truck_green.svg?react';
 export { default as IcUser } from '@svg/ic_user.svg?react';
+
+//Card component icons
+export { default as IcRegularCustomer } from '@svg/ic_regular_customer.svg?react';
