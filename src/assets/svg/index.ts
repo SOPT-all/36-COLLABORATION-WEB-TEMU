@@ -1,6 +1,7 @@
 // Arrow icons
 export { default as IcArrowDownGrayS } from '@svg/ic_arrow_down_gray_s.svg?react';
 export { default as IcArrowDownGray } from '@svg/ic_arrow_down_gray.svg?react';
+export { default as IcArrowDownOrange } from '@svg/ic_arrow_down_orange.svg?react';
 export { default as IcArrowDownWhite } from '@svg/ic_arrow_down_white.svg?react';
 export { default as IcArrowLineGray } from '@svg/ic_arrow_line_gray.svg?react';
 export { default as IcArrowRightBlack } from '@svg/ic_arrow_right_black.svg?react';
