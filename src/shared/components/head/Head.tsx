@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { type ComponentPropsWithRef, type Ref } from 'react';
+import { type ComponentPropsWithRef } from 'react';
 import { headStyle } from '@/shared/components/head/Head.css';
 
 type HeadLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
@@ -33,7 +33,6 @@ export interface HeadProps extends ComponentPropsWithRef<'h1'> {
   level?: HeadLevel;
   tag?: HeadTag;
   color?: HeadColor;
-  ref?: Ref<HTMLHeadingElement>;
 }
 
 const HeadTagMap = {
