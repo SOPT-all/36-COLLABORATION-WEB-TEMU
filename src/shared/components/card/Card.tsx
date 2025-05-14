@@ -23,7 +23,7 @@ const Card = ({
 }: CardProps) => {
   return (
     <div className={styles.cardWrapper({ size })}>
-      <img className={styles.cardImg({ size })} src={imageUrl} alt="card img" />
+      <img className={styles.cardImg({ size })} src={imageUrl} alt={`${productName} img`} />
       <div className={styles.cardDescription({ size })}>
         <h3 className={styles.cardTitle}>{productName}</h3>
         <div className={styles.cardPriceRow}>
