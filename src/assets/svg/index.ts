@@ -97,3 +97,5 @@ export { default as IcTruckWhite } from '@svg/ic_truck_white_fill.svg?react';
 export { default as IcYoutube } from '@svg/ic_youtube.svg?react';
 export { default as IcSecurity } from '@svg/ic_security.svg?react';
 export { default as IcPayments } from '@svg/ic_payments.svg?react';
+export { default as IcCopyRight } from '@svg/ic_copyright_gray5.svg?react';
+export { default as IcFooterProtect } from '@svg/ic_footer_protect.svg?react';

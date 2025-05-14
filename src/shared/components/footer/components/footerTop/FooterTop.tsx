@@ -55,9 +55,9 @@ const FooterTop = () => {
           </div>
 
           <div className={styles.dividerWrapper}>
-            <Divider direction="vertical" color="gray4" thickness="0.2rem" length="1.1rem" />
-            <Divider direction="vertical" color="gray4" thickness="0.2rem" length="1.1rem" />
-            <Divider direction="vertical" color="gray4" thickness="0.2rem" length="1.1rem" />
+            <Divider direction="vertical" color="gray4" thickness="2px" length="1.1rem" />
+            <Divider direction="vertical" color="gray4" thickness="2px" length="1.1rem" />
+            <Divider direction="vertical" color="gray4" thickness="2px" length="1.1rem" />
           </div>
 
           <div className={styles.appSectionColWrapper}>

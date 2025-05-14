@@ -41,7 +41,7 @@ export const row = style({
 
 export const underline = style({
   textDecoration: 'underline',
-  textDecorationColor: 'white',
+  textDecorationColor: vars.color.white,
 });
 
 export const flexRow = style({
