@@ -24,6 +24,55 @@ export const footerToptextGap = style({
   gap: '1.2rem',
 });
 
-export const appSectionRow = style({
+export const appSectionWrapper = style({
   display: 'flex',
+  gap: '1.8rem',
+});
+
+export const appSectionColWrapper = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1.3rem',
+});
+
+export const appSectionColTextWrapper = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.5rem',
+});
+
+export const appSectionTextRow = style({
+  display: 'flex',
+});
+
+export const dividerWrapper = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1.5rem',
+});
+
+export const buttonContainer = style({
+  display: 'flex',
+});
+
+export const buttonWrapper = style({
+  display: 'flex',
+
+  alignItems: 'center',
+  padding: '0.8rem 1.8rem',
+  gap: '0.8rem',
+
+  borderRadius: '30px',
+  border: `1px solid ${vars.color.gray6}`,
+});
+
+export const snsContainer = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1.2rem',
+});
+
+export const snsWrapper = style({
+  display: 'flex',
+  gap: '2.7rem',
 });

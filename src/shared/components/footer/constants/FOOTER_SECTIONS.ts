@@ -1,3 +1,5 @@
+import * as Icons from '@svg/index';
+
 export const FOOTER_SECTIONS = {
   COMPANY_INFO: {
     title: '회사 정보',
@@ -31,32 +33,35 @@ export const FOOTER_SECTIONS = {
       { id: 'partnership', text: 'Temu와 제휴하기' },
     ],
   },
-  APP_DOWNLOAD: {
-    title: 'Temu 앱 다운로드',
+};
+
+export const APP_DOWNLOAD = {
+  title: 'Temu 앱 다운로드',
+  itemsLeft: [
+    { id: 'price-alert', text: '가격 인하 알림', icon: Icons.IcGraph },
+    { id: 'secure-payment', text: '더 빠르고 안전한 결제', icon: Icons.IcShieldWhite },
+    { id: 'exclusive-benefits', text: '독점 혜택', icon: Icons.IcBoonWhite },
+  ],
+  itemsRight: [
+    { id: 'realtime-tracking', text: '실시간 주문 추적', icon: Icons.IcTruckWhite },
+    { id: 'stock-alert', text: '재고 부족 상품 알림', icon: Icons.IcHourGlass },
+    { id: 'coupon-alert', text: '쿠폰 및 혜택 알림', icon: Icons.IcCoupon },
+  ],
+
+  appStoreLinks: [
+    { id: 'ios', text: '여기서 다운로드', subText: 'App Store', icon: Icons.IcApple },
+    { id: 'android', text: '여기서 다운로드', subText: 'Google Play', icon: Icons.IcGoogle },
+  ],
+
+  socialLinks: {
+    title: 'Temu와 연락하기',
     items: [
-      { id: 'price-alert', text: '가격 인하 알림', svg: 'IcGraph' },
-      { id: 'secure-payment', text: '더 빠르고 안전한 결제', svg: 'IcShieldWhite' },
-      { id: 'exclusive-benefits', text: '독점 혜택', svg: 'IcBoonWhite' },
-      { id: 'realtime-tracking', text: '실시간 주문 추적', svg: 'IcTruckWhite' },
-      { id: 'stock-alert', text: '재고 부족 상품 알림', svg: 'IcHourGlass' },
-      { id: 'coupon-alert', text: '쿠폰 및 혜택 알림', svg: 'IcCoupon' },
+      { id: 'instagram', icon: Icons.IcInstagram },
+      { id: 'facebook', icon: Icons.IcfaceBook },
+      { id: 'x', icon: Icons.IcFooterX },
+      { id: 'tiktok', icon: Icons.IcTikTok },
+      { id: 'youtube', icon: Icons.IcYoutube },
+      { id: 'pinterest', icon: Icons.IcPinterest },
     ],
-
-    appStoreLinks: [
-      { id: 'ios', text: '여기서 다운로드', subText: 'App Store', svg: 'IcApple' },
-      { id: 'android', text: '여기서 다운로드', subText: 'Google Play', svg: 'IcGoogle' },
-    ],
-
-    socialLinks: {
-      title: 'Temu와 연락하기',
-      items: [
-        { id: 'instagram', svg: 'IcInstagram' },
-        { id: 'facebook', svg: 'IcfaceBook' },
-        { id: 'twitter', svg: 'IcFooterX' },
-        { id: 'tiktok', svg: 'IcTikTok' },
-        { id: 'youtube', svg: 'IcYoutube' },
-        { id: 'pinterest', svg: 'IcPinterest' },
-      ],
-    },
   },
 };
