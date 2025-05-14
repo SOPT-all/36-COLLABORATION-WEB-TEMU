@@ -7,6 +7,7 @@ export { default as IcArrowLineGray } from '@svg/ic_arrow_line_gray.svg?react';
 export { default as IcArrowRightBlack } from '@svg/ic_arrow_right_black.svg?react';
 export { default as IcArrowRightGray } from '@svg/ic_arrow_right_gray.svg?react';
 export { default as IcArrowRightGreen } from '@svg/ic_arrow_right_green.svg?react';
+export { default as IcArrowRightWhite } from '@svg/ic_arrow_right_white.svg?react';
 
 // Baby and Book icons
 export { default as IcBabyBlack } from '@svg/ic_baby_black.svg?react';
@@ -94,3 +95,5 @@ export { default as IcShieldWhite } from '@svg/ic_shield_white.svg?react';
 export { default as IcTikTok } from '@svg/ic_tiktok.svg?react';
 export { default as IcTruckWhite } from '@svg/ic_truck_white_fill.svg?react';
 export { default as IcYoutube } from '@svg/ic_youtube.svg?react';
+export { default as IcSecurity } from '@svg/ic_security.svg?react';
+export { default as IcPayments } from '@svg/ic_payments.svg?react';

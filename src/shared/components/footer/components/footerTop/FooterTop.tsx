@@ -1,5 +1,8 @@
 import * as styles from '@shared/components/footer/components/footerTop/FooterTop.css';
-import { APP_DOWNLOAD, FOOTER_SECTIONS } from '@shared/components/footer/constants/FOOTER_SECTIONS';
+import {
+  APP_DOWNLOAD,
+  FOOTER_TOP_SECTIONS,
+} from '@shared/components/footer/constants/FOOTER_SECTIONS';
 import Text from '@shared/components/text/Text';
 import Divider from '@shared/components/divider/Divider';
 
@@ -8,7 +11,7 @@ const FooterTop = () => {
 
   return (
     <div className={styles.footerTopContainer}>
-      {Object.entries(FOOTER_SECTIONS).map(([key, section]) => (
+      {Object.entries(FOOTER_TOP_SECTIONS).map(([key, section]) => (
         <section key={key} className={styles.footerTopSection}>
           <Text tag="body_bold_16" color="white">
             {section.title}

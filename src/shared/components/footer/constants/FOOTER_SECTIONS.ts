@@ -1,6 +1,6 @@
 import * as Icons from '@svg/index';
 
-export const FOOTER_SECTIONS = {
+export const FOOTER_TOP_SECTIONS = {
   COMPANY_INFO: {
     title: '회사 정보',
     items: [
@@ -64,4 +64,39 @@ export const APP_DOWNLOAD = {
       { id: 'pinterest', icon: Icons.IcPinterest },
     ],
   },
+};
+
+export const FOOTER_MID_SECTION = {
+  left_info: {
+    title: '사업자 정보. 고지사항',
+    content: [
+      { id: 'company', text: '업체명: Elementary Innovation Pte. Ltd.' },
+      { id: 'address', text: '주소: 6 Raffles Quay, #14-06, Singapore (048580) | 대표자: Qin Sun' },
+      { id: 'registration', text: '사업자등록번호: 201900304D | 전화번호: +65 6717 3228' },
+      { id: 'report', text: '온라인 소매업체 보고서: 2025-공정-0013' },
+      { id: 'link', text: '사업자 정보 확인 링크', underline: true, icon: Icons.IcArrowRightWhite },
+    ],
+  },
+
+  right_info: [
+    {
+      id: 1,
+      text: 'Temu는 고객님이 현금 결제한 금액에 대해 씨티은행(Citibank)과 지급 보증 계약을 체결하여 안전한 거래를 보장하고 있습니다. 단,신용 카드 거래에는 적용되지 않습니다.',
+    },
+    { id: 2, text: '서비스 가입사실 확인 링크', underline: true, icon: true },
+    {
+      id: 3,
+      text: '문의 사항이 있거나 분쟁이 필요한 경우',
+    },
+    { id: 4, text: '고객서비스', underline: true, icon: true },
+    { id: 5, text: ' 또는 Dispute@temu.com으로 문의하시기 바랍니다. ' },
+    {
+      id: 6,
+      text: '호스팅 서비스 제공: Microsoft Azure ',
+    },
+    {
+      id: 7,
+      text: 'Temu는 통신판매중개자이며 통신판매당사자가 아닙니다. 따라서 Temu는 상품.거래 정보 및 거래 등에대하여 책임을 지지 않습니다. Temu는 고객의 권리와 이익을 보호하기 위해 무료 반품, 배송 보장, 가격조정 정책을 포함하되 이에 국한되지 않는 서비스를 제공합니다.',
+    },
+  ],
 };
