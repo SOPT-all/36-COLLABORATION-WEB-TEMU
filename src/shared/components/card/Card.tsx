@@ -1,9 +1,8 @@
 import * as styles from '@shared/components/card/Card.css';
-import Ic_review_black from '@svg/ic_review_black.svg?react';
-import Ic_regular_customer from '@svg/ic_regular_customer.svg?react';
-import Ic_cart from '@svg/ic_cart_black.svg?react';
+import IcRegularCustomer from '@svg/ic_regular_customer.svg?react';
+import { IcCartBlack, IcReviewBlack } from '@svg/index';
 
-interface CardInterface {
+interface CardProps {
   size?: 'l' | 'xl';
   repurchase?: boolean;
   imageUrl: string;
@@ -21,7 +20,7 @@ const Card = ({
   discountRate,
   discountPrice,
   reviewCount,
-}: CardInterface) => {
+}: CardProps) => {
   return (
     <div className={styles.cardWrapper({ size })}>
       <img className={styles.cardImg({ size })} src={imageUrl} alt="card img" />
@@ -33,18 +32,18 @@ const Card = ({
             <span className={styles.cardPrice}>{discountPrice}원</span>
           </div>
           <button type="button" className={styles.cartButton}>
-            <Ic_cart width={'2.4rem'} height={'2.4rem'} />
+            <IcCartBlack width={'2.4rem'} height={'2.4rem'} />
           </button>
         </div>
         {size === 'xl' && (
           <>
             <div className={styles.cardReviewRow}>
-              <Ic_review_black width={'1.6rem'} height={'1.6rem'} />
+              <IcReviewBlack width={'1.6rem'} height={'1.6rem'} />
               <div className={styles.review}>{reviewCount}</div>
             </div>
             {repurchase && (
               <div className={styles.cardRepurchaseRow}>
-                <Ic_regular_customer height={'1.6rem'} width={'1.6rem'} />
+                <IcRegularCustomer height={'1.6rem'} width={'1.6rem'} />
                 <span>재구매 고객이 많은 스토어</span>
               </div>
             )}
