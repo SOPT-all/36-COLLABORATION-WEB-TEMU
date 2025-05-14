@@ -38,6 +38,8 @@ export const logowrapper = style({
   display: 'flex',
   alignItems: 'center',
   gap: '1.2rem',
+
+  cursor: 'pointer',
 });
 
 export const inputWrapper = style({
