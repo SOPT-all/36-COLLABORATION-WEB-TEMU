@@ -9,7 +9,7 @@ interface DetailButtonProps {
 
 const DetailButton = ({ reviewCount }: DetailButtonProps) => {
   return (
-    <section className={styles.detailButtonsContainer}>
+    <nav className={styles.detailButtonsContainer}>
       {TAB.map(({ key, label }) => (
         <>
           <button key={key} type="button" className={styles.detailButtonWrapper}>
@@ -21,7 +21,7 @@ const DetailButton = ({ reviewCount }: DetailButtonProps) => {
           <Divider direction="vertical" color="gray2" thickness="1px" />
         </>
       ))}
-    </section>
+    </nav>
   );
 };
 
