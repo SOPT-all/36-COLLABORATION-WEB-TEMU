@@ -1,3 +1,4 @@
+import { vars } from '@shared/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const container = style({
@@ -48,7 +49,7 @@ export const categoryMenuWrapper = style({
 
   width: '100%',
 
-  zIndex: 2,
+  zIndex: vars.zIndex.category,
 });
 
 export const navStyle = style({
