@@ -1,10 +1,6 @@
-type DetailCell = {
-  title: string;
-  value: string;
-  colSpan?: number; // 병합용
-};
+import type { DetailCellTypes } from '@pages/productDetail/types/table';
 
-export const DETAIL_TABLE: DetailCell[][] = [
+export const DETAIL_TABLE: DetailCellTypes[][] = [
   [
     { title: '설치유형', value: '독립형' },
     { title: '선반 유형', value: '슬라이딩 선반' },
