@@ -81,9 +81,3 @@ export { default as IcUser } from '@svg/ic_user.svg?react';
 
 //Card component icons
 export { default as IcRegularCustomer } from '@svg/ic_regular_customer.svg?react';
-
-//Main Banner img
-export { default as ImgMainBanner } from '@img/img_main_banner.svg?react';
-
-//Family Month Title  img
-export { default as FamilyMonthTitle } from '@img/img_family_month_title.svg?react';
