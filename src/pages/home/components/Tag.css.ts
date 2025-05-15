@@ -23,6 +23,8 @@ export const tag = recipe({
     padding: '1.6rem',
     borderRadius: '0.4rem',
 
+    background: vars.color.gray0,
+
     cursor: 'pointer',
   },
   variants: {
