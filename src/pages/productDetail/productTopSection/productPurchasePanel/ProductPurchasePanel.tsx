@@ -11,6 +11,7 @@ import IcPlantGreen from '@svg/ic_plant_green.svg?react';
 import IcShieldGreen from '@svg/ic_shield_green.svg?react';
 import IcArrowDownGray from '@svg/ic_arrow_down_gray.svg?react';
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
+
 interface ProductPurchasePanelProps {
   company: string;
   productName: string;

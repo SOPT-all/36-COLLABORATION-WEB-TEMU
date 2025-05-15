@@ -2,7 +2,12 @@ import ProductTopSection from './productTopSection/ProductTopSection';
 import { data } from '@pages/productDetail/mockData';
 
 const ProductDetail = () => {
-  const { productDetails, reviewCount, productId, ...restData } = data;
+  const {
+    productDetails: _productDetails,
+    reviewCount: _reviewCount,
+    productId: _productId,
+    ...restData
+  } = data;
 
   return (
     <div>
