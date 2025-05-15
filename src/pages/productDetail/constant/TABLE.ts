@@ -1,4 +1,10 @@
-export const DETAIL_TABLE = [
+type DetailCell = {
+  title: string;
+  value: string;
+  colSpan?: number; // 병합용
+};
+
+export const DETAIL_TABLE: DetailCell[][] = [
   [
     { title: '설치유형', value: '독립형' },
     { title: '선반 유형', value: '슬라이딩 선반' },
@@ -30,11 +36,8 @@ export const DETAIL_TABLE = [
   [
     {
       title: 'A/S 책임자와 전화번호 또는 소비자 상담 관련 전화번호',
-      value: '',
-    },
-    {
-      title: '',
       value: '-',
+      colSpan: 3,
     },
   ],
 ];
