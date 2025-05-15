@@ -52,7 +52,7 @@ const Home = () => {
       discountPrice: 41000,
       reviewCount: 130,
     },
-  ];
+  ] as const;
   const dummyCardsXL = [
     {
       size: 'xl',
@@ -189,7 +189,7 @@ const Home = () => {
       discountPrice: 41000,
       reviewCount: 130,
     },
-  ];
+  ] as const;
   return (
     <>
       {
