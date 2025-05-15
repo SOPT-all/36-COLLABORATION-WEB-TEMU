@@ -1,11 +1,15 @@
 import { style } from '@vanilla-extract/css';
 
 export const container = style({
+  padding: '0.8rem 14rem',
+});
+
+export const leftWrapper = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
 
-  padding: '0.8rem 14rem',
+  width: '10.5rem',
 });
 
 export const rightWrapper = style({
@@ -17,7 +21,24 @@ export const rightWrapper = style({
 
 export const textWrapper = style({
   display: 'flex',
+  justifyContent: 'center',
   alignItems: 'center',
-
   gap: '1.2rem',
+});
+
+export const categoryWrapper = style({
+  position: 'relative',
+
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+
+  width: '108.6rem',
+});
+
+export const categoryMenuWrapper = style({
+  position: 'absolute',
+  top: '100%',
+  left: 0,
+  zIndex: 2,
 });
