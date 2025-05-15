@@ -4,6 +4,7 @@ export const vars = createGlobalTheme(':root', {
   color: {
     white: '#FFFFFF',
     black: '#121212',
+    gray0: '#f6f6f6',
     gray1: '#EAEAEA',
     gray2: '#CDCDCD',
     gray3: '#BCBCBC',
