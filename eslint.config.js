@@ -35,6 +35,10 @@ export default tseslint.config(
       indent: ['error', 2], //들여쓰기 2칸!
       'no-trailing-spaces': 'error', // 쓸데없는 공백 없애기
       'import/newline-after-import': ['error', { count: 1 }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
     },
   }
 );
