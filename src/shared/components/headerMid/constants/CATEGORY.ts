@@ -1,18 +1,55 @@
 import * as Icons from '@svg/index';
+import type { CategoryTitleTypes } from '@shared/components/headerMid/types/category';
 
-export const CATEGORY_TITLE = [
-  { id: 'fashion', icon: Icons.IcBookBlack, title: '의류·잡화·뷰티' },
+export const CATEGORY_TITLE: CategoryTitleTypes[] = [
+  {
+    id: 'fashion',
+    iconBlack: Icons.IcGoodsBlack,
+    iconWhite: Icons.IcGoodsWhite,
+    title: '의류·잡화·뷰티',
+  },
   {
     id: 'baby',
-    icon: Icons.IcBabyBlack,
+    iconBlack: Icons.IcBabyBlack,
+    iconWhite: Icons.IcBabyWhite,
     title: '유아동',
   },
-  { id: 'life', icon: Icons.IcGoodsBlack, title: '생필품' },
-  { id: 'kitchen', icon: Icons.IcKitchenBlack, title: '홈·주방' },
-  { id: 'digital', icon: Icons.IcDigitalBlack, title: '디지털·가전' },
-  { id: 'sports', icon: Icons.IcSportBlack, title: '스포츠·건강' },
-  { id: 'car', icon: Icons.IcCarBlack, title: '자동차·공구' },
-  { id: 'book', icon: Icons.IcBookBlack, title: '도서' },
+  {
+    id: 'life',
+    iconBlack: Icons.IcGoodsBlack,
+    iconWhite: Icons.IcGoodsWhite,
+    title: '생필품',
+  },
+  {
+    id: 'kitchen',
+    iconBlack: Icons.IcKitchenBlack,
+    iconWhite: Icons.IcKitchenWhite,
+    title: '홈·주방',
+  },
+  {
+    id: 'digital',
+    iconBlack: Icons.IcDigitalBlack,
+    iconWhite: Icons.IcDigitalWhite,
+    title: '디지털·가전',
+  },
+  {
+    id: 'sports',
+    iconBlack: Icons.IcSportBlack,
+    iconWhite: Icons.IcSportWhite,
+    title: '스포츠·건강',
+  },
+  {
+    id: 'car',
+    iconBlack: Icons.IcCarBlack,
+    iconWhite: Icons.IcCarWhite,
+    title: '자동차·공구',
+  },
+  {
+    id: 'book',
+    iconBlack: Icons.IcBookBlack,
+    iconWhite: Icons.IcBookWhite,
+    title: '도서',
+  },
 ];
 
 export const CATEGORY_DETAIL_MAP = {
@@ -29,7 +66,7 @@ export const CATEGORY_DETAIL_MAP = {
       title: '잡화',
       category: [
         { id: 'shoes', title: '신발' },
-        { id: 'bag', title: '가방/잡화화' },
+        { id: 'bag', title: '가방/잡화' },
         { id: 'accessory', title: '쥬얼리/시계' },
       ],
     },

@@ -1,6 +1,10 @@
 import { style } from '@vanilla-extract/css';
 
 export const container = style({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+
   padding: '0.8rem 14rem',
 });
 
@@ -34,11 +38,19 @@ export const categoryWrapper = style({
   justifyContent: 'space-between',
 
   width: '108.6rem',
+  padding: '0.7rem 0rem',
 });
 
 export const categoryMenuWrapper = style({
   position: 'absolute',
   top: '100%',
   left: 0,
+
+  width: '100%',
+
   zIndex: 2,
+});
+
+export const navStyle = style({
+  cursor: 'pointer',
 });
