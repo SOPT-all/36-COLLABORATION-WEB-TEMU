@@ -1,4 +1,4 @@
-// starIcons.ts
+import React from 'react';
 import IcStar1 from '@svg/ic_star_1_sm.svg?react';
 import IcStar1_5 from '@svg/ic_star_1_5_sm.svg?react';
 import IcStar2 from '@svg/ic_star_2_sm.svg?react';
