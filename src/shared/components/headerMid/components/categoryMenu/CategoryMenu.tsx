@@ -9,7 +9,7 @@ import Divider from '@shared/components/divider/Divider';
 import type { CategoryId } from '@shared/components/headerMid/types/category';
 
 const CategoryMenu = () => {
-  const [hoverCategory, setHoverCategory] = useState<CategoryId>('fashion');
+  const [hoverCategory, setHoverCategory] = useState<CategoryId>('');
   const defaultCategory: CategoryId = 'fashion';
   const visibleCategory = hoverCategory || defaultCategory;
 
