@@ -32,7 +32,11 @@ const Tag = () => {
   return (
     <div className={styles.tagWrapper}>
       {TAG.map(tag => (
-        <div key={tag.text} onClick={() => setSelectedTag(tag.text)}>
+        <div
+          className={styles.tag({ selected: selectedTag === tag.text })}
+          key={tag.text}
+          onClick={() => setSelectedTag(tag.text)}
+        >
           {tag.icon}
           <Text
             tag={selectedTag == tag.text ? 'body_bold_14' : 'body_regular_14'}
