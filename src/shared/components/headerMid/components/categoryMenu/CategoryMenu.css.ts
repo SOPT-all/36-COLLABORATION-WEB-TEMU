@@ -33,6 +33,7 @@ export const currentCategoryWrapper = style({
   flexDirection: 'column',
   padding: '2.3rem 3.3rem',
 
+  width: '18.4rem',
   height: '32rem',
 
   gap: '1.6rem',

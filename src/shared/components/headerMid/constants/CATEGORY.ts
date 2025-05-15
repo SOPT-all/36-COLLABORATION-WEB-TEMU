@@ -141,7 +141,7 @@ export const CATEGORY_DETAIL_MAP = {
   ],
   car: [
     {
-      title: '공구',
+      title: '자동차',
       category: [{ id: 'car_accessory', title: '자동차용품' }],
     },
     {

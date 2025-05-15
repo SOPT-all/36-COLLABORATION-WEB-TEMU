@@ -5,6 +5,7 @@ import {
 } from '@shared/components/headerMid/constants/CATEGORY';
 import * as styles from '@shared/components/headerMid/components/categoryMenu/CategoryMenu.css';
 import Text from '@shared/components/text/Text';
+import Divider from '@shared/components/divider/Divider';
 
 type CategoryId = 'fashion' | 'baby' | 'life' | 'kitchen' | 'digital' | 'sports' | 'car' | 'book';
 
@@ -32,18 +33,21 @@ const CategoryMenu = () => {
         <div className={styles.currentCategoryContainer}>
           {CATEGORY_DETAIL_MAP[currentCategory]?.map(
             (section: { title: string; category: { id: string; title: string }[] }) => (
-              <div key={section.title} className={styles.currentCategoryWrapper}>
-                <Text tag="body_bold_14">{section.title}</Text>
-                <ul className={styles.currentCategoryTextWrapper}>
-                  {section.category.map((category: { id: string; title: string }) => (
-                    <li key={category.id}>
-                      <Text tag="body_regular_14" color="gray6">
-                        {category.title}
-                      </Text>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <>
+                <div key={section.title} className={styles.currentCategoryWrapper}>
+                  <Text tag="body_bold_14">{section.title}</Text>
+                  <ul className={styles.currentCategoryTextWrapper}>
+                    {section.category.map((category: { id: string; title: string }) => (
+                      <li key={category.id}>
+                        <Text tag="body_regular_14" color="gray6">
+                          {category.title}
+                        </Text>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <Divider direction="vertical" length="100%" thickness="1px" color="gray1" />
+              </>
             )
           )}
         </div>
