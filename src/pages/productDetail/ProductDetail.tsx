@@ -1,5 +1,11 @@
+import ProductReviewSection from './productReviewSection/ProductReviewSection';
+
 const ProductDetail = () => {
-  return <div></div>;
+  return (
+    <div>
+      <ProductReviewSection />
+    </div>
+  );
 };
 
 export default ProductDetail;
