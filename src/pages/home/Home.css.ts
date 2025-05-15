@@ -58,3 +58,13 @@ export const listWrapper = style({
   gridTemplateColumns: 'repeat(auto-fit, minmax(30rem, 1fr))',
   gap: '1.9rem',
 });
+
+export const imgMainBanner = style({
+  width: '108.6rem',
+  height: '22.4rem',
+});
+
+export const familyMonthTitle = style({
+  width: '11.5rem',
+  height: '2rem',
+});
