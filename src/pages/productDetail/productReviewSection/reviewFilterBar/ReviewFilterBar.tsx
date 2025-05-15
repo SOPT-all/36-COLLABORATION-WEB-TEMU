@@ -1,13 +1,16 @@
+import React, { Dispatch, SetStateAction } from 'react';
 import Divider from '@shared/components/divider/Divider';
 import * as styles from './ReviewFilterBar.css';
 import IcArrowDownGray from '@svg/ic_arrow_down_gray.svg?react';
 
+type SortType = 'latest' | 'score';
+
 type ReviewFilterBarProps = {
-  sortType: 'latest' | 'score';
-  setSortType: (type: 'latest' | 'score') => void;
+  sortType: SortType;
+  setSortType: Dispatch<SetStateAction<SortType>>;
 };
 
-const ReviewFilterBar = ({ sortType, setSortType }: ReviewFilterBarProps) => {
+const ReviewFilterBar: React.FC<ReviewFilterBarProps> = ({ sortType, setSortType }) => {
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>

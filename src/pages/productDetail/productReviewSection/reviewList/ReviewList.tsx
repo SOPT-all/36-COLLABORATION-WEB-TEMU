@@ -1,7 +1,6 @@
 import ReviewListItem from '../reviewListItem/ReviewListItem';
 import * as styles from './ReviewList.css';
-import type { ProductReviewDetail } from '@shared/types/reviews';
-import type { ReviewScoreDistribution } from '@shared/types/reviews';
+import type { ProductReviewDetail, ReviewScoreDistribution } from '@shared/types/reviews';
 
 type ReviewListProps = {
   productReviewDetails: ProductReviewDetail[];
