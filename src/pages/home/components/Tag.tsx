@@ -4,20 +4,20 @@ import Text from '@shared/components/text/Text';
 import { TAG } from './constant/tags';
 
 const Tag = () => {
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [selectedTag, setSelectedTag] = useState<string>('recommend');
 
   return (
     <div className={styles.tagWrapper}>
       {TAG.map(tag => (
         <div
-          className={styles.tag({ selected: selectedTag === tag.text })}
+          className={styles.tag({ selected: selectedTag === tag.id })}
           key={tag.id}
-          onClick={() => setSelectedTag(tag.text)}
+          onClick={() => setSelectedTag(tag.id)}
         >
           {tag.icon}
           <Text
-            tag={selectedTag == tag.text ? 'body_bold_14' : 'body_regular_14'}
-            color={selectedTag == tag.text ? 'white' : 'black'}
+            tag={selectedTag == tag.id ? 'body_bold_14' : 'body_regular_14'}
+            color={selectedTag == tag.id ? 'white' : 'black'}
           >
             {tag.text}
           </Text>
