@@ -14,12 +14,12 @@ const ProductTopSection = ({ restData }: ProductTopSectionProps) => {
     discountRate,
     originalPrice,
     discountPrice,
-    productImages,
+    // productImages,
     productColors,
   } = restData;
   return (
     <div className={styles.productTopContainer}>
-      <ProductImageGallery productImages={productImages} />
+      <ProductImageGallery />
       <ProductPurchasePanel
         company={company}
         productName={productName}

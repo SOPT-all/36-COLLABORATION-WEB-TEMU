@@ -8,11 +8,12 @@ import { useState } from 'react';
 import { mockProductImages } from '@pages/productDetail/productTopSection/productImageGallery/mockImage';
 import { clsx } from 'clsx';
 
-interface ProductImageGalleryProps {
-  productImages: string[];
-}
+// interface ProductImageGalleryProps {
+//   productImages: string[];
+// }
 
-const ProductImageGallery = ({ productImages }: ProductImageGalleryProps) => {
+// props로 { productImages }: ProductImageGalleryProps 줄 예정
+const ProductImageGallery = () => {
   // api 연동시 첫 이미지로 수정
   const [SelectedImage, setSelectedImage] = useState(() => mockProductImages[0]);
 
