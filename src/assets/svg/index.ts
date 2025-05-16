@@ -3,7 +3,6 @@ export { default as IcArrowDownGrayS } from '@svg/ic_arrow_down_gray_s.svg?react
 export { default as IcArrowDownGray } from '@svg/ic_arrow_down_gray.svg?react';
 export { default as IcArrowDownOrange } from '@svg/ic_arrow_down_orange.svg?react';
 export { default as IcArrowDownWhite } from '@svg/ic_arrow_down_white.svg?react';
-export { default as IcArrowLineGray } from '@svg/ic_arrow_line_gray.svg?react';
 export { default as IcArrowRightBlack } from '@svg/ic_arrow_right_black.svg?react';
 export { default as IcArrowRightGray } from '@svg/ic_arrow_right_gray.svg?react';
 export { default as IcArrowRightGreen } from '@svg/ic_arrow_right_green.svg?react';
@@ -30,6 +29,7 @@ export { default as IcDigitalBlack } from '@svg/ic_digital_black.svg?react';
 export { default as IcDigitalWhite } from '@svg/ic_digital_white.svg?react';
 export { default as IcFlashBlack } from '@svg/ic_flash_black.svg?react';
 export { default as IcFlashOrange } from '@svg/ic_flash_orange.svg?react';
+export { default as IcFlashLineGray } from '@svg/ic_flash_line_gray.svg?react';
 
 // Goods icons
 export { default as IcGoodsBlack } from '@svg/ic_goods_black.svg?react';
