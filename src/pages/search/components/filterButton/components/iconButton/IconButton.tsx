@@ -14,7 +14,7 @@ const IconButton = ({
   ...props
 }: IconButtonProps) => {
   return (
-    <button
+    <button type='button'
       className={styles.button}
       {...props}
     >
