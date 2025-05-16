@@ -7,7 +7,7 @@ import { dummyCardsXL } from '@pages/search/mockData';
 
 const Search = () => {
   return (
-    <div className={styles.pageWrapper}>
+    <div className={styles.container}>
       <FilterButton />
       <div className={styles.listWrapper}>
         {dummyCardsXL.map((cardData) => (
