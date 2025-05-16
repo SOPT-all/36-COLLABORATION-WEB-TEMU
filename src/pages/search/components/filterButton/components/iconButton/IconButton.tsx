@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
-import * as styles from '@pages/search/components/filterButton/components/iconButton/IconButton.css';
+import { button } from '@pages/search/components/filterButton/components/iconButton/IconButton.css';
 
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
@@ -15,7 +15,7 @@ const IconButton = ({
 }: IconButtonProps) => {
   return (
     <button type='button'
-      className={styles.button}
+      className={button}
       {...props}
     >
       {icon && iconPosition === 'left' && icon}

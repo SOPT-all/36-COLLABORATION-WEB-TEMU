@@ -1,10 +1,10 @@
 import { SEARCH_FILTER } from '@pages/search/constants/SEARCH_FILTER';
 import IconButton from '@pages/search/components/filterButton/components/iconButton/IconButton';
-import * as styles from '@pages/search/components/filterButton/FilterButton.css';
+import {container} from '@pages/search/components/filterButton/FilterButton.css';
 
 const FilterButton = () => {
   return (
-    <div className={styles.container}>
+    <div className={container}>
       {SEARCH_FILTER.items.map(({ id, text, icon: Icon, iconPosition }) => (
         <IconButton
           key={id}
