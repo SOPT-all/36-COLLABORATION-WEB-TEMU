@@ -1,31 +1,24 @@
-import React, { Dispatch, SetStateAction } from 'react';
 import Divider from '@shared/components/divider/Divider';
-import * as styles from './ReviewFilterBar.css';
+import * as styles from '@pages/productDetail/productReviewSection/components/reviewFilterBar/ReviewFilterBar.css';
 import IcArrowDownGray from '@svg/ic_arrow_down_gray.svg?react';
+import type { ReviewFilterBarProps } from '@/pages/productDetail/productReviewSection/types/index';
 
-type SortType = 'latest' | 'score';
-
-type ReviewFilterBarProps = {
-  sortType: SortType;
-  setSortType: Dispatch<SetStateAction<SortType>>;
-};
-
-const ReviewFilterBar: React.FC<ReviewFilterBarProps> = ({ sortType, setSortType }) => {
+const ReviewFilterBar = ({ sortType, onChangeSortType }: ReviewFilterBarProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
         <button
           type="button"
-          className={sortType === 'latest' ? styles.active : styles.inactive}
-          onClick={() => setSortType('latest')}
+          className={styles.filterButton({ selected: sortType === 'recent' })}
+          onClick={() => onChangeSortType('recent')}
         >
           최신순
         </button>
         <Divider direction="vertical" />
         <button
           type="button"
-          className={sortType === 'score' ? styles.active : styles.inactive}
-          onClick={() => setSortType('score')}
+          className={styles.filterButton({ selected: sortType === 'popularity' })}
+          onClick={() => onChangeSortType('popularity')}
         >
           별점순
         </button>

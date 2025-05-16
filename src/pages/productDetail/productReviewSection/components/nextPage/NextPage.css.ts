@@ -1,9 +1,12 @@
 import { style } from '@vanilla-extract/css';
 
-export const container = style({
+export const pageNavigation = style({
   display: 'flex',
-  gap: '1.6rem',
-  marginTop: '5.2rem',
   alignItems: 'center',
   justifyContent: 'center',
+});
+
+export const pageWrapper = style({
+  display: 'flex',
+  gap: '1.6rem',
 });

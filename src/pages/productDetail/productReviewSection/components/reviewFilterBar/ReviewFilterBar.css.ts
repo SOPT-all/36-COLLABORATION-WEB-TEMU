@@ -1,5 +1,6 @@
 import { vars } from '@shared/styles/theme.css';
 import { style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
 
 export const container = style({
   display: 'flex',
@@ -12,12 +13,25 @@ export const leftSide = style({
   gap: '1.2rem',
 });
 
-export const active = style({
-  color: vars.color.gray8,
-});
-
-export const inactive = style({
-  color: vars.color.gray5,
+export const filterButton = recipe({
+  base: {
+    ...vars.font.body_medium_15,
+    cursor: 'pointer',
+  },
+  variants: {
+    selected: {
+      true: {
+        color: vars.color.gray8,
+      },
+      false: {
+        color: vars.color.gray5,
+        fontWeight: 'normal',
+      },
+    },
+  },
+  defaultVariants: {
+    selected: false,
+  },
 });
 
 export const rightSide = style({
@@ -27,10 +41,9 @@ export const rightSide = style({
 
 export const selectWrapper = style({
   display: 'flex',
-  position: 'relative',
   gap: '0.4rem',
   padding: '0.6rem 1rem',
   alignItems: 'center',
-  borderRadius: '0.8rem',
+  borderRadius: '8px',
   border: `1px solid ${vars.color.gray2}`,
 });

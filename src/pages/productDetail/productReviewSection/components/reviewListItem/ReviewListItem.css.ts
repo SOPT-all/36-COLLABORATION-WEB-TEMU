@@ -2,15 +2,18 @@ import { style } from '@vanilla-extract/css';
 
 export const container = style({
   display: 'flex',
+  flexDirection: 'column',
   padding: '3.2rem 0rem',
-  gap: '11.2rem',
+});
+
+export const wrapper = style({
+  display: 'flex',
 });
 
 export const leftWrapper = style({
   display: 'flex',
   gap: '3.2rem',
   width: '74.4rem',
-  alignContent: 'space-between',
 });
 
 export const leftItem = style({

@@ -1,10 +1,10 @@
-import ProductReviewSection from './productReviewSection/ProductReviewSection';
+import ProductReviewSection from '@pages/productDetail/productReviewSection/ProductReviewSection';
 
 const ProductDetail = () => {
   return (
-    <div>
+    <>
       <ProductReviewSection />
-    </div>
+    </>
   );
 };
 

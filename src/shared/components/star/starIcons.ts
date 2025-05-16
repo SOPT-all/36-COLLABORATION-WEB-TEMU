@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ComponentType, SVGProps } from 'react';
 import IcStar1 from '@svg/ic_star_1_sm.svg?react';
 import IcStar1_5 from '@svg/ic_star_1_5_sm.svg?react';
 import IcStar2 from '@svg/ic_star_2_sm.svg?react';
@@ -9,7 +9,7 @@ import IcStar4 from '@svg/ic_star_4_sm.svg?react';
 import IcStar4_5 from '@svg/ic_star_4_5_sm.svg?react';
 import IcStar5 from '@svg/ic_star_5_sm.svg?react';
 
-export const starIconMap: Record<number, React.FC<React.SVGProps<SVGSVGElement>>> = {
+export const starIconMap: Record<number, ComponentType<SVGProps<SVGSVGElement>>> = {
   1: IcStar1,
   1.5: IcStar1_5,
   2: IcStar2,
