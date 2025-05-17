@@ -4,6 +4,7 @@ export const vars = createGlobalTheme(':root', {
   color: {
     white: '#FFFFFF',
     black: '#121212',
+
     gray0: '#f6f6f6',
     gray1: '#EAEAEA',
     gray2: '#CDCDCD',
@@ -14,6 +15,7 @@ export const vars = createGlobalTheme(':root', {
     gray7: '#434343',
     gray8: '#222222',
     gray8_30: 'rgba(34, 34, 34, 0.3)',
+    
     point_red: '#D9001B',
     point_orange: '#FF7710',
     point_orange2: '#FEEFE1',
@@ -29,6 +31,7 @@ export const vars = createGlobalTheme(':root', {
     head_sb_20: { fontSize: '2rem', fontWeight: '600', lineHeight: '150%' },
     head_medium_20: { fontSize: '2rem', fontWeight: '500', lineHeight: '150%' },
     head_regular_20: { fontSize: '2rem', fontWeight: '400', lineHeight: '150%' },
+    
     body_bold_18: { fontSize: '1.8rem', fontWeight: '700', lineHeight: '150%' },
     body_medium_18: { fontSize: '1.8rem', fontWeight: '500', lineHeight: '150%' },
     body_regular_18: { fontSize: '1.8rem', fontWeight: '400', lineHeight: '150%' },
@@ -40,6 +43,7 @@ export const vars = createGlobalTheme(':root', {
     body_bold_14: { fontSize: '1.4rem', fontWeight: '700', lineHeight: '150%' },
     body_medium_14: { fontSize: '1.4rem', fontWeight: '500', lineHeight: '150%' },
     body_regular_14: { fontSize: '1.4rem', fontWeight: '400', lineHeight: '150%' },
+    
     caption_bold_13: { fontSize: '1.3rem', fontWeight: '700', lineHeight: '150%' },
     caption_medium_13: { fontSize: '1.3rem', fontWeight: '500', lineHeight: '150%' },
     caption_regular_13: { fontSize: '1.3rem', fontWeight: '400', lineHeight: '150%' },

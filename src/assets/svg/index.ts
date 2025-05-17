@@ -66,6 +66,10 @@ export { default as IcSportBlack } from '@svg/ic_sport_black.svg?react';
 export { default as IcSportWhite } from '@svg/ic_sport_white.svg?react';
 
 // Star icons
+export { default as IcStar1Sm } from '@svg/ic_star_1_sm.svg?react';
+export { default as IcStar15Sm } from '@svg/ic_star_1_5_sm.svg?react';
+export { default as IcStar25Sm } from '@svg/ic_star_2_5_sm.svg?react';
+export { default as IcStar35Sm } from '@svg/ic_star_3_5_sm.svg?react';
 export { default as IcStar2Sm } from '@svg/ic_star_2_sm.svg?react';
 export { default as IcStar3Sm } from '@svg/ic_star_3_sm.svg?react';
 export { default as IcStar45Sm } from '@svg/ic_star_4_5_sm.svg?react';
