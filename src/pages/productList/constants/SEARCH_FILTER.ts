@@ -1,5 +1,5 @@
 import * as Icons from '@svg/index';
-import type { IconPosition } from '@pages/search/types/iconPosition'
+import type { IconPosition } from '@pages/productList/types/iconPosition'
 
 export const SEARCH_FILTER = {
   items: [

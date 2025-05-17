@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
-import { button } from '@pages/search/components/filterButton/components/iconButton/IconButton.css';
+import { button } from '@pages/productList/components/filterButton/components/iconButton/IconButton.css';
 
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;

@@ -1,6 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Home from '@pages/home/Home';
-import Search from '@pages/search/Search';
 import ProductList from '@pages/productList/ProductList';
 import ProductDetail from '@pages/productDetail/ProductDetail';
 import { ROUTES } from '@router/constant/routes';
@@ -9,10 +8,6 @@ const router = createBrowserRouter([
   {
     path: ROUTES.HOME,
     element: <Home />,
-  },
-  {
-    path: ROUTES.SEARCH,
-    element: <Search />,
   },
   {
     path: ROUTES.PRODUCT_LIST,

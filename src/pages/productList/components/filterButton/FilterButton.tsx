@@ -1,6 +1,6 @@
-import { SEARCH_FILTER } from '@pages/search/constants/SEARCH_FILTER';
-import IconButton from '@pages/search/components/filterButton/components/iconButton/IconButton';
-import {container} from '@pages/search/components/filterButton/FilterButton.css';
+import { SEARCH_FILTER } from '@pages/productList/constants/SEARCH_FILTER';
+import IconButton from '@pages/productList/components/filterButton/components/iconButton/IconButton';
+import {container} from '@pages/productList/components/filterButton/FilterButton.css';
 
 const FilterButton = () => {
   return (

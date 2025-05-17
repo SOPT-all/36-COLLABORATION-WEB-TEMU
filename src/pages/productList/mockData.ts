@@ -1,4 +1,4 @@
-import type { GetProductsResponseTypes } from '@pages/search/types/api';
+import type { GetProductsResponseTypes } from '@pages/productList/types/api';
 
 export const mockSearchData: GetProductsResponseTypes[] = [
   {
