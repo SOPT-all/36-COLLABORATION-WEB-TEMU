@@ -1,11 +1,11 @@
 import { vars } from '@shared/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
-export const detailButtonsContainer = style({
+export const detailTabsContainer = style({
   display: 'flex',
 });
 
-export const detailButtonWrapper = style({
+export const detailTabsWrapper = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
