@@ -130,43 +130,42 @@ const ProductPurchasePanel = ({
           </div>
           <Divider direction="horizontal" color="gray1" />
         </div>
-
-        <div className={styles.productActionSectionDown}>
-          <div className={styles.productColor}>
-            <Text className={styles.productStyle} tag="body_medium_16">
-              색상
-            </Text>
-            <div className={styles.wrapper}>
-              <select className={styles.select} defaultValue="">
-                <option value="" disabled>
-                  색상을 선택하세요
+      </div>
+      <div className={styles.productActionSectionDown}>
+        <div className={styles.productColor}>
+          <Text className={styles.productStyle} tag="body_medium_16">
+            색상
+          </Text>
+          <div className={styles.wrapper}>
+            <select className={styles.select} defaultValue="">
+              <option value="" disabled>
+                색상을 선택하세요
+              </option>
+              {productColors.map(color => (
+                <option key={color} value={color}>
+                  {color}
                 </option>
-                {productColors.map(color => (
-                  <option key={color} value={color}>
-                    {color}
-                  </option>
-                ))}
-              </select>
-              <IcArrowDownGray className={styles.icon} width={20} height={20} />
-            </div>
-          </div>
-          <div className={styles.productQuantity}>
-            <Text className={styles.productStyle} tag="body_medium_16">
-              수량
-            </Text>
-            <div className={styles.wrapper}>
-              <select className={styles.select} defaultValue="">
-                <option value="" disabled>
-                  수량을 선택하세요
-                </option>
-                <option>1</option>
-              </select>
-              <IcArrowDownGray className={styles.icon} width={20} height={20} />
-            </div>
+              ))}
+            </select>
+            <IcArrowDownGray className={styles.icon} width={20} height={20} />
           </div>
         </div>
-        <Divider direction="horizontal" color="gray1" />
+        <div className={styles.productQuantity}>
+          <Text className={styles.productStyle} tag="body_medium_16">
+            수량
+          </Text>
+          <div className={styles.wrapper}>
+            <select className={styles.select} defaultValue="">
+              <option value="" disabled>
+                수량을 선택하세요
+              </option>
+              <option>1</option>
+            </select>
+            <IcArrowDownGray className={styles.icon} width={20} height={20} />
+          </div>
+        </div>
       </div>
+      <Divider direction="horizontal" color="gray1" />
 
       <div className={styles.total}>
         <Text tag="body_medium_16" color="gray6">
