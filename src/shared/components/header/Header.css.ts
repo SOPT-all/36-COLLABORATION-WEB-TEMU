@@ -46,7 +46,7 @@ export const inputWrapper = style({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '1rem 1.2rem',
+  padding: '1rem 1.2rem 1rem 2.4rem',
 
   borderRadius: '30px',
   border: `1.5px solid ${vars.color.point_orange}`,
