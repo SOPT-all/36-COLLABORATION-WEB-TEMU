@@ -104,3 +104,6 @@ export { default as IcFooterProtect } from '@svg/ic_footer_protect.svg?react';
 export { default as IcTemu } from '@svg/ic_temu.svg?react';
 export { default as IcTemuLogo } from '@svg/ic_temu_logo.svg?react';
 export { default as IcSearch } from '@svg/ic_search.svg?react';
+
+//Card component icons
+export { default as IcRegularCustomer } from '@svg/ic_regular_customer.svg?react';
