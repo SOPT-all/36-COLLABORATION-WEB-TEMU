@@ -1,5 +1,5 @@
-import ProductTopSection from './productTopSection/ProductTopSection';
-import { data } from '@pages/productDetail/mockData';
+import ProductTopSection from '@pages/productDetail/productTopSection/ProductTopSection';
+import { mockDetailData } from '@pages/productDetail/productTopSection/constants/mockDetailData';
 
 const ProductDetail = () => {
   // build 에러 때문에 임시로 처리했습니다. 나중에 꼭 없앨게요
@@ -9,7 +9,7 @@ const ProductDetail = () => {
     reviewCount: _reviewCount,
     productId: _productId,
     ...restData
-  } = data;
+  } = mockDetailData;
 
   return (
     <div>

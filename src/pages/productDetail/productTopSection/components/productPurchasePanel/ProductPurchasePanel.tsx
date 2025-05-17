@@ -1,8 +1,8 @@
-import * as styles from '@pages/productDetail/productTopSection/productPurchasePanel/ProductPurchasePanel.css';
+import * as styles from '@pages/productDetail/productTopSection/components/productPurchasePanel/ProductPurchasePanel.css';
 import Text from '@shared/components/text/Text';
 import IcShareWhite from '@svg/ic_share_white.svg?react';
 import IcArrowRightBlack from '@svg/ic_arrow_right_black.svg?react';
-import BestSeller from './bestSeller/BestSeller';
+import BestSeller from '@pages/productDetail/productTopSection/components/bestSeller/BestSeller';
 import IcCheckGreen from '@svg/ic_check_green.svg?react';
 import Divider from '@shared/components/divider/Divider';
 import IcTruckGreen from '@svg/ic_truck_green.svg?react';
@@ -32,7 +32,7 @@ const ProductPurchasePanel = ({
   return (
     <div className={styles.container}>
       <div className={styles.summarySection}>
-        <div className={styles.titleContainer}>
+        <section className={styles.titleContainer}>
           <Text tag="body_medium_14" color="gray6">
             {company}
           </Text>
@@ -44,9 +44,9 @@ const ProductPurchasePanel = ({
               <IcShareWhite width={36} height={36} />
             </button>
           </div>
-        </div>
+        </section>
 
-        <div className={styles.category}>
+        <section className={styles.category}>
           <BestSeller />
           <div className={styles.smallCategory}>
             <Text tag="body_medium_14" color="black">
@@ -54,9 +54,9 @@ const ProductPurchasePanel = ({
             </Text>
             <IcArrowRightBlack width={14} height={14} />
           </div>
-        </div>
+        </section>
 
-        <div className={styles.discount}>
+        <section className={styles.discount}>
           <div className={styles.discountNumber}>
             <Text tag="head_bold_28" color="point_orange">
               {discountRate}%
@@ -68,9 +68,9 @@ const ProductPurchasePanel = ({
           <Text tag="body_medium_16" color="gray4" style={{ textDecoration: 'line-through' }}>
             {originalPrice.toLocaleString()}원
           </Text>
-        </div>
+        </section>
 
-        <div className={styles.benefit}>
+        <section className={styles.benefit}>
           <div className={styles.benefitLeft}>
             <IcCheckGreen width={16} height={16} />
             <Text tag="body_medium_14" color="black">
@@ -80,7 +80,7 @@ const ProductPurchasePanel = ({
           <Text tag="body_medium_14" color="black">
             독점 혜택
           </Text>
-        </div>
+        </section>
       </div>
 
       <div className={styles.productActionSection}>
@@ -133,7 +133,9 @@ const ProductPurchasePanel = ({
 
         <div className={styles.productActionSectionDown}>
           <div className={styles.productColor}>
-            <Text tag="body_medium_16">색상</Text>
+            <Text className={styles.productStyle} tag="body_medium_16">
+              색상
+            </Text>
             <div className={styles.wrapper}>
               <select className={styles.select} defaultValue="">
                 <option value="" disabled>
@@ -149,15 +151,15 @@ const ProductPurchasePanel = ({
             </div>
           </div>
           <div className={styles.productQuantity}>
-            <Text tag="body_medium_16">수량</Text>
+            <Text className={styles.productStyle} tag="body_medium_16">
+              수량
+            </Text>
             <div className={styles.wrapper}>
               <select className={styles.select} defaultValue="">
                 <option value="" disabled>
-                  색상을 선택하세요
+                  수량을 선택하세요
                 </option>
                 <option>1</option>
-                <option>2</option>
-                <option>3</option>
               </select>
               <IcArrowDownGray className={styles.icon} width={20} height={20} />
             </div>

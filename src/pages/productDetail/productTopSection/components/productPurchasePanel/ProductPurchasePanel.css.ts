@@ -142,6 +142,12 @@ export const productQuantity = style({
   gap: '4.5rem',
 });
 
+export const productStyle = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+});
+
 export const wrapper = style({
   position: 'relative',
   display: 'flex',

@@ -1,6 +1,6 @@
 import * as styles from '@pages/productDetail/productTopSection/ProductTopSection.css';
-import ProductImageGallery from './productImageGallery/ProductImageGallery';
-import ProductPurchasePanel from './productPurchasePanel/ProductPurchasePanel';
+import ProductImageGallery from './components/productImageGallery/ProductImageGallery';
+import ProductPurchasePanel from './components/productPurchasePanel/ProductPurchasePanel';
 import type { Product } from '../../../shared/types/product';
 
 type ProductTopSectionProps = {

@@ -1,4 +1,4 @@
-export const data = {
+export const mockDetailData = {
   company: '스마일마켓',
   productName:
     '손으로 세척할 수 있는 캔버스 토트 백, 빈티지 스타일 지퍼 클로저, 단색, 폴리에스터 안감, 어깨 스트랩 포함, 학생, 통근자, 캐주얼용',

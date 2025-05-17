@@ -3,9 +3,9 @@
  * 이후 api 연동시 이미지 교체
  */
 
-import * as styles from '@pages/productDetail/productTopSection/productImageGallery/ProductImageGallery.css';
+import * as styles from '@pages/productDetail/productTopSection/components/productImageGallery/ProductImageGallery.css';
 import { useState } from 'react';
-import { mockProductImages } from '@pages/productDetail/productTopSection/productImageGallery/mockImage';
+import { mockProductImages } from '@pages/productDetail/productTopSection/constants/mockImage';
 import { clsx } from 'clsx';
 
 // interface ProductImageGalleryProps {
