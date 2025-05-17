@@ -6,6 +6,7 @@ export { default as IcArrowDownWhite } from '@svg/ic_arrow_down_white.svg?react'
 export { default as IcArrowRightBlack } from '@svg/ic_arrow_right_black.svg?react';
 export { default as IcArrowRightGray } from '@svg/ic_arrow_right_gray.svg?react';
 export { default as IcArrowRightGreen } from '@svg/ic_arrow_right_green.svg?react';
+export { default as IcArrowRightWhite } from '@svg/ic_arrow_right_white.svg?react';
 
 // Baby and Book icons
 export { default as IcBabyBlack } from '@svg/ic_baby_black.svg?react';
@@ -83,5 +84,33 @@ export { default as IcStar5Sm } from '@svg/ic_star_5_sm.svg?react';
 export { default as IcTruckGreen } from '@svg/ic_truck_green.svg?react';
 export { default as IcUser } from '@svg/ic_user.svg?react';
 
+
+// Footer icons
+export { default as IcApple } from '@svg/ic_apple.svg?react';
+export { default as IcBoonWhite } from '@svg/ic_boon_white.svg?react';
+export { default as IcCoupon } from '@svg/ic_coupon_white.svg?react';
+export { default as IcfaceBook } from '@svg/ic_facebook.svg?react';
+export { default as IcFooterX } from '@svg/ic_footer_x.svg?react';
+export { default as IcGoogle } from '@svg/ic_google.svg?react';
+export { default as IcGraph } from '@svg/ic_graph_white.svg?react';
+export { default as IcHourGlass } from '@svg/ic_hourglass_white.svg?react';
+export { default as IcInstagram } from '@svg/ic_instagram.svg?react';
+export { default as IcPinterest } from '@svg/ic_pinterest.svg?react';
+export { default as IcShieldWhite } from '@svg/ic_shield_white.svg?react';
+export { default as IcTikTok } from '@svg/ic_tiktok.svg?react';
+export { default as IcTruckWhite } from '@svg/ic_truck_white_fill.svg?react';
+export { default as IcYoutube } from '@svg/ic_youtube.svg?react';
+export { default as IcSecurity } from '@svg/ic_security.svg?react';
+export { default as IcPayments } from '@svg/ic_payments.svg?react';
+export { default as IcCopyRight } from '@svg/ic_copyright_gray5.svg?react';
+export { default as IcFooterProtect } from '@svg/ic_footer_protect.svg?react';
+
+
+export { default as IcTemu } from '@svg/ic_temu.svg?react';
+export { default as IcTemuLogo } from '@svg/ic_temu_logo.svg?react';
+export { default as IcSearch } from '@svg/ic_search.svg?react';
+
 //Card component icons
 export { default as IcRegularCustomer } from '@svg/ic_regular_customer.svg?react';
+
+

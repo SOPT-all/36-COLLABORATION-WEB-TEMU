@@ -47,4 +47,8 @@ export const vars = createGlobalTheme(':root', {
     caption_medium_12: { fontSize: '1.2rem', fontWeight: '500', lineHeight: '150%' },
     caption_regular_12: { fontSize: '1.2rem', fontWeight: '400', lineHeight: '150%' },
   },
+
+  zIndex: {
+    header: '2',
+  },
 });
