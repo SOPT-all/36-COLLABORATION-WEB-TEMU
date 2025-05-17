@@ -3,9 +3,9 @@ import ProductImageGallery from './components/productImageGallery/ProductImageGa
 import ProductPurchasePanel from './components/productPurchasePanel/ProductPurchasePanel';
 import type { Product } from '../../../shared/types/product';
 
-type ProductTopSectionProps = {
+interface ProductTopSectionProps {
   restData: Product;
-};
+}
 
 const ProductTopSection = ({ restData }: ProductTopSectionProps) => {
   const {
