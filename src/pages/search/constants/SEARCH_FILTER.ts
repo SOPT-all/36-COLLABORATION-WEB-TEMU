@@ -1,6 +1,5 @@
 import * as Icons from '@svg/index';
-
-type IconPosition = 'left' | 'right';
+import type { IconPosition } from '@pages/search/types/iconPosition'
 
 export const SEARCH_FILTER = {
   items: [

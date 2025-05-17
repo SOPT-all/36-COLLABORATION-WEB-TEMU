@@ -1,6 +1,6 @@
 import type { GetProductsResponseTypes } from '@pages/search/types/api';
 
-export const dummyCardsXL: GetProductsResponseTypes[] = [
+export const mockSearchData: GetProductsResponseTypes[] = [
   {
     productId: 1,
     repurchase: true,
@@ -136,4 +136,4 @@ export const dummyCardsXL: GetProductsResponseTypes[] = [
     discountPrice: 41000,
     reviewCount: 130,
   },
-] as const;
+];

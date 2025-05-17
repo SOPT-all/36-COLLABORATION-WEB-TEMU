@@ -3,14 +3,14 @@ import FilterButton from '@pages/search/components/filterButton/FilterButton';
 import Card from '@shared/components/card/Card'
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
 import * as Icons from '@svg/index';
-import { dummyCardsXL } from '@pages/search/mockData';
+import { mockSearchData } from '@pages/search/mockData';
 
 const Search = () => {
   return (
     <div className={styles.container}>
       <FilterButton />
       <div className={styles.listWrapper}>
-        {dummyCardsXL.map((cardData) => (
+        {mockSearchData.map((cardData) => (
           <Card key={cardData.productId} {...cardData} size='xl' />
         ))}
       </div>
