@@ -5,7 +5,7 @@ import { recipe } from '@vanilla-extract/recipes';
 export const container = style({
   display: 'flex',
   padding: '1.6rem 0rem',
-  gap: '84rem',
+  justifyContent: 'space-between',
 });
 
 export const leftSide = style({

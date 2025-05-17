@@ -19,6 +19,7 @@ const ReviewList = ({
   sortType,
 }: ReviewListProps) => {
   const sorted = getSortedReviews(productReviewDetails, sortType);
+
   return (
     <div className={styles.container}>
       {sorted.map((review, idx) => (
