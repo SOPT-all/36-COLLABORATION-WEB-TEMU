@@ -22,7 +22,9 @@ const HeaderMid = () => {
     <div className={styles.container}>
       <div className={styles.categoryWrapper}>
         <div className={styles.leftWrapper}>
-          <div className={styles.navStyle}>{CategoryToggleIcon}</div>
+          <div className={styles.navStyle} aria-label="카테고리">
+            {CategoryToggleIcon}
+          </div>
           {isCategoryOpen && (
             <div className={styles.categoryMenuWrapper}>
               <CategoryMenu />
@@ -32,19 +34,27 @@ const HeaderMid = () => {
         </div>
         <div className={styles.rightWrapper}>
           <div className={styles.textWrapper}>
-            <Text tag="caption_medium_13" color="gray6" className={styles.navStyle}>
-              로그인
-            </Text>
+            <button type="button" className={styles.navStyle} aria-label="로그인">
+              <Text tag="caption_medium_13" color="gray6" className={styles.navStyle}>
+                로그인
+              </Text>
+            </button>
             <Divider direction="vertical" color="gray3" thickness="2px" length="12px" />
-            <Text tag="caption_medium_13" color="gray6" className={styles.navStyle}>
-              회원가입
-            </Text>
+            <button type="button" className={styles.navStyle} aria-label="회원가입">
+              <Text tag="caption_medium_13" color="gray6" className={styles.navStyle}>
+                회원가입
+              </Text>
+            </button>
             <Divider direction="vertical" color="gray3" thickness="2px" length="12px" />
-            <Text tag="caption_medium_13" color="gray6" className={styles.navStyle}>
-              고객센터
-            </Text>
+            <button type="button" className={styles.navStyle} aria-label="고객센터">
+              <Text tag="caption_medium_13" color="gray6" className={styles.navStyle}>
+                고객센터
+              </Text>
+            </button>
           </div>
-          <IcLanguage width="2.4rem" height="2.4rem" />
+          <button type="button" className={styles.navStyle} aria-label="언어변경">
+            <IcLanguage width="2.4rem" height="2.4rem" />
+          </button>
         </div>
       </div>
     </div>

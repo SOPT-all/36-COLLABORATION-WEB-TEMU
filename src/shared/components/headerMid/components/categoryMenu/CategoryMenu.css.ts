@@ -19,6 +19,7 @@ export const titleRow = style({
   alignItems: 'center',
   gap: '0.6rem',
 
+  width: '18.4rem',
   height: '4rem',
   padding: '0rem 1.2rem',
 
