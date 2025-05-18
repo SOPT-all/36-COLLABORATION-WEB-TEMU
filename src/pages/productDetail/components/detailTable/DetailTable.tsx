@@ -1,7 +1,6 @@
 import { DETAIL_TABLE } from '@pages/productDetail/constant/TABLE';
 import { Fragment } from 'react/jsx-runtime';
-import * as styles from '@pages/productDetail/detailTable/DetailTable.css';
-
+import * as styles from '@pages/productDetail/components/detailTable/DetailTable.css';
 const DetailTable = () => {
   return (
     <table className={styles.tableContainer}>

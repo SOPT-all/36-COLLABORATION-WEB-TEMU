@@ -26,6 +26,7 @@ export const vars = createGlobalTheme(':root', {
   font: {
     head_bold_60: { fontSize: '6rem', fontWeight: '600', lineHeight: '150%' },
     head_bold_28: { fontSize: '2.8rem', fontWeight: '700', lineHeight: '150%' },
+    head_semibold_24: { fontSize: '2.4rem', fontWeight: '600', lineHeight: '150%' },
     head_bold_24: { fontSize: '2.4rem', fontWeight: '700', lineHeight: '150%' },
     head_sb_24: { fontSize: '2.4rem', fontWeight: '600', lineHeight: '150%' },
     head_bold_20: { fontSize: '2rem', fontWeight: '700', lineHeight: '150%' },

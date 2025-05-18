@@ -1,25 +1,37 @@
+import { useState } from 'react';
 import * as styles from '@pages/productDetail/components/detailTabs/DetailTabs.css';
-import Text from '@shared/components/text/Text';
 import { TAB } from '@pages/productDetail/constant/TAB';
 import Divider from '@shared/components/divider/Divider';
 
 interface DetailTabsProps {
   reviewCount?: number;
+  onTabClick: (key: string) => void;
 }
 
-const DetailTabs = ({ reviewCount }: DetailTabsProps) => {
+const DetailTabs = ({ reviewCount, onTabClick }: DetailTabsProps) => {
+  const [selectedTab, setSelectedTab] = useState('');
+
   return (
     <nav className={styles.detailTabsContainer}>
-      {TAB.map(({ key, label }) => (
-        <>
-          <button key={key} type="button" className={styles.detailTabsWrapper}>
-            <Text tag="body_medium_18" color="gray8">
+      {TAB.map(({ key, label }, index) => (
+        <div key={key} className={styles.detailTabsContainer}>
+          <button
+            type="button"
+            className={styles.detailTabsWrapper({ isClicked: key === selectedTab })}
+            onClick={() => {
+              setSelectedTab(key);
+              onTabClick(key);
+            }}
+          >
+            <p>
               {label}
-              {key === 'review' && reviewCount && ` (${reviewCount})`}
-            </Text>
+              {key === 'review' && reviewCount ? ` (${reviewCount})` : ''}
+            </p>
           </button>
-          <Divider direction="vertical" color="gray2" thickness="1px" />
-        </>
+          {index !== TAB.length - 1 && (
+            <Divider direction="vertical" color="gray2" thickness="1px" />
+          )}
+        </div>
       ))}
     </nav>
   );
