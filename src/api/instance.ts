@@ -11,7 +11,7 @@ export const get = async <T>(...args: Parameters<typeof instance.get>) => {
     const response = await instance.get<ApiResponse<T>>(...args);
     return response.data.data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw error;
   }
 };
