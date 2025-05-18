@@ -32,6 +32,7 @@ export const vars = createGlobalTheme(':root', {
     head_sb_20: { fontSize: '2rem', fontWeight: '600', lineHeight: '150%' },
     head_medium_20: { fontSize: '2rem', fontWeight: '500', lineHeight: '150%' },
     head_regular_20: { fontSize: '2rem', fontWeight: '400', lineHeight: '150%' },
+
     body_bold_18: { fontSize: '1.8rem', fontWeight: '700', lineHeight: '150%' },
     body_medium_18: { fontSize: '1.8rem', fontWeight: '500', lineHeight: '150%' },
     body_regular_18: { fontSize: '1.8rem', fontWeight: '400', lineHeight: '150%' },
@@ -43,6 +44,7 @@ export const vars = createGlobalTheme(':root', {
     body_bold_14: { fontSize: '1.4rem', fontWeight: '700', lineHeight: '150%' },
     body_medium_14: { fontSize: '1.4rem', fontWeight: '500', lineHeight: '150%' },
     body_regular_14: { fontSize: '1.4rem', fontWeight: '400', lineHeight: '150%' },
+
     caption_bold_13: { fontSize: '1.3rem', fontWeight: '700', lineHeight: '150%' },
     caption_medium_13: { fontSize: '1.3rem', fontWeight: '500', lineHeight: '150%' },
     caption_regular_13: { fontSize: '1.3rem', fontWeight: '400', lineHeight: '150%' },
@@ -53,5 +55,6 @@ export const vars = createGlobalTheme(':root', {
 
   zIndex: {
     category: '1',
+    header: '2',
   },
 });
