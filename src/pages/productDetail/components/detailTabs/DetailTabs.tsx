@@ -5,7 +5,8 @@ import Divider from '@shared/components/divider/Divider';
 
 interface DetailTabsProps {
   reviewCount?: number;
-  onTabClick: (key: string) => void;
+  // eslint-disable-next-line no-unused-vars
+  onTabClick: (tab: string) => void;
 }
 
 const DetailTabs = ({ reviewCount, onTabClick }: DetailTabsProps) => {
@@ -13,19 +14,19 @@ const DetailTabs = ({ reviewCount, onTabClick }: DetailTabsProps) => {
 
   return (
     <nav className={styles.detailTabsContainer}>
-      {TAB.map(({ key, label }, index) => (
-        <div key={key} className={styles.detailTabsContainer}>
+      {TAB.map((tab, index) => (
+        <div key={tab.key} className={styles.detailTabsContainer}>
           <button
             type="button"
-            className={styles.detailTabsWrapper({ isClicked: key === selectedTab })}
+            className={styles.detailTabsWrapper({ isClicked: tab.key === selectedTab })}
             onClick={() => {
-              setSelectedTab(key);
-              onTabClick(key);
+              setSelectedTab(tab.key);
+              onTabClick(tab.key);
             }}
           >
             <p>
-              {label}
-              {key === 'review' && reviewCount ? ` (${reviewCount})` : ''}
+              {tab.label}
+              {tab.key === 'review' && reviewCount ? ` (${reviewCount})` : ''}
             </p>
           </button>
           {index !== TAB.length - 1 && (
