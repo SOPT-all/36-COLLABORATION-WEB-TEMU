@@ -1,9 +1,6 @@
-export const BASE_URL: string = import.meta.env.VITE_API_BASE_URL;
+import { END_URL } from '@/constant/url';
+import { get } from '@api/instance';
+import type { ProductDetailResponseTypes } from '@pages/productDetail/types/response';
 
-export const END_URL = {
-  GET_PRODUCT: '/products',
-  GET_PRODUCTS_PROMOTION: '/products/promotion',
-  GET_PRODUCTS_SEARCH: '/products/search',
-  GET_PRODUCTS_DETAIL: (productId: number) => `/products/${productId}`,
-  GET_PRODUCTS_DETAIL_REVIEWS: (productId: number) => `/products/${productId}/reviews`,
-};
+export const getProductDetail = (productId: number) =>
+  get<ProductDetailResponseTypes>(END_URL.GET_PRODUCTS_DETAIL(productId));
