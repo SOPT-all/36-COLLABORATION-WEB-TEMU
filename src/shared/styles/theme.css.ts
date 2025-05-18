@@ -3,6 +3,7 @@ import { createGlobalTheme } from '@vanilla-extract/css';
 export const vars = createGlobalTheme(':root', {
   color: {
     white: '#FFFFFF',
+
     black: '#121212',
 
     gray0: '#F6F6F6',
@@ -53,6 +54,7 @@ export const vars = createGlobalTheme(':root', {
   },
 
   zIndex: {
+    category: '1',
     header: '2',
   },
 });
