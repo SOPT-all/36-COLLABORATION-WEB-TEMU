@@ -100,7 +100,6 @@ export { default as IcPayments } from '@svg/ic_payments.svg?react';
 export { default as IcCopyRight } from '@svg/ic_copyright_gray5.svg?react';
 export { default as IcFooterProtect } from '@svg/ic_footer_protect.svg?react';
 
-// header
 export { default as IcTemu } from '@svg/ic_temu.svg?react';
 export { default as IcTemuLogo } from '@svg/ic_temu_logo.svg?react';
 export { default as IcSearch } from '@svg/ic_search.svg?react';
