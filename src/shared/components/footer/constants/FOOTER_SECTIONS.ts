@@ -102,12 +102,8 @@ export const FOOTER_MID_SECTION = {
 };
 
 export const FOOTER_BOTTOM_SECTIONS = [
-  {
-    id: 1,
-    text: '2022 - 2025 Whaleco Inc.',
-  },
-  { id: 2, text: '이용 약관', underline: true },
-  { id: 3, text: '개인 정보 보호 정책', underline: true },
-  { id: 4, text: '개인 정보 보호 선택', underline: true, icon: true },
-  { id: 5, text: '광고 선택', underline: true },
+  { id: 1, text: '이용 약관', underline: true },
+  { id: 2, text: '개인 정보 보호 정책', underline: true },
+  { id: 3, text: '개인 정보 보호 선택', underline: true, icon: true },
+  { id: 4, text: '광고 선택', underline: true },
 ];

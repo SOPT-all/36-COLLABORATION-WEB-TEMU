@@ -6,9 +6,18 @@ export const container = style({
   justifyContent: 'center',
   alignItems: 'center',
   padding: '2.6rem 1rem',
-  gap: '1rem',
+  gap: '1.1rem',
 
   backgroundColor: vars.color.black,
+});
+
+export const leftTitlesWrapper = style({
+  display: 'flex',
+});
+
+export const titlesWrapper = style({
+  display: 'flex',
+  gap: '2rem',
 });
 
 export const underline = style({

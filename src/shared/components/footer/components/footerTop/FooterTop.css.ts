@@ -26,6 +26,7 @@ export const footerToptextGap = style({
 
 export const appSectionWrapper = style({
   display: 'flex',
+
   gap: '1.8rem',
 });
 
@@ -43,11 +44,16 @@ export const appSectionColTextWrapper = style({
 
 export const appSectionTextRow = style({
   display: 'flex',
+  gap: '0.3rem',
 });
 
 export const dividerWrapper = style({
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'center',
+
+  paddingTop: '0.5rem',
+
   gap: '1.5rem',
 });
 
