@@ -3,6 +3,7 @@ import { IcCartBlack, IcReviewBlack } from '@svg/index';
 import { PRODUCT_TAGS } from './constant/productTag';
 
 interface CardProps {
+  productId?: number;
   size?: 'l' | 'xl';
   imageUrl: string;
   productName: string;
@@ -10,10 +11,11 @@ interface CardProps {
   discountPrice: number;
   reviewCount?: number;
   productTag?: string;
-  categoryList: [];
+  categoryList?: string[];
 }
 
 const Card = ({
+  productId,
   size = 'l',
   imageUrl,
   productName,

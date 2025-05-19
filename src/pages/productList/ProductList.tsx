@@ -20,7 +20,7 @@ const ProductList = () => {
             discountRate={cardData.discountRate}
             discountPrice={cardData.discountPrice}
             reviewCount={cardData.reviewCount}
-            categoryList={cardData.category}
+            categoryList={cardData.categoryList}
             productTag={cardData.productTag}
           />
         ))}
