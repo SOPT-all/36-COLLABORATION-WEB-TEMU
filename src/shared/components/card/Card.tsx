@@ -5,7 +5,7 @@ import { PRODUCT_TAGS } from './constant/productTag';
 interface CardProps {
   size?: 'l' | 'xl';
   productId: number;
-  productImage: string;
+  imageUrl: string;
   productName: string;
   discountRate: number;
   discountPrice: number;
@@ -16,7 +16,7 @@ interface CardProps {
 const Card = ({
   size = 'l',
   productId,
-  productImage,
+  imageUrl,
   productName,
   discountRate,
   discountPrice,
@@ -25,7 +25,7 @@ const Card = ({
 }: CardProps) => {
   return (
     <div className={styles.cardWrapper({ size })}>
-      <img className={styles.cardImg({ size })} src={productImage} alt={`${productName} img`} />
+      <img className={styles.cardImg({ size })} src={imageUrl} alt={`${productName} img`} />
       <div className={styles.cardDescription({ size })}>
         <h3 className={styles.cardTitle}>{productName}</h3>
         <div className={styles.cardPriceRow}>
