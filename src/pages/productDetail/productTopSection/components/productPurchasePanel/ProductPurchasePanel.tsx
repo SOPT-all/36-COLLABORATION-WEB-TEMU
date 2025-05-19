@@ -10,7 +10,7 @@ import {
   IcArrowDownGray,
   IcCheckGreen,
 } from '@svg/index';
-
+import { PURCHASE_PANEL } from '@pages/productDetail/productTopSection/constants/PURCHASE_PANEL';
 import BestSeller from '@pages/productDetail/productTopSection/components/bestSeller/BestSeller';
 import Divider from '@shared/components/divider/Divider';
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
@@ -93,42 +93,45 @@ const ProductPurchasePanel = ({
           <div className={styles.productPost}>
             <div className={styles.productPostUp}>
               <IcTruckGreen width={20} height={20} />
-              <Text tag="body_medium_16">해당 상품 무료 배송</Text>
+              <Text tag="body_medium_16">{PURCHASE_PANEL.delivery.title}</Text>
             </div>
             <div className={styles.productPostDown}>
-              <Text tag="body_medium_14">배송 예정: 5일이내 가장 빠른 배송</Text>
-              <Text tag="body_medium_14">배송지연에 대한 보상으로 5,300원 크레딧을 받으세요</Text>
+              {PURCHASE_PANEL.delivery.content.map((content, idx) => (
+                <Text key={idx} tag="body_medium_14">
+                  {content}
+                </Text>
+              ))}
             </div>
           </div>
           <Divider direction="horizontal" color="gray1" />
 
           <div className={styles.productFree}>
             <IcReturnGreen width={20} height={20} />
-            <Text tag="body_medium_16">무료 반품 / 가격 조정</Text>
+            <Text tag="body_medium_16">{PURCHASE_PANEL.returnAndPrice.title}</Text>
           </div>
           <Divider direction="horizontal" color="gray1" />
 
           <div className={styles.productFree}>
             <IcPlantGreen width={20} height={20} />
-            <Text tag="body_medium_16">Temu의 나무 심기 프로그램</Text>
+            <Text tag="body_medium_16">{PURCHASE_PANEL.treePlanting.title}</Text>
           </div>
           <Divider direction="horizontal" color="gray1" />
 
           <div className={styles.productShopping}>
             <div className={styles.productShoppingUp}>
               <IcShieldGreen width={20} height={20} />
-              <Text tag="body_medium_16">쇼핑 보안</Text>
+              <Text tag="body_medium_16">{PURCHASE_PANEL.paymentSecurity.title}</Text>
             </div>
             <div className={styles.productShoppingDown}>
               <div className={styles.productShoppingList}>
-                <span className={styles.dot}>·</span>
-                <Text tag="body_medium_14">안전한 결제 옵션</Text>
-                <span className={styles.dot}>·</span>
-                <Text tag="body_medium_14">안전한 물류</Text>
-                <span className={styles.dot}>·</span>
-                <Text tag="body_medium_14">개인 정보 보호</Text>
-                <span className={styles.dot}>·</span>
-                <Text tag="body_medium_14">물류 보호</Text>
+                {PURCHASE_PANEL.paymentSecurity.content.map((content, idx) => (
+                  <>
+                    <span className={styles.dot}>·</span>
+                    <Text key={idx} tag="body_medium_14">
+                      {content}
+                    </Text>
+                  </>
+                ))}
               </div>
             </div>
           </div>
