@@ -1,37 +1,26 @@
-/**
- * mockImage에서 이미지를 렌더링
- * 이후 api 연동시 이미지 교체
- */
-
-import * as styles from '@pages/productDetail/productTopSection/components/productImageGallery/ProductImageGallery.css';
 import { useState } from 'react';
-import { mockProductImages } from '@pages/productDetail/productTopSection/constants/mockImage';
-import { clsx } from 'clsx';
+import * as styles from '@pages/productDetail/productTopSection/components/productImageGallery/ProductImageGallery.css';
 
-// interface ProductImageGalleryProps {
-//   productImages: string[];
-// }
+interface ProductImageGalleryProps {
+  productImages: string[];
+}
 
-// props로 { productImages }: ProductImageGalleryProps 줄 예정
-const ProductImageGallery = () => {
-  // api 연동시 첫 이미지로 수정
-  const [SelectedImage, setSelectedImage] = useState(() => mockProductImages[0]);
+const ProductImageGallery = ({ productImages }: ProductImageGalleryProps) => {
+  const [selectedImage, setSelectedImage] = useState<string>(productImages[0]);
 
   return (
     <div className={styles.galleryContainer}>
-      <SelectedImage width={552} height={552} />
+      <img src={selectedImage} width={552} height={552} alt="썸네일 이미지" />
       <div className={styles.galleryItem}>
-        {mockProductImages.map((IconComponent, idx) => {
-          const isSelected = IconComponent === SelectedImage;
+        {productImages.map((smallImage, idx) => {
+          const isSelected = smallImage === selectedImage;
           return (
             <button
               key={idx}
-              onClick={() => setSelectedImage(() => IconComponent)}
-              className={clsx(styles.galleryItemButton, {
-                [styles.galleryItemSelected]: isSelected,
-              })}
+              onClick={() => setSelectedImage(smallImage)}
+              className={styles.galleryImage({ selected: isSelected })}
             >
-              <IconComponent width={116} height={116} />
+              <img src={smallImage} width={116} height={116} alt={`썸네일 이미지 ${idx + 1}`} />
             </button>
           );
         })}

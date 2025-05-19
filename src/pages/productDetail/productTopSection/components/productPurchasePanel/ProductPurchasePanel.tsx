@@ -1,16 +1,20 @@
 import * as styles from '@pages/productDetail/productTopSection/components/productPurchasePanel/ProductPurchasePanel.css';
 import Text from '@shared/components/text/Text';
-import IcShareWhite from '@svg/ic_share_white.svg?react';
-import IcArrowRightBlack from '@svg/ic_arrow_right_black.svg?react';
+import {
+  IcShareWhite,
+  IcArrowRightBlack,
+  IcTruckGreen,
+  IcReturnGreen,
+  IcPlantGreen,
+  IcShieldGreen,
+  IcArrowDownGray,
+  IcCheckGreen,
+} from '@svg/index';
+
 import BestSeller from '@pages/productDetail/productTopSection/components/bestSeller/BestSeller';
-import IcCheckGreen from '@svg/ic_check_green.svg?react';
 import Divider from '@shared/components/divider/Divider';
-import IcTruckGreen from '@svg/ic_truck_green.svg?react';
-import IcReturnGreen from '@svg/ic_return_green.svg?react';
-import IcPlantGreen from '@svg/ic_plant_green.svg?react';
-import IcShieldGreen from '@svg/ic_shield_green.svg?react';
-import IcArrowDownGray from '@svg/ic_arrow_down_gray.svg?react';
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
+import Head from '@shared/components/head/Head';
 
 interface ProductPurchasePanelProps {
   company: string;
@@ -30,23 +34,23 @@ const ProductPurchasePanel = ({
   productColors,
 }: ProductPurchasePanelProps) => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.summarySection}>
-        <section className={styles.titleContainer}>
+        <div className={styles.titleContainer}>
           <Text tag="body_medium_14" color="gray6">
             {company}
           </Text>
           <div className={styles.titleRow}>
-            <Text tag="head_sb_24" color="black">
+            <Head level="h2" tag="head_sb_24" color="black">
               {productName}
-            </Text>
+            </Head>
             <button>
               <IcShareWhite width={36} height={36} />
             </button>
           </div>
-        </section>
+        </div>
 
-        <section className={styles.category}>
+        <div className={styles.category}>
           <BestSeller />
           <div className={styles.smallCategory}>
             <Text tag="body_medium_14" color="black">
@@ -54,13 +58,13 @@ const ProductPurchasePanel = ({
             </Text>
             <IcArrowRightBlack width={14} height={14} />
           </div>
-        </section>
+        </div>
 
-        <section className={styles.discount}>
+        <div className={styles.discount}>
           <div className={styles.discountNumber}>
-            <Text tag="head_bold_28" color="point_orange">
+            <Head level="h2" tag="head_bold_28" color="point_orange">
               {discountRate}%
-            </Text>
+            </Head>
             <Text tag="head_bold_28" color="black">
               {discountPrice.toLocaleString()}
             </Text>
@@ -68,9 +72,9 @@ const ProductPurchasePanel = ({
           <Text tag="body_medium_16" color="gray4" style={{ textDecoration: 'line-through' }}>
             {originalPrice.toLocaleString()}원
           </Text>
-        </section>
+        </div>
 
-        <section className={styles.benefit}>
+        <div className={styles.benefit}>
           <div className={styles.benefitLeft}>
             <IcCheckGreen width={16} height={16} />
             <Text tag="body_medium_14" color="black">
@@ -80,7 +84,7 @@ const ProductPurchasePanel = ({
           <Text tag="body_medium_14" color="black">
             독점 혜택
           </Text>
-        </section>
+        </div>
       </div>
 
       <div className={styles.productActionSection}>
@@ -171,7 +175,9 @@ const ProductPurchasePanel = ({
         <Text tag="body_medium_16" color="gray6">
           총 금액
         </Text>
-        <Text tag="head_bold_28">9,900</Text>
+        <Head level="h2" tag="head_bold_28">
+          9,900
+        </Head>
       </div>
 
       <div className={styles.button}>
@@ -184,7 +190,7 @@ const ProductPurchasePanel = ({
         />
         <ProductActionButton text="구매하기" variant="solid" size="lg" radius="sm" fontSize="lg" />
       </div>
-    </div>
+    </section>
   );
 };
 

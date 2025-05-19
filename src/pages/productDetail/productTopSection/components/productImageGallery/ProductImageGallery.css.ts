@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
 
 export const galleryContainer = style({
   display: 'flex',
@@ -14,10 +15,19 @@ export const galleryItem = style({
   alignItems: 'center',
 });
 
-export const galleryItemButton = style({
-  border: '1px solid transparent',
-});
-
-export const galleryItemSelected = style({
-  borderColor: 'black',
+export const galleryImage = recipe({
+  base: {
+    border: '1px solid transparent',
+  },
+  variants: {
+    selected: {
+      true: {
+        borderColor: 'black',
+        transition: 'border-color 0.3s ease-in-out',
+      },
+    },
+  },
+  defaultVariants: {
+    selected: false,
+  },
 });

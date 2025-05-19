@@ -177,7 +177,7 @@ export const total = style({
   justifyContent: 'flex-end',
   alignItems: 'center',
   gap: '0.9rem',
-  marginTop: '4.8rem',
+  marginTop: '3.6rem',
 });
 
 export const button = style({

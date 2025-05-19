@@ -5,7 +5,11 @@ export const mockDetailData = {
   discountRate: 50,
   originalPrice: 30000,
   discountPrice: 15000,
-  productImages: ['image1', 'image2', 'image3'],
+  productImages: [
+    'https://placehold.co/551x551',
+    'https://placehold.co/552x552',
+    'https://placehold.co/553x553',
+  ],
   productColors: ['베이지', '어두운 갈색', '카키색'],
   productDetails: ['image1', 'image2', 'image3'],
   reviewCount: 2,

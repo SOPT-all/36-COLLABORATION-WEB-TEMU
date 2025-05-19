@@ -10,5 +10,5 @@ export const bestSeller = style({
   backgroundColor: vars.color.point_green,
   color: vars.color.white,
   ...vars.font.caption_medium_12,
-  borderRadius: '0.4rem',
+  borderRadius: '4px',
 });
