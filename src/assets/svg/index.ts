@@ -79,7 +79,7 @@ export { default as IcStar45 } from '@svg/ic_star_4_5.svg?react';
 export { default as IcStar4Sm } from '@svg/ic_star_4_sm.svg?react';
 export { default as IcStar4 } from '@svg/ic_star_4.svg?react';
 export { default as IcStar5 } from '@svg/ic_star_5.svg?react';
-//export { default as IcStar5Sm } from '@svg/ic_star_5_sm.svg?react';
+export { default as IcStar5Sm } from '@svg/ic_star_5_sm.svg?react';
 
 // Miscellaneous icons
 export { default as IcTruckGreen } from '@svg/ic_truck_green.svg?react';

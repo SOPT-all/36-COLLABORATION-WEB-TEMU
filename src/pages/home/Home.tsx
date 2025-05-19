@@ -2,6 +2,7 @@ import * as styles from '@/pages/home/Home.css';
 import { IcFlashBlack, IcChevronForwardBlack } from '@svg/index';
 import ImgMainBanner from '@/../public/img/imgMainBanner.png';
 import FamilyMonthTitle from '@/../public/img/familyMonthTitle.png';
+import Banner from '@/../public/img/banner_familymonth.png';
 import Tag from '@/pages/home/components/Tag';
 import Text from '@shared/components/text/Text';
 import Card from '@shared/components/card/Card';
@@ -13,9 +14,7 @@ const Home = () => {
 
   return (
     <>
-      {
-        //Header
-      }
+      <img src={Banner} alt="banner img" />
       <div className={styles.homeWrapper}>
         <section className={styles.sectionStyle}>
           <div className={styles.forwardTitleWrapper}>
