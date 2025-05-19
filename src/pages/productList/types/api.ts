@@ -5,6 +5,6 @@ export interface GetProductsResponseTypes {
   discountRate: number;
   discountPrice: number;
   reviewCount: number;
-  category: string[];
+  categoryList: string[];
   productTag?: string;
 }

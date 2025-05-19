@@ -4,19 +4,17 @@ import { PRODUCT_TAGS } from './constant/productTag';
 
 interface CardProps {
   size?: 'l' | 'xl';
-  productId: number;
   imageUrl: string;
   productName: string;
   discountRate: number;
   discountPrice: number;
   reviewCount?: number;
   productTag?: string;
-  categoryList: string[];
+  categoryList: [];
 }
 
 const Card = ({
   size = 'l',
-  productId,
   imageUrl,
   productName,
   discountRate,
