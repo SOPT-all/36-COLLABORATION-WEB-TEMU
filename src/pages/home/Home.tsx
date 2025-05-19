@@ -1,5 +1,5 @@
 import * as styles from '@/pages/home/Home.css';
-import { IcFlashBlack, IcChevronForwardBlack } from '@svg/index';
+import { IcFlashBlack, IcChevronForwardBlack, IcArrowDownWhite } from '@svg/index';
 import ImgMainBanner from '@/../public/img/imgMainBanner.png';
 import FamilyMonthTitle from '@/../public/img/familyMonthTitle.png';
 import Banner from '@/../public/img/banner_familymonth.png';
@@ -8,13 +8,14 @@ import Text from '@shared/components/text/Text';
 import Card from '@shared/components/card/Card';
 import { dummyCardsL } from '@/pages/home/mockHomeData';
 import useFilterCard from '@pages/home/hooks/useFilterCard';
+import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
 
 const Home = () => {
   const { selectedTag, filteredCards, handleTagClick } = useFilterCard();
 
   return (
     <>
-      <img src={Banner} alt="banner img" />
+      <img src={Banner} alt="banner img" className={styles.imgBanner} />
       <div className={styles.homeWrapper}>
         <section className={styles.sectionStyle}>
           <div className={styles.forwardTitleWrapper}>
@@ -35,9 +36,11 @@ const Home = () => {
             ))}
           </div>
         </section>
-        <section className={styles.sectionStyle}>
+
+        <section className={styles.sectionBanner}>
           <img src={ImgMainBanner} className={styles.imgMainBanner} />
         </section>
+
         <section className={styles.sectionStyle}>
           <div className={styles.listTitleWrapper}>
             <img src={FamilyMonthTitle} className={styles.familyMonthTitle} />
@@ -51,6 +54,16 @@ const Home = () => {
               <Card key={index} {...cardData} />
             ))}
           </div>
+        </section>
+
+        <section className={styles.sectionBtn}>
+          <ProductActionButton
+            text="더보기"
+            size="sm"
+            radius="md"
+            fontSize="sm"
+            icon={<IcArrowDownWhite />}
+          />
         </section>
       </div>
     </>

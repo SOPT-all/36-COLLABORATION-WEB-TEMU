@@ -4,14 +4,12 @@ export const homeWrapper = style({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  gap: '10rem',
 });
 
 export const sectionStyle = style({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  gap: '2rem',
 
   width: '100%',
 });
@@ -22,7 +20,7 @@ export const forwardTitleWrapper = style({
   alignItems: 'center',
   gap: '1rem',
 
-  margin: '6.6rem 0',
+  marginBottom: '3.6rem',
 });
 
 export const forwardTitle = style({
@@ -39,9 +37,16 @@ export const forwardListWrapper = style({
   justifyContent: 'center',
   alignItems: 'center',
   gap: '2.9rem',
-  flexWrap: 'nowrap',
 
   width: '136.6rem',
+});
+
+export const sectionBanner = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  margin: '11.4rem 0 10.5rem 0',
 });
 
 export const listTitleWrapper = style({
@@ -50,6 +55,8 @@ export const listTitleWrapper = style({
   alignItems: 'center',
   justifyContent: 'center',
   gap: '1.1rem',
+
+  marginBottom: '4.2rem',
 });
 
 export const listWrapper = style({
@@ -57,6 +64,15 @@ export const listWrapper = style({
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(30rem, 1fr))',
   gap: '1.9rem',
+  rowGap: '3.6rem',
+
+  marginTop: '6.3rem',
+});
+
+export const imgBanner = style({
+  width: '100%',
+  height: '32rem',
+  marginBottom: '6.6rem',
 });
 
 export const imgMainBanner = style({
@@ -67,4 +83,13 @@ export const imgMainBanner = style({
 export const familyMonthTitle = style({
   width: '11.5rem',
   height: '2rem',
+});
+
+export const sectionBtn = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  paddingTop: '11.2rem',
+  paddingBottom: '18.6rem',
 });
