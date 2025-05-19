@@ -17,3 +17,8 @@ export const PURCHASE_PANEL = {
     content: ['안전한 결제 옵션', '안전한 물류', '개인 정보 보호', '물류 보호'],
   },
 };
+
+export const PURCHASE_TOTAL_PRISE = {
+  text: '총 금액',
+  price: 9900,
+};

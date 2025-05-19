@@ -10,7 +10,10 @@ import {
   IcArrowDownGray,
   IcCheckGreen,
 } from '@svg/index';
-import { PURCHASE_PANEL } from '@pages/productDetail/productTopSection/constants/PURCHASE_PANEL';
+import {
+  PURCHASE_PANEL,
+  PURCHASE_TOTAL_PRISE,
+} from '@pages/productDetail/productTopSection/constants/PURCHASE_PANEL';
 import BestSeller from '@pages/productDetail/productTopSection/components/bestSeller/BestSeller';
 import Divider from '@shared/components/divider/Divider';
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
@@ -176,10 +179,10 @@ const ProductPurchasePanel = ({
 
       <div className={styles.total}>
         <Text tag="body_medium_16" color="gray6">
-          총 금액
+          {PURCHASE_TOTAL_PRISE.text}
         </Text>
         <Head level="h2" tag="head_bold_28">
-          9,900
+          {PURCHASE_TOTAL_PRISE.price.toLocaleString()}
         </Head>
       </div>
 
