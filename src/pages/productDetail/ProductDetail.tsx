@@ -15,3 +15,7 @@ const ProductDetail = () => {
       <ProductTopSection restData={restData} />
       <ProductReviewSection />
     </>
+  );
+};
+
+export default ProductDetail;
