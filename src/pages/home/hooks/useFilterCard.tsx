@@ -6,8 +6,8 @@ export default function FilterCard() {
 
   const filteredCards = dummyCardsXL.filter(card => card.category === selectedTag);
 
-  const handleTagClick = (tagId: string) => {
-    setSelectedTag(tagId);
+  const handleTagClick = (id: string) => {
+    setSelectedTag(id);
   };
 
   return { selectedTag, filteredCards, handleTagClick };
