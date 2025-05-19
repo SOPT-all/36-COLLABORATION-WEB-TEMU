@@ -4,7 +4,7 @@ import { TAG } from './constant/tags';
 
 interface TagProps {
   selectedTag: string;
-  handleTagClick: (id: string) => void;
+  handleTagClick: (tag: string) => void;
 }
 
 const Tag = ({ selectedTag, handleTagClick }: TagProps) => {
