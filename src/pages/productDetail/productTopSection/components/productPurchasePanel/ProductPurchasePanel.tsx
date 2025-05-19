@@ -11,6 +11,7 @@ import {
   IcCheckGreen,
 } from '@svg/index';
 import {
+  PURCHASE_PANEL_BENEFIT,
   PURCHASE_PANEL,
   PURCHASE_TOTAL_PRISE,
 } from '@pages/productDetail/productTopSection/constants/PURCHASE_PANEL';
@@ -81,11 +82,11 @@ const ProductPurchasePanel = ({
           <div className={styles.benefitLeft}>
             <IcCheckGreen width={16} height={16} />
             <Text tag="body_medium_14" color="black">
-              특별 무료 배송 혜택
+              {PURCHASE_PANEL_BENEFIT.title}
             </Text>
           </div>
           <Text tag="body_medium_14" color="black">
-            독점 혜택
+            {PURCHASE_PANEL_BENEFIT.content}
           </Text>
         </div>
       </div>

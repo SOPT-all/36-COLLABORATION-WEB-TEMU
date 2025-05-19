@@ -1,3 +1,8 @@
+export const PURCHASE_PANEL_BENEFIT = {
+  title: '특별 무료 배송 혜택',
+  content: '독점 혜택',
+};
+
 export const PURCHASE_PANEL = {
   delivery: {
     title: '해당 상품 무료 배송',
