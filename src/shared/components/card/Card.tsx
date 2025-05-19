@@ -11,6 +11,7 @@ interface CardProps {
   discountPrice: number;
   reviewCount?: number;
   productTag?: string;
+  categoryList: string[];
 }
 
 const Card = ({
@@ -22,6 +23,7 @@ const Card = ({
   discountPrice,
   reviewCount,
   productTag,
+  categoryList,
 }: CardProps) => {
   return (
     <div className={styles.cardWrapper({ size })}>

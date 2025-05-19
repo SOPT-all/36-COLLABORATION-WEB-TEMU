@@ -11,7 +11,18 @@ const ProductList = () => {
       <FilterButton />
       <div className={styles.listWrapper}>
         {mockSearchData.map(cardData => (
-          <Card key={cardData.productId} {...cardData} size="xl" />
+          <Card
+            key={cardData.productId}
+            size="xl"
+            productId={cardData.productId}
+            imageUrl={cardData.imageUrl}
+            productName={cardData.productName}
+            discountRate={cardData.discountRate}
+            discountPrice={cardData.discountPrice}
+            reviewCount={cardData.reviewCount}
+            categoryList={cardData.category}
+            productTag={cardData.productTag}
+          />
         ))}
       </div>
       <div className={styles.buttonWrapper}>
