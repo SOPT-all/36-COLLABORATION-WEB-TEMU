@@ -1,4 +1,5 @@
 import ProductTopSection from '@pages/productDetail/productTopSection/ProductTopSection';
+import ProductReviewSection from '@pages/productDetail/productReviewSection/ProductReviewSection';
 import { mockDetailData } from '@pages/productDetail/productTopSection/constants/mockDetailData';
 
 const ProductDetail = () => {
@@ -10,10 +11,7 @@ const ProductDetail = () => {
   } = mockDetailData;
 
   return (
-    <div>
+    <>
       <ProductTopSection restData={restData} />
-    </div>
-  );
-};
-
-export default ProductDetail;
+      <ProductReviewSection />
+    </>
