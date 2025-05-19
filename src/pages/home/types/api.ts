@@ -1,5 +1,5 @@
 export interface GetPromotionResponseTypes {
-  size: 'l';
+  size?: 'l';
   repurchase: boolean;
   imageUrl: string;
   productName: string;
@@ -9,11 +9,12 @@ export interface GetPromotionResponseTypes {
 }
 
 export interface GetProductsResponseTypes {
-  size: 'xl';
+  size?: 'xl';
   repurchase: boolean;
   imageUrl: string;
   productName: string;
   discountRate: number;
   discountPrice: number;
   reviewCount: number;
+  category: string;
 }

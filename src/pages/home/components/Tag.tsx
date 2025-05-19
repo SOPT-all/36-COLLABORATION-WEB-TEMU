@@ -1,25 +1,27 @@
-import { useState } from 'react';
 import * as styles from '@/pages/home/components/Tag.css';
 import Text from '@shared/components/text/Text';
 import { TAG } from './constant/tags';
 
-const Tag = () => {
-  const [selectedTag, setSelectedTag] = useState<string>('recommend');
+interface TagProps {
+  selectedTag: string;
+  handleTagClick: (id: string) => void;
+}
 
+const Tag = ({ selectedTag, handleTagClick }: TagProps) => {
   return (
     <div className={styles.tagWrapper}>
-      {TAG.map(tag => (
+      {TAG.map(({ id, text, icon }) => (
         <div
-          className={styles.tag({ selected: selectedTag === tag.id })}
-          key={tag.id}
-          onClick={() => setSelectedTag(tag.id)}
+          className={styles.tag({ selected: selectedTag === id })}
+          key={id}
+          onClick={() => handleTagClick(id)}
         >
-          {tag.icon}
+          {icon}
           <Text
-            tag={selectedTag == tag.id ? 'body_bold_14' : 'body_regular_14'}
-            color={selectedTag == tag.id ? 'white' : 'black'}
+            tag={selectedTag == id ? 'body_bold_14' : 'body_regular_14'}
+            color={selectedTag == id ? 'white' : 'black'}
           >
-            {tag.text}
+            {text}
           </Text>
         </div>
       ))}

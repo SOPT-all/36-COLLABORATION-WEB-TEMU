@@ -5,9 +5,12 @@ import FamilyMonthTitle from '@/../public/img/familyMonthTitle.png';
 import Tag from '@/pages/home/components/Tag';
 import Text from '@shared/components/text/Text';
 import Card from '@shared/components/card/Card';
-import { dummyCardsL, dummyCardsXL } from './mockHomeData';
+import { dummyCardsL } from '@/pages/home/mockHomeData';
+import useFilterCard from '@pages/home/hooks/useFilterCard';
 
 const Home = () => {
+  const { selectedTag, filteredCards, handleTagClick } = useFilterCard();
+
   return (
     <>
       {
@@ -17,11 +20,11 @@ const Home = () => {
         <section className={styles.sectionStyle}>
           <div className={styles.forwardTitleWrapper}>
             <div className={styles.forwardTitle}>
-              <IcFlashBlack width={'2.4rem'} height={'2.4rem'} />
+              <IcFlashBlack width="2.4rem" height="2.4rem" />
               <Text tag="head_bold_24" color="black">
                 번개특가
               </Text>
-              <IcChevronForwardBlack width={'3.2rem'} height={'3.2rem'} />
+              <IcChevronForwardBlack width="3.2rem" height="3.2rem" />
             </div>
             <Text tag="body_regular_16" color="gray4">
               서둘러 주세요! 혜택가로 인기 상품을 놓치지 말고 구매하세요
@@ -43,9 +46,9 @@ const Home = () => {
               관심 상품 둘러보기
             </Text>
           </div>
-          <Tag />
+          <Tag selectedTag={selectedTag} handleTagClick={handleTagClick} />
           <div className={styles.listWrapper}>
-            {dummyCardsXL.map((cardData, index) => (
+            {filteredCards.map((cardData, index) => (
               <Card key={index} {...cardData} />
             ))}
           </div>
