@@ -8,7 +8,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 20,
     discountPrice: 49000,
     reviewCount: 100,
-    categoryList: ['kitchen'],
     productTag: '인기',
   },
   {
@@ -18,7 +17,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 15,
     discountPrice: 35000,
     reviewCount: 42,
-    categoryList: ['kitchen'],
     productTag: '신상',
   },
   {
@@ -28,7 +26,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 10,
     discountPrice: 59000,
     reviewCount: 87,
-    categoryList: ['kitchen'],
     productTag: '할인',
   },
   {
@@ -38,7 +35,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 25,
     discountPrice: 41000,
     reviewCount: 130,
-    categoryList: ['digital'],
     productTag: '인기',
   },
   {
@@ -48,7 +44,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 25,
     discountPrice: 41000,
     reviewCount: 130,
-    categoryList: ['digital'],
     productTag: '신상',
   },
   {
@@ -58,7 +53,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 20,
     discountPrice: 49000,
     reviewCount: 100,
-    categoryList: ['kitchen'],
     productTag: '할인',
   },
   {
@@ -68,7 +62,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 15,
     discountPrice: 35000,
     reviewCount: 42,
-    categoryList: ['kitchen'],
     productTag: '인기',
   },
   {
@@ -78,7 +71,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 10,
     discountPrice: 59000,
     reviewCount: 87,
-    categoryList: ['kitchen'],
     productTag: '신상',
   },
   {
@@ -88,7 +80,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 25,
     discountPrice: 41000,
     reviewCount: 130,
-    categoryList: ['digital'],
     productTag: '할인',
   },
   {
@@ -98,7 +89,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 25,
     discountPrice: 41000,
     reviewCount: 130,
-    categoryList: ['digital'],
     productTag: '인기',
   },
   {
@@ -108,7 +98,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 20,
     discountPrice: 49000,
     reviewCount: 100,
-    categoryList: ['kitchen'],
     productTag: '신상',
   },
   {
@@ -118,7 +107,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 15,
     discountPrice: 35000,
     reviewCount: 42,
-    categoryList: ['kitchen'],
     productTag: '할인',
   },
   {
@@ -128,7 +116,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 10,
     discountPrice: 59000,
     reviewCount: 87,
-    categoryList: ['kitchen'],
     productTag: '인기',
   },
   {
@@ -138,7 +125,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 25,
     discountPrice: 41000,
     reviewCount: 130,
-    categoryList: ['digital'],
     productTag: '신상',
   },
   {
@@ -148,7 +134,6 @@ export const mockSearchData: GetProductsResponseTypes[] = [
     discountRate: 25,
     discountPrice: 41000,
     reviewCount: 130,
-    categoryList: ['digital'],
     productTag: '할인',
   },
 ];

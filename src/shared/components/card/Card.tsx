@@ -1,6 +1,7 @@
 import * as styles from '@shared/components/card/Card.css';
 import { IcCartBlack, IcReviewBlack } from '@svg/index';
 import { PRODUCT_TAGS } from './constant/productTag';
+import { useNavigate } from 'react-router-dom';
 
 interface CardProps {
   productId?: number;
@@ -11,7 +12,6 @@ interface CardProps {
   discountPrice: number;
   reviewCount?: number;
   productTag?: string;
-  categoryList?: string[];
 }
 
 const Card = ({
@@ -23,10 +23,13 @@ const Card = ({
   discountPrice,
   reviewCount,
   productTag,
-  categoryList,
 }: CardProps) => {
+  const navigate = useNavigate();
+  const handleCardClick = () => {
+    navigate(`/products/${productId}`);
+  };
   return (
-    <div className={styles.cardWrapper({ size })}>
+    <div className={styles.cardWrapper({ size })} onClick={handleCardClick}>
       <img className={styles.cardImg({ size })} src={imageUrl} alt={`${productName} img`} />
       <div className={styles.cardDescription({ size })}>
         <h3 className={styles.cardTitle}>{productName}</h3>
