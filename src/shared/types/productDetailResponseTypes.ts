@@ -1,4 +1,4 @@
-export interface Product {
+export interface productDetailResponseTypes {
   company: string;
   productName: string;
   discountRate: number;

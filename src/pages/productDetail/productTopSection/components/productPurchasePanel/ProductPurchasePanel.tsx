@@ -126,7 +126,7 @@ const ProductPurchasePanel = ({
               <IcShieldGreen width={20} height={20} />
               <Text tag="body_medium_16">{PURCHASE_PANEL.paymentSecurity.title}</Text>
             </div>
-            <div className={styles.productShoppingDown}>
+            <div>
               <div className={styles.productShoppingList}>
                 {PURCHASE_PANEL.paymentSecurity.content.map((content, idx) => (
                   <>

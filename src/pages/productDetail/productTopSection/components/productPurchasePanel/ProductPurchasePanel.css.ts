@@ -110,8 +110,6 @@ export const productShoppingUp = style({
   gap: '2rem',
 });
 
-export const productShoppingDown = style({});
-
 export const productShoppingList = style({
   display: 'flex',
   gap: '0.4rem',
@@ -158,12 +156,14 @@ export const select = style({
   display: 'flex',
   alignItems: 'flex-start',
   gap: '1rem',
+
   width: '41.4rem',
+  padding: '0.8rem 1.6rem 0.8rem 2.4rem',
+  borderRadius: '8px',
+  border: `1px solid ${vars.color.gray2}`,
+
   ...vars.font.body_medium_16,
   color: vars.color.gray6,
-  borderRadius: '0.8rem',
-  border: `1px solid ${vars.color.gray2}`,
-  padding: '0.8rem 1.6rem 0.8rem 2.4rem',
 });
 
 export const icon = style({
