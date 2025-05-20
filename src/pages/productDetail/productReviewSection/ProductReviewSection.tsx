@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { mockReviewData } from '@pages/productDetail/productReviewSection/constants/reviewData';
+import { useParams } from 'react-router-dom';
+import { useGetProductDetailReview } from '@api/queries';
 import type { SortType } from '@pages/productDetail/productReviewSection/types/index';
 import * as styles from '@pages/productDetail/productReviewSection/ProductReviewSection.css';
 import ReviewFilterBar from '@pages/productDetail/productReviewSection/components/reviewFilterBar/ReviewFilterBar';
@@ -10,13 +11,25 @@ import Divider from '@shared/components/divider/Divider';
 import NextPage from '@pages/productDetail/productReviewSection/components/nextPage/NextPage';
 
 const ProductReviewSection = () => {
-  const { avgScore, reviewImages, productReviewDetails, reviewScoreDistributions } = mockReviewData;
+  const { id } = useParams<{ id: string }>();
+  const productId = Number(id);
+  const { data, isLoading, isError } = useGetProductDetailReview(productId);
+
+  const {
+    avgScore = 0,
+    reviewImages = [],
+    productReviewDetails = [],
+    reviewScoreDistributions = [],
+  } = data ?? {};
 
   const [sortType, setSortType] = useState<SortType>('recent');
 
   const handleChangeSortType = (type: SortType) => {
     setSortType(type);
   };
+
+  if (isLoading) return <div>로딩 중...</div>;
+  if (isError) return <div>리뷰를 불러오는 중 에러가 발생했습니다.</div>;
 
   return (
     <div className={styles.container}>

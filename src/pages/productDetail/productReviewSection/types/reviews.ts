@@ -17,5 +17,5 @@ export interface ProductReviewDetailResponseTypes {
   avgScore: number;
   reviewImages: string[];
   productReviewDetails: ReviewResponseTypes[];
-  reviewScoreDistributions: ProductReviewDetailResponseTypes[];
+  reviewScoreDistributions: ReviewScoreDistributionResponseTypes[];
 }
