@@ -1,39 +1,61 @@
+import { useSearchParams } from 'react-router-dom';
+import { useGetSearchedProductList } from '@api/queries';
+
 import * as styles from '@pages/productList/ProductList.css';
 import FilterButton from '@pages/productList/components/filterButton/FilterButton';
 import Card from '@shared/components/card/Card';
+import Text from '@shared/components/text/Text'
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
 import * as Icons from '@svg/index';
-import { mockSearchData } from '@pages/productList/mockData';
 
 const ProductList = () => {
+  const [searchParams] = useSearchParams();
+  const keyword = searchParams.get('keyword') ?? '';
+
+  const { data, isLoading, isError } = useGetSearchedProductList(keyword);
+  const productList = data?.searchedProductList ?? [];
+
+  const renderMessage = (message: string) => (
+    <Text tag="body_bold_18" color="black" className={styles.messageWrapper}>
+      {message}
+    </Text>
+  );
+
   return (
     <div className={styles.container}>
       <FilterButton />
       <div className={styles.listWrapper}>
-        {mockSearchData.map(cardData => (
+        {isLoading && renderMessage('로딩 중...')}
+        {isError && renderMessage('에러가 발생했습니다.')}
+        {!isLoading && !isError && productList.length === 0 && renderMessage('검색 결과가 없습니다.')}
+
+        {!isLoading && !isError && productList.map(product => (
           <Card
-            key={cardData.productId}
+            key={product.productId}
             size="xl"
-            productId={cardData.productId}
-            imageUrl={cardData.productImage}
-            productName={cardData.productName}
-            discountRate={cardData.discountRate}
-            discountPrice={cardData.discountPrice}
-            reviewCount={cardData.reviewCount}
-            productTag={cardData.productTag}
+            productId={product.productId}
+            imageUrl={product.productImage}
+            productName={product.productName}
+            discountRate={product.discountRate}
+            discountPrice={product.discountPrice}
+            reviewCount={product.reviewCount}
+            productTag={product.productTag}
           />
         ))}
       </div>
-      <div className={styles.buttonWrapper}>
-        <ProductActionButton
-          text="더보기"
-          variant="solid"
-          size="sm"
-          radius="lg"
-          fontSize="sm"
-          icon={<Icons.IcArrowDownWhite />}
-        />
-      </div>
+
+      {!isLoading && !isError && productList.length > 0 && (
+        <div className={styles.buttonWrapper}>
+          <ProductActionButton
+            text="더보기"
+            variant="solid"
+            size="sm"
+            radius="lg"
+            fontSize="sm"
+            icon={<Icons.IcArrowDownWhite />}
+          />
+        </div>
+      )}
     </div>
   );
 };

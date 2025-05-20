@@ -1,4 +1,4 @@
-export interface GetProductsResponseTypes {
+export interface ProductCardData {
   productId: number;
   productName: string;
   discountRate: number;
@@ -6,4 +6,8 @@ export interface GetProductsResponseTypes {
   productImage: string;
   reviewCount: number;
   productTag: string;
+}
+
+export interface ProductListResponseTypes {
+  searchedProductList: ProductCardData[];
 }
