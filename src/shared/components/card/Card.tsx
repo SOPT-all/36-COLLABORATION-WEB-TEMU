@@ -1,6 +1,6 @@
 import * as styles from '@shared/components/card/Card.css';
 import { IcCartBlack, IcReviewBlack } from '@svg/index';
-import { PRODUCT_TAGS } from './constant/productTag';
+import { PRODUCT_TAGS } from '@shared/components/card/constant/productTag';
 import { useNavigate } from 'react-router-dom';
 
 interface CardProps {
