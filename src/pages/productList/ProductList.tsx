@@ -15,7 +15,7 @@ const ProductList = () => {
             key={cardData.productId}
             size="xl"
             productId={cardData.productId}
-            imageUrl={cardData.imageUrl}
+            imageUrl={cardData.productImage}
             productName={cardData.productName}
             discountRate={cardData.discountRate}
             discountPrice={cardData.discountPrice}

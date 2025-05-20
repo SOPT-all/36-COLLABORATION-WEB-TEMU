@@ -1,9 +1,9 @@
 export interface GetProductsResponseTypes {
   productId: number;
-  imageUrl: string;
   productName: string;
   discountRate: number;
   discountPrice: number;
+  productImage: string;
   reviewCount: number;
-  productTag?: string;
+  productTag: string;
 }

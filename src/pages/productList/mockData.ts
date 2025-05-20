@@ -1,9 +1,9 @@
-import type { GetProductsResponseTypes } from '@pages/productList/types/api';
+import type { GetProductsResponseTypes } from '@pages/productList/types/response';
 
 export const mockSearchData: GetProductsResponseTypes[] = [
   {
     productId: 1,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+1',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+1',
     productName: '모던 디자인 테이블 램프',
     discountRate: 20,
     discountPrice: 49000,
@@ -12,7 +12,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 2,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+2',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+2',
     productName: '심플 미니멀 스탠드',
     discountRate: 15,
     discountPrice: 35000,
@@ -21,7 +21,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 3,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+3',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+3',
     productName: '북유럽 스타일 조명',
     discountRate: 10,
     discountPrice: 59000,
@@ -30,7 +30,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 4,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+4',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+4',
     productName: 'LED 데스크 라이트',
     discountRate: 25,
     discountPrice: 41000,
@@ -39,7 +39,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 5,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+4',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+4',
     productName: 'LED 데스크 라이트',
     discountRate: 25,
     discountPrice: 41000,
@@ -48,7 +48,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 6,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+1',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+1',
     productName: '모던 디자인 테이블 램프',
     discountRate: 20,
     discountPrice: 49000,
@@ -57,7 +57,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 7,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+2',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+2',
     productName: '심플 미니멀 스탠드',
     discountRate: 15,
     discountPrice: 35000,
@@ -66,7 +66,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 8,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+3',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+3',
     productName: '북유럽 스타일 조명',
     discountRate: 10,
     discountPrice: 59000,
@@ -75,7 +75,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 9,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+4',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+4',
     productName: 'LED 데스크 라이트',
     discountRate: 25,
     discountPrice: 41000,
@@ -84,7 +84,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 10,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+4',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+4',
     productName: 'LED 데스크 라이트',
     discountRate: 25,
     discountPrice: 41000,
@@ -93,7 +93,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 11,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+1',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+1',
     productName: '모던 디자인 테이블 램프',
     discountRate: 20,
     discountPrice: 49000,
@@ -102,7 +102,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 12,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+2',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+2',
     productName: '심플 미니멀 스탠드',
     discountRate: 15,
     discountPrice: 35000,
@@ -111,7 +111,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 13,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+3',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+3',
     productName: '북유럽 스타일 조명',
     discountRate: 10,
     discountPrice: 59000,
@@ -120,7 +120,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 14,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+4',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+4',
     productName: 'LED 데스크 라이트',
     discountRate: 25,
     discountPrice: 41000,
@@ -129,7 +129,7 @@ export const mockSearchData: GetProductsResponseTypes[] = [
   },
   {
     productId: 15,
-    imageUrl: 'https://via.placeholder.com/350x150.png?text=Product+4',
+    productImage: 'https://via.placeholder.com/350x150.png?text=Product+4',
     productName: 'LED 데스크 라이트',
     discountRate: 25,
     discountPrice: 41000,
