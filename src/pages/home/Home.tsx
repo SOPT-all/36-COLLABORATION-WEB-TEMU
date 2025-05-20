@@ -31,8 +31,8 @@ const Home = () => {
             </Text>
           </div>
           <div className={styles.forwardListWrapper}>
-            {dummyCardsL.map((cardData, index) => (
-              <Card key={index} {...cardData} />
+            {dummyCardsL.map(cardData => (
+              <Card key={cardData.productId} size="l" {...cardData} />
             ))}
           </div>
         </section>
@@ -50,8 +50,8 @@ const Home = () => {
           </div>
           <Tag selectedTag={selectedTag} handleTagClick={handleTagClick} />
           <div className={styles.listWrapper}>
-            {filteredCards.map((cardData, index) => (
-              <Card key={index} {...cardData} />
+            {filteredCards.map(cardData => (
+              <Card key={cardData.productId} size="xl" {...cardData} />
             ))}
           </div>
         </section>

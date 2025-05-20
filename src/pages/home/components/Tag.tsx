@@ -1,10 +1,11 @@
 import * as styles from '@/pages/home/components/Tag.css';
 import Text from '@shared/components/text/Text';
 import { TAG } from './constant/tags';
+import type { Category } from './constant/categorys';
 
 interface TagProps {
   selectedTag: string;
-  handleTagClick: (id: string) => void;
+  handleTagClick: (category: Category) => void;
 }
 
 const Tag = ({ selectedTag, handleTagClick }: TagProps) => {

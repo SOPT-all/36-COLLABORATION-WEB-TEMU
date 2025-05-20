@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import { dummyCardsXL } from '@/pages/home/mockHomeData';
+import { Category } from '@/pages/home/components/constant/categorys';
 
-export default function FilterCard() {
-  const [selectedTag, setSelectedTag] = useState<string>('recommend');
+const FilterCard = () => {
+  const [selectedTag, setSelectedTag] = useState<Category>(Category.RECOMMEND);
 
-  const filteredCards = dummyCardsXL.filter(card => card.category === selectedTag);
+  const filteredCards = dummyCardsXL.filter(card => card.categoryList.includes(selectedTag));
 
-  const handleTagClick = (id: string) => {
-    setSelectedTag(id);
+  const handleTagClick = (category: Category) => {
+    setSelectedTag(category);
   };
 
   return { selectedTag, filteredCards, handleTagClick };
-}
+};
+
+export default FilterCard;

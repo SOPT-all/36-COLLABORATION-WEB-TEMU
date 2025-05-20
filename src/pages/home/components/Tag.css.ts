@@ -16,7 +16,6 @@ export const tag = recipe({
     justifyContent: 'center',
     alignItems: 'center',
     gap: '0.4rem',
-    flexShrink: 0,
 
     width: '9.4rem',
     minHeight: '9.2rem',
