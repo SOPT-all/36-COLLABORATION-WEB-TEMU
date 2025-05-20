@@ -140,9 +140,9 @@ export const review = style({
   ...vars.font.caption_regular_13,
 });
 
-export const cardRepurchaseRow = style({
+export const cardProductTageRow = style({
   display: 'flex',
-  alignItems: 'flex-start',
+  alignItems: 'center',
   gap: '0.4rem',
 
   ...vars.font.body_regular_14,
