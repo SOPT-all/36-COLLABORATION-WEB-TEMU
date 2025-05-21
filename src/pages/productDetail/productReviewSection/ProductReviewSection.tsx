@@ -35,7 +35,7 @@ const ProductReviewSection = () => {
 
   const filteredReviews =
     filterScore != null
-      ? productReviewDetails.filter(r => r.score === filterScore)
+      ? productReviewDetails.filter(review => review.score === filterScore)
       : productReviewDetails;
 
   if (isLoading) return <div>로딩 중...</div>;
