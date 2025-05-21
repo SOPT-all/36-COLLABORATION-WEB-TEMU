@@ -6,13 +6,18 @@ import Banner from '@/../public/img/banner_familymonth.png';
 import Tag from '@/pages/home/components/Tag';
 import Text from '@shared/components/text/Text';
 import Card from '@shared/components/card/Card';
-import { dummyCardsL } from '@/pages/home/mockHomeData';
 import useFilterCard from '@pages/home/hooks/useFilterCard';
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
+import { useGetPromotionProductList } from '@api/queries';
+import type { GetPromotionResponseTypes } from './types/api';
 
 const Home = () => {
   const { selectedTag, filteredCards, handleTagClick } = useFilterCard();
+  const { data, isLoading, isError } = useGetPromotionProductList();
 
+  if (isLoading) return <div>로딩 중...</div>;
+  if (isError) return <div>데이터를 불러오는 데 실패했습니다.</div>;
+  const promotionData = data?.promotionProductInfos ?? [];
   return (
     <>
       <img src={Banner} alt="banner img" className={styles.imgBanner} />
@@ -31,7 +36,7 @@ const Home = () => {
             </Text>
           </div>
           <div className={styles.forwardListWrapper}>
-            {dummyCardsL.map(cardData => (
+            {promotionData.map((cardData: GetPromotionResponseTypes) => (
               <Card
                 key={cardData.productId}
                 size="l"
