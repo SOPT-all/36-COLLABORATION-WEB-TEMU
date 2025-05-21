@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import * as styles from '@/pages/home/Home.css';
 import { IcFlashBlack, IcChevronForwardBlack, IcArrowDownWhite } from '@svg/index';
 import ImgMainBanner from '@/../public/img/imgMainBanner.png';
@@ -15,9 +14,9 @@ import CardSkeleton from '@shared/components/card/CardSkeleton';
 
 const Home = () => {
   const { selectedTag, filteredCards, handleTagClick } = useFilterCard();
-  const { data } = useGetPromotionProductList();
-
+  const { data, isLoading, isError } = useGetPromotionProductList();
   const promotionData = data?.promotionProductInfos ?? [];
+
   return (
     <>
       <img src={Banner} alt="banner img" className={styles.imgBanner} />
@@ -35,17 +34,15 @@ const Home = () => {
               서둘러 주세요! 혜택가로 인기 상품을 놓치지 말고 구매하세요
             </Text>
           </div>
-          <Suspense
-            fallback={
+          <div className={styles.forwardListWrapper}>
+            {isLoading || isError ? (
               <>
                 {[...Array(5)].map((_, i) => (
                   <CardSkeleton key={i} size="l" />
                 ))}
               </>
-            }
-          >
-            <div className={styles.forwardListWrapper}>
-              {promotionData.map((cardData: GetPromotionResponseTypes) => (
+            ) : (
+              promotionData.map((cardData: GetPromotionResponseTypes) => (
                 <Card
                   key={cardData.productId}
                   size="l"
@@ -55,10 +52,11 @@ const Home = () => {
                   discountRate={cardData.discountRate}
                   discountPrice={cardData.discountPrice}
                 />
-              ))}
-            </div>
-          </Suspense>
+              ))
+            )}
+          </div>
         </section>
+
         <section className={styles.sectionBanner}>
           <img src={ImgMainBanner} className={styles.imgMainBanner} />
         </section>
@@ -70,33 +68,22 @@ const Home = () => {
               관심 상품 둘러보기
             </Text>
           </div>
-
           <Tag selectedTag={selectedTag} handleTagClick={handleTagClick} />
-          <Suspense
-            fallback={
-              <div className={styles.listWrapper}>
-                {[...Array(6)].map((_, i) => (
-                  <CardSkeleton key={i} size="xl" />
-                ))}
-              </div>
-            }
-          >
-            <div className={styles.listWrapper}>
-              {filteredCards.map(cardData => (
-                <Card
-                  key={cardData.productId}
-                  size="xl"
-                  productId={cardData.productId}
-                  imageUrl={cardData.productImage}
-                  productName={cardData.productName}
-                  discountRate={cardData.discountRate}
-                  discountPrice={cardData.discountPrice}
-                  reviewCount={cardData.reviewCount}
-                  productTag={cardData.productTag}
-                />
-              ))}
-            </div>
-          </Suspense>
+          <div className={styles.listWrapper}>
+            {filteredCards.map(cardData => (
+              <Card
+                key={cardData.productId}
+                size="xl"
+                productId={cardData.productId}
+                imageUrl={cardData.productImage}
+                productName={cardData.productName}
+                discountRate={cardData.discountRate}
+                discountPrice={cardData.discountPrice}
+                reviewCount={cardData.reviewCount}
+                productTag={cardData.productTag}
+              />
+            ))}
+          </div>
         </section>
 
         <section className={styles.sectionBtn}>
