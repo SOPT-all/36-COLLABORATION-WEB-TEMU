@@ -32,7 +32,15 @@ const Home = () => {
           </div>
           <div className={styles.forwardListWrapper}>
             {dummyCardsL.map(cardData => (
-              <Card key={cardData.productId} size="l" {...cardData} />
+              <Card
+                key={cardData.productId}
+                size="l"
+                productId={cardData.productId}
+                imageUrl={cardData.productImage}
+                productName={cardData.productName}
+                discountRate={cardData.discountRate}
+                discountPrice={cardData.discountPrice}
+              />
             ))}
           </div>
         </section>
@@ -51,7 +59,17 @@ const Home = () => {
           <Tag selectedTag={selectedTag} handleTagClick={handleTagClick} />
           <div className={styles.listWrapper}>
             {filteredCards.map(cardData => (
-              <Card key={cardData.productId} size="xl" {...cardData} />
+              <Card
+                key={cardData.productId}
+                size="xl"
+                productId={cardData.productId}
+                imageUrl={cardData.productImage}
+                productName={cardData.productName}
+                discountRate={cardData.discountRate}
+                discountPrice={cardData.discountPrice}
+                reviewCount={cardData.reviewCount}
+                productTag={cardData.productTag}
+              />
             ))}
           </div>
         </section>

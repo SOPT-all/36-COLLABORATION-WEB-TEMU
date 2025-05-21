@@ -111,3 +111,4 @@ export { default as IcSearch } from '@svg/ic_search.svg?react';
 
 //Card component icons
 export { default as IcRegularCustomer } from '@svg/ic_regular_customer.svg?react';
+export { default as IcDay } from '@svg/ic_day.svg?react';
