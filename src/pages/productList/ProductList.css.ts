@@ -20,3 +20,7 @@ export const buttonWrapper = style({
 
   textAlign: 'center',
 })
+
+export const messageWrapper = style({
+  paddingBottom: '18.8rem',
+})
