@@ -60,6 +60,7 @@ export { default as IcReviewBlack } from '@svg/ic_review_black.svg?react';
 export { default as IcReviewFilter } from '@svg/ic_review_filter.svg?react';
 export { default as IcReviewWhite } from '@svg/ic_review_white.svg?react';
 export { default as IcShare } from '@svg/ic_share.svg?react';
+export { default as IcShareWhite } from '@svg/ic_share_white.svg?react';
 export { default as IcShieldGreen } from '@svg/ic_shield_green.svg?react';
 
 // Sport icons
@@ -110,4 +111,4 @@ export { default as IcSearch } from '@svg/ic_search.svg?react';
 
 //Card component icons
 export { default as IcRegularCustomer } from '@svg/ic_regular_customer.svg?react';
-export { default as IcDay } from '@svg/ic_Day.svg?react';
+export { default as IcDay } from '@svg/ic_day.svg?react';
