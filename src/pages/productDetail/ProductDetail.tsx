@@ -30,7 +30,7 @@ const ProductDetail = () => {
           <div className={styles.contentContainer({ expanded: isExpanded })}>
             <div className={styles.detailWrapper({ gap: 'xl' })}>
               <div id="info" className={styles.detailWrapper({ gap: 's' })}>
-                <Head level="h3" tag="head_semibold_24">
+                <Head level="h3" tag="head_sb_24">
                   제품 세부 정보
                 </Head>
                 <DetailTable />

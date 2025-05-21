@@ -7,7 +7,6 @@ type HeadTag =
   | 'head_bold_60'
   | 'head_bold_28'
   | 'head_bold_24'
-  | 'head_semibold_24'
   | 'head_sb_24'
   | 'head_bold_20'
   | 'head_sb_20'

@@ -24,7 +24,7 @@ export const tdStyle = style({
 
   verticalAlign: 'middle',
   textAlign: 'center',
-  textWrap: 'nowrap',
+  whiteSpace: 'nowrap',
 
   border: `1px solid ${vars.color.gray1}`,
   backgroundColor: vars.color.white,
