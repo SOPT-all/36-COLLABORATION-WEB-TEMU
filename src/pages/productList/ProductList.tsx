@@ -1,6 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
 import { useGetSearchedProductList } from '@api/queries';
-
 import * as styles from '@pages/productList/ProductList.css';
 import FilterButton from '@pages/productList/components/filterButton/FilterButton';
 import Card from '@shared/components/card/Card';
