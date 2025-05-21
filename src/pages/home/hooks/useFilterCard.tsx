@@ -7,8 +7,9 @@ const FilterCard = () => {
 
   const filteredCards = dummyCardsXL.filter(card => card.categoryList.includes(selectedTag));
 
-  const handleTagClick = (category: Category) => {
-    setSelectedTag(category);
+  const handleTagClick = (id: Category) => {
+    setSelectedTag(id);
+    console.log(id);
   };
 
   return { selectedTag, filteredCards, handleTagClick };

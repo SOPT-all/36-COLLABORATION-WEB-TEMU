@@ -4,8 +4,8 @@ import { TAG } from './constant/tags';
 import type { Category } from './constant/categorys';
 
 interface TagProps {
-  selectedTag: string;
-  handleTagClick: (category: Category) => void;
+  selectedTag: Category;
+  handleTagClick: (id: Category) => void;
 }
 
 const Tag = ({ selectedTag, handleTagClick }: TagProps) => {
