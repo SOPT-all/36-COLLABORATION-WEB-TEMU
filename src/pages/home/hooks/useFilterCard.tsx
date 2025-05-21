@@ -1,11 +1,22 @@
-import { useState } from 'react';
-import { dummyCardsXL } from '@/pages/home/mockHomeData';
+import { useState, useEffect } from 'react';
 import { Category } from '@/pages/home/components/constant/categorys';
+import type { ProductCardData } from '@/pages/productList/types/response';
 
-const FilterCard = () => {
+interface UseFilterCardProps {
+  productList: ProductCardData[];
+  isLoading: boolean;
+}
+
+const useFilterCard = ({ productList, isLoading }: UseFilterCardProps) => {
   const [selectedTag, setSelectedTag] = useState<Category>(Category.RECOMMEND);
+  const [filteredCards, setFilteredCards] = useState<ProductCardData[]>([]);
 
-  const filteredCards = dummyCardsXL.filter(card => card.categoryList.includes(selectedTag));
+  useEffect(() => {
+    if (!isLoading) {
+      const filtered = productList.filter(card => card.categoryList.includes(selectedTag));
+      setFilteredCards(filtered);
+    }
+  }, [productList, selectedTag, isLoading]);
 
   const handleTagClick = (id: Category) => {
     setSelectedTag(id);
@@ -14,4 +25,4 @@ const FilterCard = () => {
   return { selectedTag, filteredCards, handleTagClick };
 };
 
-export default FilterCard;
+export default useFilterCard;
