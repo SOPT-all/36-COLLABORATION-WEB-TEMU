@@ -9,7 +9,6 @@ const FilterCard = () => {
 
   const handleTagClick = (id: Category) => {
     setSelectedTag(id);
-    console.log(id);
   };
 
   return { selectedTag, filteredCards, handleTagClick };
