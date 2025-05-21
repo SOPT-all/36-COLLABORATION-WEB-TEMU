@@ -22,6 +22,9 @@ const ProductDetail = () => {
   const productId = Number(id);
   const { data, isLoading, isError } = useGetProductDetail(productId);
 
+  if (isLoading) return <div>로딩 중...</div>;
+  if (isError) return <div>상품 정보를 불러오는 중 에러가 발생했습니다.</div>;
+
   const {
     // productDetails: productDetails,
     // reviewCount: reviewCount,
@@ -37,9 +40,6 @@ const ProductDetail = () => {
   };
 
   const handleExpandClick = () => setIsExpanded(prev => !prev);
-
-  if (isLoading) return <div>로딩 중...</div>;
-  if (isError) return <div>상품 정보를 불러오는 중 에러가 발생했습니다.</div>;
 
   return (
     <div className={styles.container}>
