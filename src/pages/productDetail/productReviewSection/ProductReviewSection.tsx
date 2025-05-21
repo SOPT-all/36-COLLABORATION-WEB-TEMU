@@ -23,10 +23,20 @@ const ProductReviewSection = () => {
   } = data ?? {};
 
   const [sortType, setSortType] = useState<SortType>('recent');
+  const [filterScore, setFilterScore] = useState<number | null>(null);
 
   const handleChangeSortType = (type: SortType) => {
     setSortType(type);
   };
+
+  const handleChangeFilterScore = (score: number | null) => {
+    setFilterScore(score);
+  };
+
+  const filteredReviews =
+    filterScore != null
+      ? productReviewDetails.filter(r => r.score === filterScore)
+      : productReviewDetails;
 
   if (isLoading) return <div>로딩 중...</div>;
   if (isError) return <div>리뷰를 불러오는 중 에러가 발생했습니다.</div>;
@@ -43,12 +53,17 @@ const ProductReviewSection = () => {
       <ReviewPhoto reviewImages={reviewImages} />
       <Divider color="gray1" direction="horizontal" />
 
-      <ReviewFilterBar sortType={sortType} onChangeSortType={handleChangeSortType} />
+      <ReviewFilterBar
+        sortType={sortType}
+        onChangeSortType={handleChangeSortType}
+        filterScore={filterScore}
+        onChangeFilterScore={handleChangeFilterScore}
+      />
       <Divider color="gray1" direction="horizontal" />
 
       <div className={styles.listSection}>
         <ReviewList
-          productReviewDetails={productReviewDetails}
+          productReviewDetails={filteredReviews}
           reviewScoreDistributions={reviewScoreDistributions}
           sortType={sortType}
         />

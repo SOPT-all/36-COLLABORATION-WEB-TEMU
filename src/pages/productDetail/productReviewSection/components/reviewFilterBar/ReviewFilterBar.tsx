@@ -1,9 +1,22 @@
 import Divider from '@shared/components/divider/Divider';
 import * as styles from '@pages/productDetail/productReviewSection/components/reviewFilterBar/ReviewFilterBar.css';
 import IcArrowDownGray from '@svg/ic_arrow_down_gray.svg?react';
-import type { ReviewFilterBarProps } from '@/pages/productDetail/productReviewSection/types/index';
+import type { SortType } from '@/pages/productDetail/productReviewSection/types/index';
+import { REVIEW_FILTER } from '@pages/productDetail/productTopSection/constants/REVIEW_FILTER';
 
-const ReviewFilterBar = ({ sortType, onChangeSortType }: ReviewFilterBarProps) => {
+interface ReviewFilterBarProps {
+  sortType: SortType;
+  onChangeSortType: (_type: SortType) => void;
+  filterScore: number | null;
+  onChangeFilterScore: (_score: number | null) => void;
+}
+
+const ReviewFilterBar = ({
+  sortType,
+  onChangeSortType,
+  filterScore,
+  onChangeFilterScore,
+}: ReviewFilterBarProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
@@ -31,8 +44,19 @@ const ReviewFilterBar = ({ sortType, onChangeSortType }: ReviewFilterBarProps) =
           <IcArrowDownGray width={16} height={16} />
         </div>
         <div className={styles.selectWrapper}>
-          <select>
+          <select
+            value={filterScore ?? ''}
+            onChange={e => {
+              const v = e.target.value;
+              onChangeFilterScore(v === '' ? null : Number(v));
+            }}
+          >
             <option value="">별점</option>
+            {REVIEW_FILTER.map(num => (
+              <option key={num} value={num}>
+                {num}점
+              </option>
+            ))}
           </select>
           <IcArrowDownGray width={16} height={16} />
         </div>
