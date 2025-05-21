@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useSuspenseQuery } from '@tanstack/react-query';
 import { getProductDetail, getPromotionProductList, getSearchedProductList } from '@api/api';
 import { QUERY_KEYS } from '@/constant/queryKey';
 
@@ -18,7 +18,7 @@ export const useGetSearchedProductList = (keyword: string) => {
 };
 
 export const useGetPromotionProductList = () => {
-  return useQuery({
+  return useSuspenseQuery({
     queryKey: [QUERY_KEYS.PRODUCTS_PROMOTION],
     queryFn: () => getPromotionProductList(),
   });

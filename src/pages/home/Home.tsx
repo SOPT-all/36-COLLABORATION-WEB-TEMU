@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import * as styles from '@/pages/home/Home.css';
 import { IcFlashBlack, IcChevronForwardBlack, IcArrowDownWhite } from '@svg/index';
 import ImgMainBanner from '@/../public/img/imgMainBanner.png';
@@ -14,8 +15,6 @@ import CardSkeleton from '@shared/components/card/CardSkeleton';
 
 const Home = () => {
   const { selectedTag, filteredCards, handleTagClick } = useFilterCard();
-  const { data, isLoading, isError } = useGetPromotionProductList();
-  const promotionData = data?.promotionProductInfos ?? [];
 
   return (
     <>
@@ -34,27 +33,17 @@ const Home = () => {
               서둘러 주세요! 혜택가로 인기 상품을 놓치지 말고 구매하세요
             </Text>
           </div>
-          <div className={styles.forwardListWrapper}>
-            {isLoading || isError ? (
-              <>
+          <Suspense
+            fallback={
+              <div className={styles.forwardListWrapper}>
                 {[...Array(5)].map((_, i) => (
                   <CardSkeleton key={i} size="l" />
                 ))}
-              </>
-            ) : (
-              promotionData.map((cardData: GetPromotionResponseTypes) => (
-                <Card
-                  key={cardData.productId}
-                  size="l"
-                  productId={cardData.productId}
-                  imageUrl={cardData.productImage}
-                  productName={cardData.productName}
-                  discountRate={cardData.discountRate}
-                  discountPrice={cardData.discountPrice}
-                />
-              ))
-            )}
-          </div>
+              </div>
+            }
+          >
+            <PromotionCardList />
+          </Suspense>
         </section>
 
         <section className={styles.sectionBanner}>
@@ -97,6 +86,27 @@ const Home = () => {
         </section>
       </div>
     </>
+  );
+};
+
+const PromotionCardList = () => {
+  const { data } = useGetPromotionProductList();
+  const promotionData = data?.promotionProductInfos ?? [];
+
+  return (
+    <div className={styles.forwardListWrapper}>
+      {promotionData.map((cardData: GetPromotionResponseTypes) => (
+        <Card
+          key={cardData.productId}
+          size="l"
+          productId={cardData.productId}
+          imageUrl={cardData.productImage}
+          productName={cardData.productName}
+          discountRate={cardData.discountRate}
+          discountPrice={cardData.discountPrice}
+        />
+      ))}
+    </div>
   );
 };
 
