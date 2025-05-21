@@ -71,7 +71,6 @@ export const listWrapper = style({
 
 export const imgBanner = style({
   width: '100%',
-  height: '32rem',
   marginBottom: '6.6rem',
 });
 
