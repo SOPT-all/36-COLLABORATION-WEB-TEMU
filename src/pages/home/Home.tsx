@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import * as styles from '@/pages/home/Home.css';
 import { IcFlashBlack, IcChevronForwardBlack, IcArrowDownWhite } from '@svg/index';
 import ImgMainBanner from '@/../public/img/imgMainBanner.png';
@@ -10,13 +11,12 @@ import useFilterCard from '@pages/home/hooks/useFilterCard';
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
 import { useGetPromotionProductList } from '@api/queries';
 import type { GetPromotionResponseTypes } from './types/api';
+import CardSkeleton from '@shared/components/card/CardSkeleton';
 
 const Home = () => {
   const { selectedTag, filteredCards, handleTagClick } = useFilterCard();
-  const { data, isLoading, isError } = useGetPromotionProductList();
+  const { data } = useGetPromotionProductList();
 
-  if (isLoading) return <div>로딩 중...</div>;
-  if (isError) return <div>데이터를 불러오는 데 실패했습니다.</div>;
   const promotionData = data?.promotionProductInfos ?? [];
   return (
     <>
@@ -35,19 +35,29 @@ const Home = () => {
               서둘러 주세요! 혜택가로 인기 상품을 놓치지 말고 구매하세요
             </Text>
           </div>
-          <div className={styles.forwardListWrapper}>
-            {promotionData.map((cardData: GetPromotionResponseTypes) => (
-              <Card
-                key={cardData.productId}
-                size="l"
-                productId={cardData.productId}
-                imageUrl={cardData.productImage}
-                productName={cardData.productName}
-                discountRate={cardData.discountRate}
-                discountPrice={cardData.discountPrice}
-              />
-            ))}
-          </div>
+          <Suspense
+            fallback={
+              <>
+                {[...Array(5)].map((_, i) => (
+                  <CardSkeleton key={i} size="l" />
+                ))}
+              </>
+            }
+          >
+            <div className={styles.forwardListWrapper}>
+              {promotionData.map((cardData: GetPromotionResponseTypes) => (
+                <Card
+                  key={cardData.productId}
+                  size="l"
+                  productId={cardData.productId}
+                  imageUrl={cardData.productImage}
+                  productName={cardData.productName}
+                  discountRate={cardData.discountRate}
+                  discountPrice={cardData.discountPrice}
+                />
+              ))}
+            </div>
+          </Suspense>
         </section>
         <section className={styles.sectionBanner}>
           <img src={ImgMainBanner} className={styles.imgMainBanner} />
@@ -62,21 +72,31 @@ const Home = () => {
           </div>
 
           <Tag selectedTag={selectedTag} handleTagClick={handleTagClick} />
-          <div className={styles.listWrapper}>
-            {filteredCards.map(cardData => (
-              <Card
-                key={cardData.productId}
-                size="xl"
-                productId={cardData.productId}
-                imageUrl={cardData.productImage}
-                productName={cardData.productName}
-                discountRate={cardData.discountRate}
-                discountPrice={cardData.discountPrice}
-                reviewCount={cardData.reviewCount}
-                productTag={cardData.productTag}
-              />
-            ))}
-          </div>
+          <Suspense
+            fallback={
+              <div className={styles.listWrapper}>
+                {[...Array(6)].map((_, i) => (
+                  <CardSkeleton key={i} size="xl" />
+                ))}
+              </div>
+            }
+          >
+            <div className={styles.listWrapper}>
+              {filteredCards.map(cardData => (
+                <Card
+                  key={cardData.productId}
+                  size="xl"
+                  productId={cardData.productId}
+                  imageUrl={cardData.productImage}
+                  productName={cardData.productName}
+                  discountRate={cardData.discountRate}
+                  discountPrice={cardData.discountPrice}
+                  reviewCount={cardData.reviewCount}
+                  productTag={cardData.productTag}
+                />
+              ))}
+            </div>
+          </Suspense>
         </section>
 
         <section className={styles.sectionBtn}>
