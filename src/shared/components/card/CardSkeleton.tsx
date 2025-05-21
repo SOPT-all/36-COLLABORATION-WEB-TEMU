@@ -1,4 +1,4 @@
-import * as styles from './Card.css';
+import * as styles from './CardSkeleton.css';
 
 interface CardSkeletonProps {
   size?: 'l' | 'xl';
@@ -12,32 +12,17 @@ const skeletonStyle = {
 
 const CardSkeleton = ({ size = 'l' }: CardSkeletonProps) => (
   <div className={styles.cardWrapper({ size })}>
-    <div className={styles.cardImg({ size })} style={skeletonStyle} />
+    <div className={styles.cardImg({ size })} />
     <div className={styles.cardDescription({ size })}>
-      <div
-        className={styles.cardTitle}
-        style={{ ...skeletonStyle, height: 24, width: '70%', marginBottom: 8 }}
-      />
+      <div className={styles.cardTitle} />
       <div className={styles.cardPriceRow}>
-        <div
-          className={styles.priceWrapper}
-          style={{ ...skeletonStyle, height: 20, width: '50%' }}
-        />
-        <div
-          className={styles.cartButton}
-          style={{ ...skeletonStyle, height: 24, width: 24, border: 'none' }}
-        />
+        <div className={styles.priceWrapper} />
+        <div className={styles.cartButton} />
       </div>
       {size === 'xl' && (
         <>
-          <div
-            className={styles.cardReviewRow}
-            style={{ ...skeletonStyle, height: 18, width: '40%', margin: '8px 0' }}
-          />
-          <div
-            className={styles.cardProductTageRow}
-            style={{ ...skeletonStyle, height: 18, width: '60%' }}
-          />
+          <div className={styles.cardReviewRow} />
+          <div className={styles.cardProductTageRow} />
         </>
       )}
     </div>
