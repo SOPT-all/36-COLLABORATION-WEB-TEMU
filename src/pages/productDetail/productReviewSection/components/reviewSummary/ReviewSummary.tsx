@@ -3,16 +3,22 @@ import * as styles from '@pages/productDetail/productReviewSection/components/re
 import Divider from '@shared/components/divider/Divider';
 import IcStar45 from '@svg/ic_star_4_5_sm.svg?react';
 import Head from '@shared/components/head/Head';
-import type { ReviewResponseTypes } from '@pages/productDetail/productReviewSection/types/reviews';
-import IcDetailReviewGraph from '@svg/ic_detail_review_graph.svg?react';
-import { REVIEW_CHART_DATA } from '@pages/productDetail/productReviewSection/constants/SUMMARY_SECTION';
+import type {
+  ReviewResponseTypes,
+  ReviewScoreDistributionResponseTypes,
+} from '@pages/productDetail/productReviewSection/types/reviews';
 
 interface ReviewSummaryProps {
   avgScore: number;
   productReviewDetails: ReviewResponseTypes[];
+  reviewScoreDistributions: ReviewScoreDistributionResponseTypes[];
 }
 
-const ReviewSummary = ({ avgScore, productReviewDetails }: ReviewSummaryProps) => {
+const ReviewSummary = ({
+  avgScore,
+  productReviewDetails,
+  reviewScoreDistributions,
+}: ReviewSummaryProps) => {
   return (
     <>
       <div className={styles.reviewTitle}>
@@ -21,29 +27,43 @@ const ReviewSummary = ({ avgScore, productReviewDetails }: ReviewSummaryProps) =
         </Head>
         <Divider color="gray2" direction="horizontal" />
       </div>
+
       <div className={styles.rateContainer}>
         <div className={styles.rateContainerLeft}>
           <div className={styles.reviewAverage}>
-            <Text tag="head_bold_60">{avgScore}</Text>
+            <Text tag="head_bold_60">{avgScore.toFixed(1)}</Text>
             <IcStar45 width={168} height={32} />
           </div>
           <Divider direction="vertical" />
         </div>
+
         <div className={styles.rateContainerRight}>
           <div className={styles.scoreNPercent}>
-            {REVIEW_CHART_DATA.map(({ score }) => (
+            {reviewScoreDistributions.map(({ score }) => (
               <Text key={score} tag="body_medium_18">
                 {score}점
               </Text>
             ))}
           </div>
-          <div>
-            <IcDetailReviewGraph width={491} height={161} />
+
+          <div className={styles.graphWrapper}>
+            {reviewScoreDistributions.map(({ score, percentage }) => {
+              const isZero = percentage === 0;
+              return (
+                <div key={score} className={styles.barBackground}>
+                  <div
+                    className={styles.barFill({ isZero })}
+                    style={isZero ? undefined : { width: `${percentage}%` }}
+                  />
+                </div>
+              );
+            })}
           </div>
+
           <div className={styles.scoreNPercent}>
-            {REVIEW_CHART_DATA.map(({ score, percent }) => (
+            {reviewScoreDistributions.map(({ score, percentage }) => (
               <Text key={score} tag="body_medium_18">
-                {percent}
+                {percentage}%
               </Text>
             ))}
           </div>

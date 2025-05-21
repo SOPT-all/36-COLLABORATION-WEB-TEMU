@@ -33,7 +33,11 @@ const ProductReviewSection = () => {
 
   return (
     <div className={styles.container}>
-      <ReviewSummary avgScore={avgScore} productReviewDetails={productReviewDetails} />
+      <ReviewSummary
+        avgScore={avgScore}
+        productReviewDetails={productReviewDetails}
+        reviewScoreDistributions={reviewScoreDistributions}
+      />
       <Divider color="gray2" direction="horizontal" />
 
       <ReviewPhoto reviewImages={reviewImages} />
