@@ -20,7 +20,7 @@ export const tag = recipe({
     width: '9.4rem',
     minHeight: '9.2rem',
     padding: '1.6rem',
-    borderRadius: '0.4rem',
+    borderRadius: '4px',
 
     background: vars.color.gray0,
 
