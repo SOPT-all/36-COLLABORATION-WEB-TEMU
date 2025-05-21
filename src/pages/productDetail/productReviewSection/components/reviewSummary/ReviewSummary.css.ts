@@ -9,6 +9,7 @@ export const reviewTitle = style({
 export const rateContainer = style({
   display: 'flex',
   padding: '3.6rem 9.2rem',
+  justifyContent: 'center',
 });
 
 export const rateContainerLeft = style({

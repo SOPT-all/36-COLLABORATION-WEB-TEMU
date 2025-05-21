@@ -58,3 +58,8 @@ export const moreButtonWrapper = style({
   justifyContent: 'center',
   zIndex: vars.zIndex.category,
 });
+
+export const reviewWrapper = style({
+  display: 'flex',
+  justifyContent: 'center',
+});

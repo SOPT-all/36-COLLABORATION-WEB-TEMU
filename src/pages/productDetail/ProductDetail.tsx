@@ -71,7 +71,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
-      <div id="review">
+      <div id="review" className={styles.reviewWrapper}>
         <ProductReviewSection />
       </div>
     </div>
