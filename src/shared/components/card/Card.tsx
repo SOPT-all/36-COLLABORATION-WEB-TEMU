@@ -26,7 +26,9 @@ const Card = ({
 }: CardProps) => {
   const navigate = useNavigate();
   const handleCardClick = () => {
-    navigate(`/products/${productId}`);
+    if (productId) {
+      navigate(`/products/${productId}`);
+    }
   };
   return (
     <div className={styles.cardWrapper({ size })} onClick={handleCardClick}>
@@ -36,7 +38,7 @@ const Card = ({
         <div className={styles.cardPriceRow}>
           <div className={styles.priceWrapper}>
             <span className={styles.cardDiscount}>{discountRate}%</span>
-            <span className={styles.cardPrice}>{discountPrice}원</span>
+            <span className={styles.cardPrice}>{discountPrice.toLocaleString()}원</span>
           </div>
           <button type="button" className={styles.cartButton}>
             <IcCartBlack width={'2.4rem'} height={'2.4rem'} />
