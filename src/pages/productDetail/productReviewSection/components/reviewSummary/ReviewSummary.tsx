@@ -37,7 +37,7 @@ const ReviewSummary = ({ avgScore, productReviewDetails }: ReviewSummaryProps) =
               </Text>
             ))}
           </div>
-          <div className={styles.graph}>
+          <div>
             <IcDetailReviewGraph width={491} height={161} />
           </div>
           <div className={styles.scoreNPercent}>
