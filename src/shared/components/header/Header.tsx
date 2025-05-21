@@ -56,7 +56,9 @@ const Header = () => {
               placeholder={PLACEHOLDER}
               className={styles.input}
             ></input>
-            <IcSearch width="2.4rem" height="2.4rem" />
+            <button type='button' onClick={handleSearch}>
+              <IcSearch width="2.4rem" height="2.4rem" />
+            </button>
           </div>
         </div>
         <div className={styles.rightWrapper}>
