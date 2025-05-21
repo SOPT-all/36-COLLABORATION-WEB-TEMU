@@ -7,4 +7,6 @@ export const getProductDetail = (productId: number) =>
   get<ProductDetailResponseTypes>(END_URL.GET_PRODUCTS_DETAIL(productId));
 
 export const getSearchedProductList = (keyword: string) =>
-  get<ProductListResponseTypes>(`${END_URL.GET_PRODUCTS_SEARCH}?keyword=${encodeURIComponent(keyword)}`);
+  get<ProductListResponseTypes>(
+    `${END_URL.GET_PRODUCTS_SEARCH}?keyword=${encodeURIComponent(keyword)}`
+  );
