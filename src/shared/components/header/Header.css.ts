@@ -6,8 +6,7 @@ export const container = style({
   top: 0,
 
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   padding: '4.8rem 14rem 0.6rem 14rem',
 
   backgroundColor: vars.color.white,
@@ -20,6 +19,14 @@ export const container = style({
   },
 
   zIndex: vars.zIndex.header,
+});
+
+export const headerWrapper = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+
+  width: '108.6rem',
 });
 
 export const leftWrapper = style({

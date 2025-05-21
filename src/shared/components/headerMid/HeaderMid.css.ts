@@ -38,7 +38,7 @@ export const categoryWrapper = style({
   alignItems: 'center',
   justifyContent: 'space-between',
 
-  width: '100%',
+  width: '108.6rem',
   padding: '0.7rem 0rem',
 });
 

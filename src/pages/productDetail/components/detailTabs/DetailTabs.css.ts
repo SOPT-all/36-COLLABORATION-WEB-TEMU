@@ -4,7 +4,7 @@ import { recipe } from '@vanilla-extract/recipes';
 
 export const detailTabsContainer = style({
   display: 'flex',
-  width: '100%',
+  width: '108.6rem',
 });
 
 export const detailTabsWrapper = recipe({

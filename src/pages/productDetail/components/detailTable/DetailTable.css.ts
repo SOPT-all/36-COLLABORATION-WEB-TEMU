@@ -2,7 +2,7 @@ import { vars } from '@shared/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
 export const tableContainer = style({
-  width: '100%',
+  width: '108.6rem',
 
   ...vars.font.body_medium_16,
   color: vars.color.gray8,
