@@ -9,7 +9,6 @@ import Card from '@shared/components/card/Card';
 import { dummyCardsL } from '@/pages/home/mockHomeData';
 import useFilterCard from '@pages/home/hooks/useFilterCard';
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
-import CardSkeleton from '@shared/components/card/CardSkeleton';
 
 const Home = () => {
   const { selectedTag, filteredCards, handleTagClick } = useFilterCard();
@@ -83,8 +82,6 @@ const Home = () => {
             fontSize="sm"
             icon={<IcArrowDownWhite />}
           />
-          <CardSkeleton size="xl" />
-          <CardSkeleton size="l" />
         </section>
       </div>
     </>
