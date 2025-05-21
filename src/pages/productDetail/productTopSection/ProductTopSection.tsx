@@ -20,7 +20,7 @@ const ProductTopSection = ({ restData }: ProductTopSectionProps) => {
     productColors,
   } = restData;
   return (
-    <>
+    <div className={styles.container}>
       <section className={styles.productTopSection}>
         <div className={styles.productTopContainer}>
           <ProductImageGallery productImages={productImages} />
@@ -33,10 +33,12 @@ const ProductTopSection = ({ restData }: ProductTopSectionProps) => {
             productColors={productColors}
           />
         </div>
-        <Divider direction="horizontal" />
       </section>
-      <RecommendProducts />
-    </>
+      <div className={styles.wrapper}>
+        <Divider direction="horizontal" />
+        <RecommendProducts />
+      </div>
+    </div>
   );
 };
 
