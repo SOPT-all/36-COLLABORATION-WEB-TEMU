@@ -50,7 +50,7 @@ const Card = ({
               <IcReviewBlack width={'1.6rem'} height={'1.6rem'} />
               <div className={styles.review}>{reviewCount}</div>
             </div>
-            {size === 'xl' && productTag && productTag !== 'NONE' && (
+            {productTag && productTag !== 'NONE' && (
               <div className={styles.cardProductTageRow}>
                 {PRODUCT_TAGS[productTag]?.icon}
                 <span>{PRODUCT_TAGS[productTag]?.text}</span>
