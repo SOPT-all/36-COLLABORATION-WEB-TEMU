@@ -27,3 +27,5 @@ export const PURCHASE_TOTAL_PRISE = {
   text: '총 금액',
   price: 9900,
 };
+
+export const PURCHASE_QUANTIES = [1, 2, 3, 4, 5] as const;
