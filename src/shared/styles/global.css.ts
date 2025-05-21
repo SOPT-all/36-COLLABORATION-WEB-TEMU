@@ -4,6 +4,7 @@ import '@styles/reset.css';
 
 globalStyle('html', {
   fontSize: '62.5%',
+  scrollPaddingTop: '7rem',
 });
 
 globalStyle('body', {

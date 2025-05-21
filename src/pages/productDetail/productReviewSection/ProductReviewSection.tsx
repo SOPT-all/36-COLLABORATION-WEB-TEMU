@@ -19,7 +19,7 @@ const ProductReviewSection = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <ReviewSummary avgScore={avgScore} productReviewDetails={productReviewDetails} />
       <Divider color="gray2" direction="horizontal" />
 

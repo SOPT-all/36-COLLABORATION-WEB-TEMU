@@ -8,6 +8,7 @@ interface ProductActionButtonProps {
   radius?: 'sm' | 'md' | 'lg';
   fontSize?: 'sm' | 'lg';
   icon?: ReactNode;
+  onClick?: () => void;
 }
 
 const ProductActionButton = ({
@@ -17,6 +18,7 @@ const ProductActionButton = ({
   radius = 'sm',
   fontSize = 'lg',
   icon,
+  onClick,
 }: ProductActionButtonProps) => {
   return (
     <button
@@ -26,6 +28,7 @@ const ProductActionButton = ({
     ${styles.buttonFontSize[fontSize]}
     `}
       type="button"
+      onClick={onClick}
     >
       <span>{text}</span>
       {icon && <span className={styles.icon}>{icon}</span>}

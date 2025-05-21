@@ -8,6 +8,7 @@ export const container = style({
 
 export const wrapper = style({
   display: 'flex',
+  justifyContent: 'space-between',
 });
 
 export const leftWrapper = style({

@@ -5,6 +5,7 @@ export const galleryContainer = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '2.8rem',
+  width: '55.2rem',
 });
 
 export const galleryItem = style({
