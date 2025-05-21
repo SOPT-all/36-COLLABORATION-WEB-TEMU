@@ -52,6 +52,7 @@ const Header = () => {
               type="text"
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
+              onKeyDown={handleKeyDown}
               placeholder={PLACEHOLDER}
               className={styles.input}
             ></input>
