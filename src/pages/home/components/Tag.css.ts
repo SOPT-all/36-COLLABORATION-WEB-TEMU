@@ -16,16 +16,19 @@ export const tag = recipe({
     justifyContent: 'center',
     alignItems: 'center',
     gap: '0.4rem',
-    flexShrink: 0,
 
     width: '9.4rem',
-    height: '9.2rem',
+    minHeight: '9.2rem',
     padding: '1.6rem',
     borderRadius: '0.4rem',
 
     background: vars.color.gray0,
 
     cursor: 'pointer',
+    textAlign: 'center',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   },
   variants: {
     selected: {

@@ -66,7 +66,7 @@ globalStyle('a, button', {
  * 리스트 스타일 제거 (불릿/넘버)
  * Remove list styles (bullets/numbers)
  */
-globalStyle('ol, ul, menu, summary', {
+globalStyle('ol, ul, li, menu, summary', {
   '@layer': {
     [layers.reset]: {
       listStyle: 'none',

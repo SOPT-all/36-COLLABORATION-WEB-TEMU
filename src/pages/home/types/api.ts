@@ -1,19 +1,20 @@
+import type { Category } from '@/pages/home/components/constant/categorys';
+
 export interface GetPromotionResponseTypes {
-  size: 'l';
-  repurchase: boolean;
-  imageUrl: string;
+  productId: number;
   productName: string;
   discountRate: number;
   discountPrice: number;
-  reviewCount: number;
+  productImage: string;
 }
 
 export interface GetProductsResponseTypes {
-  size: 'xl';
-  repurchase: boolean;
-  imageUrl: string;
+  productId: number;
   productName: string;
   discountRate: number;
   discountPrice: number;
+  productImage: string;
   reviewCount: number;
+  productTag: string;
+  categoryList: Category[];
 }
