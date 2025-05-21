@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import * as styles from '@pages/productDetail/productTopSection/components/productPurchasePanel/ProductPurchasePanel.css';
 import Text from '@shared/components/text/Text';
 import {
@@ -20,7 +21,6 @@ import BestSeller from '@pages/productDetail/productTopSection/components/bestSe
 import Divider from '@shared/components/divider/Divider';
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
 import Head from '@shared/components/head/Head';
-import { useState } from 'react';
 
 interface ProductPurchasePanelProps {
   company: string;
