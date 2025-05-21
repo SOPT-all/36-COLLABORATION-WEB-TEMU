@@ -1,39 +1,26 @@
 import * as styles from './CardSkeleton.css';
+import clsx from 'clsx';
 
 interface CardSkeletonProps {
   size?: 'l' | 'xl';
 }
 
-const skeletonStyle = {
-  background: 'linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%)',
-  backgroundSize: '200% 100%',
-  animation: 'skeleton 2.8s infinite ease-in-out',
-};
-
 const CardSkeleton = ({ size = 'l' }: CardSkeletonProps) => (
   <div className={styles.cardWrapper({ size })}>
-    <div className={styles.cardImg({ size })} />
+    <div className={clsx(styles.cardImg({ size }), styles.shimmerImgEffect)} />
     <div className={styles.cardDescription({ size })}>
-      <div className={styles.cardTitle} />
+      <div className={clsx(styles.cardTitle, styles.shimmerEffect)} />
       <div className={styles.cardPriceRow}>
-        <div className={styles.priceWrapper} />
-        <div className={styles.cartButton} />
+        <div className={clsx(styles.priceWrapper, styles.shimmerEffect)} />
+        <div className={clsx(styles.cartButton, styles.shimmerEffect)} />
       </div>
       {size === 'xl' && (
         <>
-          <div className={styles.cardReviewRow} />
-          <div className={styles.cardProductTageRow} />
+          <div className={clsx(styles.cardReviewRow, styles.shimmerEffect)} />
+          <div className={clsx(styles.cardProductTageRow, styles.shimmerEffect)} />
         </>
       )}
     </div>
-    <style>
-      {`
-        @keyframes skeleton {
-          0% { background-position: -200px 0; }
-          100% { background-position: calc(200px + 100%) 0; }
-        }
-      `}
-    </style>
   </div>
 );
 
