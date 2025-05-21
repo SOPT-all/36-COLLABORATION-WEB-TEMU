@@ -76,9 +76,10 @@ export const cardTitle = style({
   color: vars.color.gray8,
   ...vars.font.caption_regular_13,
 
-  whiteSpace: 'nowrap',
+  display: '-webkit-box',
+  WebkitLineClamp: 3, // 줄 수 제한
+  WebkitBoxOrient: 'vertical',
   overflow: 'hidden',
-  textOverflow: 'ellipsis',
 });
 
 // 가격/장바구니 라인
