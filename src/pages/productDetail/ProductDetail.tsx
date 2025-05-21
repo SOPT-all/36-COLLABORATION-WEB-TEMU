@@ -8,10 +8,18 @@ import Head from '@shared/components/head/Head';
 import { IcArrowDownOrange } from '@svg/index';
 // 추후 api 연결 후 삭제 예정
 import { mockProductDetailData } from './constant/mockProductReviewData';
+import { mockDetailData } from '@pages/productDetail/productTopSection/constants/mockDetailData';
+import ProductTopSection from '@pages/productDetail/productTopSection/ProductTopSection';
 
 const ProductDetail = () => {
   const detailImgData = mockProductDetailData.productDetails;
   const [isExpanded, setIsExpanded] = useState(false);
+  const {
+    // productDetails: productDetails,
+    // reviewCount: reviewCount,
+    // productId: productId,
+    ...restData
+  } = mockDetailData;
 
   const handleTabClick = (key: string) => {
     const element = document.getElementById(key);
@@ -24,6 +32,7 @@ const ProductDetail = () => {
 
   return (
     <div className={styles.container}>
+      <ProductTopSection restData={restData} />
       <section className={styles.detailWrapper()}>
         <div className={styles.detailWrapper({ gap: 'm' })}>
           <DetailTabs onTabClick={handleTabClick} />
