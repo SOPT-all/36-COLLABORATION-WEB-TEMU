@@ -27,6 +27,7 @@ const Card = ({
   const navigate = useNavigate();
   const handleCardClick = () => {
     if (productId) {
+      window.scrollTo(0, 0);
       navigate(`/products/${productId}`);
     }
   };
