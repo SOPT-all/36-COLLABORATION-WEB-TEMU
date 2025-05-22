@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getProductDetail, getSearchedProductList } from '@api/api';
+import { getProductDetail, getSearchedProductList, getProductDetailReviewSection } from '@api/api';
 import { QUERY_KEYS } from '@/constant/queryKey';
 
 export const useGetProductDetail = (productId: number) => {
@@ -14,5 +14,13 @@ export const useGetSearchedProductList = (keyword: string) => {
     queryKey: [QUERY_KEYS.PRODUCTS_SEARCH, keyword],
     queryFn: () => getSearchedProductList(keyword),
     enabled: !!keyword,
+  });
+};
+
+export const useGetProductDetailReview = (productId: number) => {
+  return useQuery({
+    queryKey: [QUERY_KEYS.PRODUCTS_DETAIL_REVIEWS, productId],
+    queryFn: () => getProductDetailReviewSection(productId),
+    enabled: !!productId,
   });
 };

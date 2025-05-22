@@ -44,7 +44,6 @@ const Home = () => {
             ))}
           </div>
         </section>
-
         <section className={styles.sectionBanner}>
           <img src={ImgMainBanner} className={styles.imgMainBanner} />
         </section>
