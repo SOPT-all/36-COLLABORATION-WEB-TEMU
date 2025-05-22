@@ -1,6 +1,6 @@
 import { END_URL } from '@/constant/url';
 import { get } from '@api/instance';
-import type { PromotionProductListResponse } from '@pages/home/types/api';
+import type { PromotionProductListResponse, HomeProductListResponseTypes } from '@pages/home/types/response';
 import type { ProductDetailResponseTypes } from '@pages/productDetail/types/response';
 import type { ProductListResponseTypes } from '@pages/productList/types/response';
 import type { ProductReviewDetailResponseTypes } from '@pages/productDetail/productReviewSection/types/reviews';
@@ -13,7 +13,7 @@ export const getSearchedProductList = (keyword: string) =>
     `${END_URL.GET_PRODUCTS_SEARCH}?keyword=${encodeURIComponent(keyword)}`
   );
 
-export const getProductList = () => get<ProductListResponseTypes>(END_URL.GET_PRODUCT);
+export const getProductList = () => get<HomeProductListResponseTypes>(END_URL.GET_PRODUCT);
 
 export const getPromotionProductList = () =>
   get<PromotionProductListResponse>(END_URL.GET_PRODUCTS_PROMOTION);

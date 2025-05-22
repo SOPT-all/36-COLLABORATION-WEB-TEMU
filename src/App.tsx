@@ -9,10 +9,8 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />;
-      <div style={{ fontSize: '16px' }}>
-        <ReactQueryDevtools />
-      </div>
+      <RouterProvider router={router} />
+      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 };

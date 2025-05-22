@@ -12,7 +12,7 @@ const ProductList = () => {
   const keyword = searchParams.get('keyword') ?? '';
 
   const { data, isLoading, isError } = useGetSearchedProductList(keyword);
-  const productList = data?.productMainInfos ?? [];
+  const productList = data?.searchedProductList ?? [];
 
   const renderMessage = (message: string) => (
     <Text tag="body_bold_18" color="black" className={styles.messageWrapper}>
