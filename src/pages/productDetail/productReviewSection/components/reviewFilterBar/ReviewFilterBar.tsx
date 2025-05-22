@@ -47,8 +47,8 @@ const ReviewFilterBar = ({
           <select
             value={filterScore ?? ''}
             onChange={e => {
-              const v = e.target.value;
-              onChangeFilterScore(v === '' ? null : Number(v));
+              const value = e.target.value;
+              onChangeFilterScore(value === '' ? null : Number(value));
             }}
           >
             <option value="">별점</option>
