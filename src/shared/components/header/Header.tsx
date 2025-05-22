@@ -81,8 +81,8 @@ const Header = () => {
             </div>
           </div>
           <div className={styles.rightWrapper}>
-            <IcUser width="4rem" height="4rem" />
-            <IcCartBlack width="4rem" height="4rem" />
+            <IcUser className={styles.rightLogo} width="4rem" height="4rem" />
+            <IcCartBlack className={styles.rightLogo} width="4rem" height="4rem" />
           </div>
         </div>
       </header>
