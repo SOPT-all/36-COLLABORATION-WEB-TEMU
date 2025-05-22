@@ -29,6 +29,7 @@ const Header = () => {
 
   useEffect(() => {
     if (isSearchPage) {
+      window.scrollTo(0, 0);
       navigate(`/products?keyword=${encodeURIComponent(debouncedKeyword)}`);
     }
   }, [debouncedKeyword, isSearchPage, navigate]);
@@ -44,6 +45,7 @@ const Header = () => {
 
   const handleSearch = () => {
     if (!keyword.trim()) return;
+    window.scrollTo(0, 0);
     navigate(`/products?keyword=${encodeURIComponent(keyword)}`);
   };
 
