@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { IcCategory, IcLanguage, IcClose } from '@svg/index';
 import Text from '@shared/components/text/Text';
 import Divider from '@shared/components/divider/Divider';
@@ -8,6 +9,7 @@ import useOutsideClick from '@shared/hooks/useOutSideClick';
 
 const HeaderMid = () => {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+  const { pathname } = useLocation();
 
   const handleCategoryClick = () => {
     setIsCategoryOpen(prev => !prev);
@@ -16,6 +18,10 @@ const HeaderMid = () => {
   const ref = useOutsideClick(() => {
     setIsCategoryOpen(false);
   });
+
+  useEffect(() => {
+    setIsCategoryOpen(false);
+  }, [pathname]);
 
   const CategoryToggleIcon = isCategoryOpen ? (
     <IcClose width="3.2rem" height="3.2rem" onClick={handleCategoryClick} />
