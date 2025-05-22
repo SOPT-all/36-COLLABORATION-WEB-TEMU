@@ -91,7 +91,7 @@ const Home = () => {
 
 const PromotionCardList = () => {
   const { data } = useGetPromotionProductList();
-  const promotionData = data?.promotionProductInfos ?? [];
+  const promotionData = data?.promotionProductInfos.slice(0, 5) ?? [];
 
   return (
     <div className={styles.forwardListWrapper}>

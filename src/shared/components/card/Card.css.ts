@@ -77,7 +77,8 @@ export const cardTitle = style({
   ...vars.font.caption_regular_13,
 
   display: '-webkit-box',
-  WebkitLineClamp: 2, // 줄 수 제한
+  // 줄 수 제한
+  WebkitLineClamp: 2,
   WebkitBoxOrient: 'vertical',
   overflow: 'hidden',
 });
