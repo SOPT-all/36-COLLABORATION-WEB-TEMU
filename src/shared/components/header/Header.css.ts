@@ -12,13 +12,11 @@ export const container = style({
   backgroundColor: vars.color.white,
   transition: 'padding 0.3s ease-in-out',
 
-  selectors: {
-    '&.scrolled': {
-      padding: '0.3rem 14rem',
-    },
-  },
-
   zIndex: vars.zIndex.header,
+});
+
+export const scrolled = style({
+  padding: '0.3rem 14rem',
 });
 
 export const headerWrapper = style({
