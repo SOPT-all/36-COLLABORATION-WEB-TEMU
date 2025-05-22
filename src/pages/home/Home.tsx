@@ -7,11 +7,10 @@ import Banner from '@/../public/img/banner_familymonth.png';
 import Tag from '@/pages/home/components/Tag';
 import Text from '@shared/components/text/Text';
 import Card from '@shared/components/card/Card';
-import { useGetProductList } from '@api/queries';
+import { useGetProductList, useGetPromotionProductList } from '@api/queries';
 import useFilterCard from '@pages/home/hooks/useFilterCard';
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
-import { useGetPromotionProductList } from '@api/queries';
-import type { GetPromotionResponseTypes } from './types/api';
+import type { GetPromotionResponseTypes } from '@pages/home/types/api';
 import CardSkeleton from '@shared/components/card/CardSkeleton';
 import type { ProductCardData } from '@pages/productList/types/response';
 
