@@ -22,5 +22,5 @@ export const buttonWrapper = style({
 })
 
 export const messageWrapper = style({
-  paddingBottom: '18.8rem',
+  paddingBottom: '63.6rem',
 })
