@@ -24,6 +24,7 @@ const ProductTopSection = ({ restData }: ProductTopSectionProps) => {
     productImages,
     productColors,
   } = restData;
+
   return (
     <div className={styles.container}>
       <section className={styles.productTopSection}>

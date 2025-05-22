@@ -15,7 +15,7 @@ import {
   PURCHASE_PANEL_BENEFIT,
   PURCHASE_PANEL,
   PURCHASE_TOTAL_PRISE,
-  PURCHASE_QUANTIES,
+  PURCHASE_QUANTITIES,
 } from '@pages/productDetail/productTopSection/constants/PURCHASE_PANEL';
 import BestSeller from '@pages/productDetail/productTopSection/components/bestSeller/BestSeller';
 import Divider from '@shared/components/divider/Divider';
@@ -40,11 +40,21 @@ const ProductPurchasePanel = ({
   productColors,
 }: ProductPurchasePanelProps) => {
   const [quantity, setQuantity] = useState<number>(1);
-
+  const [selectColor, setSelectColor] = useState<string>('');
+  const [isSelected, setIsSelected] = useState<boolean>(false);
   const totalPrice = discountPrice * quantity;
 
   const handleChangeQuantity = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setQuantity(Number(e.target.value));
+  };
+
+  const handleChangeColor = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectColor(e.target.value);
+    setIsSelected(true);
+  };
+
+  const handleButtonClick = () => {
+    isSelected ? '' : alert('색상을 선택해주세요.');
   };
 
   return (
@@ -158,9 +168,9 @@ const ProductPurchasePanel = ({
             색상
           </Text>
           <div className={styles.wrapper}>
-            <select className={styles.select} defaultValue="">
+            <select className={styles.select} value={selectColor} onChange={handleChangeColor}>
               <option value="" disabled>
-                색상을 선택하세요
+                색상을 선택하세요.
               </option>
               {productColors.map(color => (
                 <option key={color} value={color}>
@@ -177,7 +187,7 @@ const ProductPurchasePanel = ({
           </Text>
           <div className={styles.wrapper}>
             <select className={styles.select} value={quantity} onChange={handleChangeQuantity}>
-              {PURCHASE_QUANTIES.map(num => (
+              {PURCHASE_QUANTITIES.map(num => (
                 <option key={num} value={num}>
                   {num}개
                 </option>
@@ -206,7 +216,14 @@ const ProductPurchasePanel = ({
           radius="sm"
           fontSize="lg"
         />
-        <ProductActionButton text="구매하기" variant="solid" size="lg" radius="sm" fontSize="lg" />
+        <ProductActionButton
+          text="구매하기"
+          variant="solid"
+          size="lg"
+          radius="sm"
+          fontSize="lg"
+          onClick={handleButtonClick}
+        />
       </div>
     </section>
   );
