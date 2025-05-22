@@ -5,7 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
 
-const { browser: browerGlobals, node: nodeGlobals } = globals;
+const { browser: browserGlobals, node: nodeGlobals } = globals;
 
 export default tseslint.config(
   { ignores: ['dist', 'node_modules', 'build', '*.config.js', '*min.js'] },
@@ -15,8 +15,11 @@ export default tseslint.config(
     languageOptions: {
       ecmaVersion: 2020,
       globals: {
-        ...browerGlobals, // window, document 등 브라우저 전역
-        ...nodeGlobals, // require, process 등 Node 전역
+        ...browserGlobals,
+        ...nodeGlobals,
+        IntersectionObserver: 'readonly',
+        IntersectionObserverInit: 'readonly',
+        IntersectionObserverEntry: 'readonly',
       },
     },
     plugins: {

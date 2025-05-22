@@ -1,5 +1,4 @@
-import type { MutableRefObject } from 'react';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type MutableRefObject } from 'react';
 
 export const useIntersect = (
   initialVisible: boolean,
