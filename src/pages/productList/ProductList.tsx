@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useGetSearchedProductList } from '@api/queries';
 import * as styles from '@pages/productList/ProductList.css';
@@ -10,9 +11,17 @@ import * as Icons from '@svg/index';
 const ProductList = () => {
   const [searchParams] = useSearchParams();
   const keyword = searchParams.get('keyword') ?? '';
-
   const { data, isLoading, isError } = useGetSearchedProductList(keyword);
   const productList = data?.productMainInfos ?? [];
+
+  const [visibleCount, setVisibleCount] = useState(9);
+  const visibleProducts = productList.slice(0, visibleCount);
+
+  const handleShowMore = () => {
+    setVisibleCount(prev => prev + 9);
+  };
+
+  const shouldShowMoreButton = productList.length > visibleCount;
 
   const renderMessage = (message: string) => (
     <Text tag="body_bold_18" color="black" className={styles.messageWrapper}>
@@ -21,7 +30,11 @@ const ProductList = () => {
   );
 
   return (
-    <div className={styles.container}>
+    <div className={
+      shouldShowMoreButton
+        ? styles.container
+        : styles.containerWithExtraMargin
+    }>
       <FilterButton />
       <div className={styles.listWrapper}>
         {isLoading && renderMessage('로딩 중...')}
@@ -33,7 +46,7 @@ const ProductList = () => {
 
         {!isLoading &&
           !isError &&
-          productList.map(product => (
+          visibleProducts.map(product => (
             <Card
               key={product.productId}
               size="xl"
@@ -48,7 +61,9 @@ const ProductList = () => {
           ))}
       </div>
 
-      {!isLoading && !isError && productList.length > 0 && (
+      {!isLoading &&
+       !isError &&
+       productList.length > visibleCount && (
         <div className={styles.buttonWrapper}>
           <ProductActionButton
             text="더보기"
@@ -57,6 +72,7 @@ const ProductList = () => {
             radius="lg"
             fontSize="sm"
             icon={<Icons.IcArrowDownWhite />}
+            onClick={handleShowMore}
           />
         </div>
       )}
