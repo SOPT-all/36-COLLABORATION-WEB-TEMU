@@ -74,11 +74,15 @@ export const listWrapper = style({
 export const imgBanner = style({
   width: '100%',
   marginBottom: '6.6rem',
+
+  cursor: 'pointer',
 });
 
 export const imgMainBanner = style({
   width: '108.6rem',
   height: '22.4rem',
+
+  cursor: 'pointer',
 });
 
 export const familyMonthTitle = style({
