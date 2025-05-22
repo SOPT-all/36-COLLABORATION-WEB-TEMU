@@ -8,6 +8,10 @@ export interface GetPromotionResponseTypes {
   productImage: string;
 }
 
+export interface PromotionProductListResponse {
+  promotionProductInfos: GetPromotionResponseTypes[];
+}
+
 export interface GetProductsResponseTypes {
   productId: number;
   productName: string;

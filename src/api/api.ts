@@ -1,5 +1,6 @@
 import { END_URL } from '@/constant/url';
 import { get } from '@api/instance';
+import type { PromotionProductListResponse } from '@pages/home/types/api';
 import type { ProductDetailResponseTypes } from '@pages/productDetail/types/response';
 import type { ProductListResponseTypes } from '@pages/productList/types/response';
 import type { ProductReviewDetailResponseTypes } from '@pages/productDetail/productReviewSection/types/reviews';
@@ -12,5 +13,9 @@ export const getSearchedProductList = (keyword: string) =>
     `${END_URL.GET_PRODUCTS_SEARCH}?keyword=${encodeURIComponent(keyword)}`
   );
 
+export const getPromotionProductList = () =>
+  get<PromotionProductListResponse>(END_URL.GET_PRODUCTS_PROMOTION);
+
 export const getProductDetailReviewSection = (productId: number) =>
   get<ProductReviewDetailResponseTypes>(END_URL.GET_PRODUCTS_DETAIL_REVIEWS(productId));
+
