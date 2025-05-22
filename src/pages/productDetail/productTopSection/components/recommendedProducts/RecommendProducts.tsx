@@ -2,7 +2,7 @@ import * as styles from '@pages/productDetail/productTopSection/components/recom
 import Head from '@shared/components/head/Head';
 import Card from '@shared/components/card/Card';
 import { useGetPromotionProductList } from '@api/queries';
-import type { GetPromotionResponseTypes } from '@pages/home/types/api';
+import type { GetPromotionResponseTypes } from '@pages/home/types/response';
 
 const RecommendedProducts = () => {
   const { data } = useGetPromotionProductList();

@@ -6,11 +6,10 @@ export interface ProductCardData {
   productImage: string;
   reviewCount: number;
   productTag: string;
-  categoryList: string[];
 }
 
 export interface ProductListResponseTypes {
-  productMainInfos: ProductCardData[];
+  searchedProductList: ProductCardData[];
   success: boolean;
   code: number;
   message: string;
