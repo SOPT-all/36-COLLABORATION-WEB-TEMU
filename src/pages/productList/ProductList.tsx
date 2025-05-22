@@ -12,7 +12,7 @@ const ProductList = () => {
   const [searchParams] = useSearchParams();
   const keyword = searchParams.get('keyword') ?? '';
   const { data, isLoading, isError } = useGetSearchedProductList(keyword);
-  const productList = data?.productMainInfos ?? [];
+  const productList = data?.searchedProductList ?? [];
 
   const [visibleCount, setVisibleCount] = useState(9);
   const visibleProducts = productList.slice(0, visibleCount);
