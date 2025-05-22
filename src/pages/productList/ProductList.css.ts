@@ -11,7 +11,8 @@ export const container = style ({
 
 export const listWrapper = style({
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(30rem, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(30rem, auto))',
+  justifyContent: 'flex-start',
   gap: '3.6rem 1.9rem',
 });
 
