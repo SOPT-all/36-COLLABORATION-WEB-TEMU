@@ -36,7 +36,10 @@ const Header = () => {
   }, [debouncedKeyword, isSearchPage, navigate]);
 
   useEffect(() => {
-    if (location.pathname !== '/products') {
+    const isProductSearchPage = location.pathname === '/products';
+    const isProductDetailPage = /^\/products\/\d+$/.test(location.pathname);
+
+    if (!isProductSearchPage && !isProductDetailPage) {
       setKeyword('');
     }
   }, [location.pathname]);
