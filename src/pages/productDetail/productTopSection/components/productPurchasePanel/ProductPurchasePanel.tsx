@@ -53,9 +53,7 @@ const ProductPurchasePanel = ({
     setIsSelected(true);
   };
 
-  const handleButtonClick = () => {
-    !isSelected && alert('색상을 선택해주세요.');
-  };
+  const handleButtonClick = () => (isSelected ? undefined : alert('색상을 선택해주세요.'));
 
   return (
     <section className={styles.container}>
