@@ -32,3 +32,7 @@ export const galleryImage = recipe({
     selected: false,
   },
 });
+
+export const image = style({
+  display: 'block',
+});

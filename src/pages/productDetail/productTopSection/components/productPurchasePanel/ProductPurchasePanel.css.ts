@@ -32,9 +32,12 @@ export const category = style({
 
 export const smallCategory = style({
   display: 'flex',
+
   gap: '0.2rem',
   alignItems: 'center',
   justifyContent: 'center',
+
+  cursor: 'pointer',
 });
 
 export const discount = style({
@@ -164,6 +167,8 @@ export const select = style({
 
   ...vars.font.body_medium_16,
   color: vars.color.gray6,
+
+  cursor: 'pointer',
 });
 
 export const icon = style({
