@@ -10,7 +10,7 @@ import useDebounce from '@shared/hooks/useDebounce';
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const isSearchPage = location.pathname === '/products';
+  const isSearchPage = location.pathname === ROUTES.PRODUCT_LIST;
   const [keyword, setKeyword] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
   const debounced = useDebounce(keyword, 300);
@@ -36,7 +36,7 @@ const Header = () => {
   }, [debouncedKeyword, isSearchPage, navigate]);
 
   useEffect(() => {
-    const isProductSearchPage = location.pathname === '/products';
+    const isProductSearchPage = location.pathname === ROUTES.PRODUCT_LIST;
     const isProductDetailPage = /^\/products\/\d+$/.test(location.pathname);
 
     if (!isProductSearchPage && !isProductDetailPage) {
