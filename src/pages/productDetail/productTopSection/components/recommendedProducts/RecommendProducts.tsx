@@ -1,23 +1,28 @@
 import * as styles from '@pages/productDetail/productTopSection/components/recommendedProducts/RecommendProducts.css';
 import Head from '@shared/components/head/Head';
 import Card from '@shared/components/card/Card';
-import { mockRecommendData } from '@pages/productDetail/productTopSection/constants/mockRecommendData';
+import { useGetPromotionProductList } from '@api/queries';
+import type { GetPromotionResponseTypes } from '@pages/home/types/api';
 
 const RecommendedProducts = () => {
+  const { data } = useGetPromotionProductList();
+  const promotionData = data?.promotionProductInfos.slice(0, 5) ?? [];
+
   return (
     <div className={styles.container}>
       <Head level="h2" tag="head_bold_24" color="black">
         함께 구매하면 좋은 상품
       </Head>
       <div className={styles.productListContainer}>
-        {mockRecommendData.map(({ productName, discountPrice, imageUrl, discountRate }) => (
+        {promotionData.map((cardData: GetPromotionResponseTypes) => (
           <Card
-            key={productName}
+            key={cardData.productId}
             size="l"
-            productName={productName}
-            discountPrice={discountPrice}
-            imageUrl={imageUrl}
-            discountRate={discountRate}
+            productId={cardData.productId}
+            imageUrl={cardData.productImage}
+            productName={cardData.productName}
+            discountRate={cardData.discountRate}
+            discountPrice={cardData.discountPrice}
           />
         ))}
       </div>
