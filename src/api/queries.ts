@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useSuspenseQuery } from '@tanstack/react-query';
 import { getProductDetail, getSearchedProductList, getProductList } from '@api/api';
 import { QUERY_KEYS } from '@/constant/queryKey';
 import type { ProductListResponseTypes } from '@/pages/productList/types/response';
@@ -19,7 +19,7 @@ export const useGetSearchedProductList = (keyword: string) => {
 };
 
 export const useGetProductList = () => {
-  return useQuery<ProductListResponseTypes, Error>({
+  return useSuspenseQuery<ProductListResponseTypes, Error>({
     queryKey: [QUERY_KEYS.PRODUCTS],
     queryFn: () => getProductList(),
   });

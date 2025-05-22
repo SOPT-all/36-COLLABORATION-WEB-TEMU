@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, Suspense } from 'react';
 import * as styles from '@/pages/home/Home.css';
 import { IcFlashBlack, IcChevronForwardBlack, IcArrowDownWhite } from '@svg/index';
 import ImgMainBanner from '@/../public/img/imgMainBanner.png';
@@ -7,19 +7,58 @@ import Banner from '@/../public/img/banner_familymonth.png';
 import Tag from '@/pages/home/components/Tag';
 import Text from '@shared/components/text/Text';
 import Card from '@shared/components/card/Card';
-import { dummyCardsL } from '@/pages/home/mockHomeData';
-import useFilterCard from '@pages/home/hooks/useFilterCard';
+import CardSkeleton from '@shared/components/card/CardSkeleton';
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
 import { useGetProductList } from '@api/queries';
+import { dummyCardsL } from '@/pages/home/mockHomeData';
+import useFilterCard from '@pages/home/hooks/useFilterCard';
 import type { ProductCardData } from '@/pages/productList/types/response';
 
-const Home = () => {
-  const {
-    data: productListData,
-    isLoading: isProductListLoading,
-    isError: isProductListError,
-  } = useGetProductList();
+const ProductCardListContent = ({
+  filteredCards,
+  visibleCount,
+  onClickMore,
+}: {
+  filteredCards: ProductCardData[];
+  visibleCount: number;
+  onClickMore: () => void;
+}) => {
+  return (
+    <>
+      <div className={styles.listWrapper}>
+        {filteredCards.slice(0, visibleCount).map(product => (
+          <Card
+            key={product.productId}
+            size="xl"
+            productId={product.productId}
+            imageUrl={product.productImage}
+            productName={product.productName}
+            discountRate={product.discountRate}
+            discountPrice={product.discountPrice}
+            reviewCount={product.reviewCount}
+            productTag={product.productTag}
+          />
+        ))}
+      </div>
 
+      {visibleCount < filteredCards.length && (
+        <section className={styles.sectionBtn}>
+          <ProductActionButton
+            text="더보기"
+            size="sm"
+            radius="md"
+            fontSize="sm"
+            icon={<IcArrowDownWhite />}
+            onClick={onClickMore}
+          />
+        </section>
+      )}
+    </>
+  );
+};
+
+const ProductCardListSection = () => {
+  const { data: productListData } = useGetProductList();
   const [visibleCount, setVisibleCount] = useState(9);
 
   const searchedList = useMemo(() => {
@@ -28,13 +67,32 @@ const Home = () => {
 
   const { selectedTag, filteredCards, handleTagClick } = useFilterCard({
     productList: searchedList,
-    isLoading: isProductListLoading,
+    isLoading: false,
   });
 
   const handleShowMore = () => {
     setVisibleCount(prev => prev + 9);
   };
 
+  return (
+    <>
+      <div className={styles.listTitleWrapper}>
+        <img src={FamilyMonthTitle} className={styles.familyMonthTitle} />
+        <Text tag="head_bold_24" color="black">
+          관심 상품 둘러보기
+        </Text>
+      </div>
+      <Tag selectedTag={selectedTag} handleTagClick={handleTagClick} />
+      <ProductCardListContent
+        filteredCards={filteredCards}
+        visibleCount={visibleCount}
+        onClickMore={handleShowMore}
+      />
+    </>
+  );
+};
+
+const Home = () => {
   return (
     <>
       <img src={Banner} alt="banner img" className={styles.imgBanner} />
@@ -66,48 +124,22 @@ const Home = () => {
             ))}
           </div>
         </section>
+
         <section className={styles.sectionBanner}>
           <img src={ImgMainBanner} className={styles.imgMainBanner} />
         </section>
-
         <section className={styles.sectionStyle}>
-          <div className={styles.listTitleWrapper}>
-            <img src={FamilyMonthTitle} className={styles.familyMonthTitle} />
-            <Text tag="head_bold_24" color="black">
-              관심 상품 둘러보기
-            </Text>
-          </div>
-          <Tag selectedTag={selectedTag} handleTagClick={handleTagClick} />
-          {!isProductListLoading && !isProductListError && (
-            <div className={styles.listWrapper}>
-              {filteredCards.slice(0, visibleCount).map((product: ProductCardData) => (
-                <Card
-                  key={product.productId}
-                  size="xl"
-                  productId={product.productId}
-                  imageUrl={product.productImage}
-                  productName={product.productName}
-                  discountRate={product.discountRate}
-                  discountPrice={product.discountPrice}
-                  reviewCount={product.reviewCount}
-                  productTag={product.productTag}
-                />
-              ))}
-            </div>
-          )}
-        </section>
-
-        <section className={styles.sectionBtn}>
-          {visibleCount < filteredCards.length && (
-            <ProductActionButton
-              text="더보기"
-              size="sm"
-              radius="md"
-              fontSize="sm"
-              icon={<IcArrowDownWhite />}
-              onClick={handleShowMore}
-            />
-          )}
+          <Suspense
+            fallback={
+              <div className={styles.listWrapper}>
+                {[...Array(6)].map((_, i) => (
+                  <CardSkeleton key={i} size="xl" />
+                ))}
+              </div>
+            }
+          >
+            <ProductCardListSection />
+          </Suspense>
         </section>
       </div>
     </>
