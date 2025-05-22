@@ -4,6 +4,7 @@ import Text from '@shared/components/text/Text';
 import Divider from '@shared/components/divider/Divider';
 import * as styles from '@shared/components/headerMid/HeaderMid.css';
 import CategoryMenu from '@shared/components/headerMid/components/categoryMenu/CategoryMenu';
+import useOutsideClick from '@shared/hooks/useOutSideClick';
 
 const HeaderMid = () => {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
@@ -11,6 +12,10 @@ const HeaderMid = () => {
   const handleCategoryClick = () => {
     setIsCategoryOpen(prev => !prev);
   };
+
+  const ref = useOutsideClick(() => {
+    setIsCategoryOpen(false);
+  });
 
   const CategoryToggleIcon = isCategoryOpen ? (
     <IcClose width="3.2rem" height="3.2rem" onClick={handleCategoryClick} />
@@ -20,7 +25,7 @@ const HeaderMid = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.categoryWrapper}>
+      <div className={styles.categoryWrapper} ref={ref}>
         <div className={styles.leftWrapper}>
           <div className={styles.navStyle} aria-label="카테고리">
             {CategoryToggleIcon}
