@@ -13,6 +13,7 @@ import ProductActionButton from '@shared/components/ProductActionButton/ProductA
 import { useGetPromotionProductList } from '@api/queries';
 import type { GetPromotionResponseTypes } from './types/api';
 import CardSkeleton from '@shared/components/card/CardSkeleton';
+import type { ProductCardData } from '@pages/productList/types/response';
 
 const ProductCardListContent = ({
   filteredCards,
@@ -136,7 +137,6 @@ const Home = () => {
           >
             <ProductCardListSection />
           </Suspense>
-
         </section>
       </div>
     </>

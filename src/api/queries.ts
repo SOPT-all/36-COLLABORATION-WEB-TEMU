@@ -4,7 +4,7 @@ import {
   getPromotionProductList,
   getSearchedProductList,
   getProductDetailReviewSection,
-  getProductList
+  getProductList,
 } from '@api/api';
 
 import { QUERY_KEYS } from '@/constant/queryKey';
@@ -24,7 +24,6 @@ export const useGetSearchedProductList = (keyword: string) => {
     enabled: !!keyword,
   });
 };
-
 
 export const useGetProductList = () => {
   return useSuspenseQuery<ProductListResponseTypes, Error>({
