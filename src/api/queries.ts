@@ -1,5 +1,5 @@
 import { useQuery, useSuspenseQuery } from '@tanstack/react-query';
-import { getProductDetail, getPromotionProductList, getSearchedProductList } from '@api/api';
+import { getProductDetail, getPromotionProductList, getSearchedProductList,getProductDetailReviewSection } from '@api/api';
 import { QUERY_KEYS } from '@/constant/queryKey';
 
 export const useGetProductDetail = (productId: number) => {
@@ -21,5 +21,13 @@ export const useGetPromotionProductList = () => {
   return useSuspenseQuery({
     queryKey: [QUERY_KEYS.PRODUCTS_PROMOTION],
     queryFn: () => getPromotionProductList(),
+ });
+};
+
+export const useGetProductDetailReview = (productId: number) => {
+  return useQuery({
+    queryKey: [QUERY_KEYS.PRODUCTS_DETAIL_REVIEWS, productId],
+    queryFn: () => getProductDetailReviewSection(productId),
+    enabled: !!productId,
   });
 };
