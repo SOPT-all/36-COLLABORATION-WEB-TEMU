@@ -21,6 +21,8 @@ const ProductList = () => {
     setVisibleCount(prev => prev + 9);
   };
 
+  const shouldShowMoreButton = productList.length > visibleCount;
+
   const renderMessage = (message: string) => (
     <Text tag="body_bold_18" color="black" className={styles.messageWrapper}>
       {message}
@@ -28,7 +30,11 @@ const ProductList = () => {
   );
 
   return (
-    <div className={styles.container}>
+    <div className={
+      shouldShowMoreButton
+        ? styles.container
+        : styles.containerWithExtraMargin
+    }>
       <FilterButton />
       <div className={styles.listWrapper}>
         {isLoading && renderMessage('로딩 중...')}

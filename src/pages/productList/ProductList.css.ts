@@ -9,6 +9,13 @@ export const container = style ({
   margin: '3.2rem auto 0 auto',
 });
 
+export const containerWithExtraMargin = style([
+  container,
+  {
+    marginBottom: '37.4rem',
+  },
+]);
+
 export const listWrapper = style({
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(30rem, auto))',
@@ -23,5 +30,5 @@ export const buttonWrapper = style({
 })
 
 export const messageWrapper = style({
-  paddingBottom: '63.6rem',
+  paddingBottom: '26rem',
 })
