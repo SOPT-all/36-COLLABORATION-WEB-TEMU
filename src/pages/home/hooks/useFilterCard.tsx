@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { Category } from '@/pages/home/components/constant/categorys';
 import type { ProductCardData } from '@/pages/productList/types/response';
 
@@ -9,13 +9,11 @@ interface UseFilterCardProps {
 
 const useFilterCard = ({ productList, isLoading }: UseFilterCardProps) => {
   const [selectedTag, setSelectedTag] = useState<Category>(Category.RECOMMEND);
-  const [filteredCards, setFilteredCards] = useState<ProductCardData[]>([]);
 
-  useEffect(() => {
-    if (!isLoading) {
-      const filtered = productList.filter(card => card.categoryList.includes(selectedTag));
-      setFilteredCards(filtered);
-    }
+  const filteredCards = useMemo(() => {
+    if (isLoading) return [];
+    if (!selectedTag) return productList;
+    return productList.filter(card => card.categoryList.includes(selectedTag));
   }, [productList, selectedTag, isLoading]);
 
   const handleTagClick = (id: Category) => {

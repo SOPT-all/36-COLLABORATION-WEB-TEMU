@@ -1,4 +1,4 @@
-import { useState, useMemo, Suspense } from 'react';
+import { useState, Suspense } from 'react';
 import * as styles from '@/pages/home/Home.css';
 import { IcFlashBlack, IcChevronForwardBlack, IcArrowDownWhite } from '@svg/index';
 import ImgMainBanner from '@/../public/img/imgMainBanner.png';
@@ -61,9 +61,7 @@ const ProductCardListSection = () => {
   const { data: productListData } = useGetProductList();
   const [visibleCount, setVisibleCount] = useState(9);
 
-  const searchedList = useMemo(() => {
-    return productListData?.productMainInfos ?? [];
-  }, [productListData]);
+  const searchedList = productListData?.productMainInfos ?? [];
 
   const { selectedTag, filteredCards, handleTagClick } = useFilterCard({
     productList: searchedList,

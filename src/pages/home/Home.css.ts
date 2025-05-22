@@ -67,6 +67,7 @@ export const listWrapper = style({
   rowGap: '3.6rem',
 
   marginTop: '6.3rem',
+  paddingBottom: '11.2rem',
 });
 
 export const imgBanner = style({
@@ -89,6 +90,5 @@ export const sectionBtn = style({
   alignItems: 'center',
   justifyContent: 'center',
 
-  paddingTop: '11.2rem',
   paddingBottom: '18.6rem',
 });
