@@ -54,7 +54,7 @@ const ProductPurchasePanel = ({
   };
 
   const handleButtonClick = () => {
-    isSelected ? '' : alert('색상을 선택해주세요.');
+    !isSelected && alert('색상을 선택해주세요.');
   };
 
   return (
