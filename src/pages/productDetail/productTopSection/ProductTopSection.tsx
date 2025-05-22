@@ -5,8 +5,13 @@ import type { productDetailResponseTypes } from '@shared/types/productDetailResp
 import RecommendProducts from '@pages/productDetail/productTopSection/components/recommendedProducts/RecommendProducts';
 import Divider from '@shared/components/divider/Divider';
 
+type ProductTopSectionData = Omit<
+  productDetailResponseTypes,
+  'productDetails' | 'reviewCount' | 'productId'
+>;
+
 interface ProductTopSectionProps {
-  restData: productDetailResponseTypes;
+  restData: ProductTopSectionData;
 }
 
 const ProductTopSection = ({ restData }: ProductTopSectionProps) => {
@@ -19,6 +24,7 @@ const ProductTopSection = ({ restData }: ProductTopSectionProps) => {
     productImages,
     productColors,
   } = restData;
+
   return (
     <div className={styles.container}>
       <section className={styles.productTopSection}>

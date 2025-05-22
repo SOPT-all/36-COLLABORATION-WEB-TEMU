@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import * as styles from '@pages/productDetail/productTopSection/components/productPurchasePanel/ProductPurchasePanel.css';
 import Text from '@shared/components/text/Text';
 import {
@@ -14,6 +15,7 @@ import {
   PURCHASE_PANEL_BENEFIT,
   PURCHASE_PANEL,
   PURCHASE_TOTAL_PRISE,
+  PURCHASE_QUANTITIES,
 } from '@pages/productDetail/productTopSection/constants/PURCHASE_PANEL';
 import BestSeller from '@pages/productDetail/productTopSection/components/bestSeller/BestSeller';
 import Divider from '@shared/components/divider/Divider';
@@ -37,6 +39,22 @@ const ProductPurchasePanel = ({
   discountPrice,
   productColors,
 }: ProductPurchasePanelProps) => {
+  const [quantity, setQuantity] = useState<number>(1);
+  const [selectColor, setSelectColor] = useState<string>('');
+  const [isSelected, setIsSelected] = useState<boolean>(false);
+  const totalPrice = discountPrice * quantity;
+
+  const handleChangeQuantity = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setQuantity(Number(e.target.value));
+  };
+
+  const handleChangeColor = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectColor(e.target.value);
+    setIsSelected(true);
+  };
+
+  const handleButtonClick = () => (isSelected ? undefined : alert('색상을 선택해주세요.'));
+
   return (
     <section className={styles.container}>
       <div className={styles.summarySection}>
@@ -148,9 +166,9 @@ const ProductPurchasePanel = ({
             색상
           </Text>
           <div className={styles.wrapper}>
-            <select className={styles.select} defaultValue="">
+            <select className={styles.select} value={selectColor} onChange={handleChangeColor}>
               <option value="" disabled>
-                색상을 선택하세요
+                색상을 선택하세요.
               </option>
               {productColors.map(color => (
                 <option key={color} value={color}>
@@ -166,11 +184,12 @@ const ProductPurchasePanel = ({
             수량
           </Text>
           <div className={styles.wrapper}>
-            <select className={styles.select} defaultValue="">
-              <option value="" disabled>
-                수량을 선택하세요
-              </option>
-              <option>1</option>
+            <select className={styles.select} value={quantity} onChange={handleChangeQuantity}>
+              {PURCHASE_QUANTITIES.map(num => (
+                <option key={num} value={num}>
+                  {num}개
+                </option>
+              ))}
             </select>
             <IcArrowDownGray className={styles.icon} width={20} height={20} />
           </div>
@@ -183,7 +202,7 @@ const ProductPurchasePanel = ({
           {PURCHASE_TOTAL_PRISE.text}
         </Text>
         <Head level="h2" tag="head_bold_28">
-          {PURCHASE_TOTAL_PRISE.price.toLocaleString()}
+          {totalPrice.toLocaleString()}원
         </Head>
       </div>
 
@@ -195,7 +214,14 @@ const ProductPurchasePanel = ({
           radius="sm"
           fontSize="lg"
         />
-        <ProductActionButton text="구매하기" variant="solid" size="lg" radius="sm" fontSize="lg" />
+        <ProductActionButton
+          text="구매하기"
+          variant="solid"
+          size="lg"
+          radius="sm"
+          fontSize="lg"
+          onClick={handleButtonClick}
+        />
       </div>
     </section>
   );

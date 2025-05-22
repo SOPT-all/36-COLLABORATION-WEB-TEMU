@@ -6,20 +6,21 @@ import DetailTabs from '@pages/productDetail/components/detailTabs/DetailTabs';
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
 import Head from '@shared/components/head/Head';
 import { IcArrowDownOrange } from '@svg/index';
-// 추후 api 연결 후 삭제 예정
-import { mockProductDetailData } from './constant/mockProductReviewData';
-import { mockDetailData } from '@pages/productDetail/productTopSection/constants/mockDetailData';
 import ProductTopSection from '@pages/productDetail/productTopSection/ProductTopSection';
+import { useParams } from 'react-router-dom';
+import { useGetProductDetail } from '@api/queries';
 
 const ProductDetail = () => {
-  const detailImgData = mockProductDetailData.productDetails;
   const [isExpanded, setIsExpanded] = useState(false);
-  const {
-    // productDetails: productDetails,
-    // reviewCount: reviewCount,
-    // productId: productId,
-    ...restData
-  } = mockDetailData;
+
+  const { id } = useParams<{ id: string }>();
+  const productId = Number(id);
+  const { data, isLoading, isError } = useGetProductDetail(productId);
+
+  if (isLoading) return <div>로딩 중...</div>;
+  if (isError) return <div>상품 정보를 불러오는 중 에러가 발생했습니다.</div>;
+
+  const { productDetails: productDetails, ...restData } = data!;
 
   const handleTabClick = (key: string) => {
     const element = document.getElementById(key);
@@ -33,6 +34,7 @@ const ProductDetail = () => {
   return (
     <div className={styles.container}>
       <ProductTopSection restData={restData} />
+
       <section className={styles.detailWrapper()}>
         <div className={styles.detailWrapper({ gap: 'm' })}>
           <DetailTabs onTabClick={handleTabClick} />
@@ -45,8 +47,8 @@ const ProductDetail = () => {
                 <DetailTable />
               </div>
               <div id="detail" className={styles.detailWrapper()}>
-                {detailImgData.map((img, index) => (
-                  <img src={img} alt={`제품 상세 이미지 ${index + 1}`} key={index} />
+                {productDetails.map((img, index) => (
+                  <img src={img} alt={`제품 상세 이미지 ${index + 1}`} width={800} key={index} />
                 ))}
               </div>
             </div>
@@ -71,6 +73,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+
       <div id="review" className={styles.reviewWrapper}>
         <ProductReviewSection />
       </div>
