@@ -5,16 +5,21 @@ import clsx from 'clsx';
 import { PLACEHOLDER, MIN_HEIGHT } from '@shared/components/header/constant';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ROUTES } from '@router/constant/routes';
+import useDebounce from '@shared/hooks/useDebounce';
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const isSearchPage = location.pathname === '/products';
   const [keyword, setKeyword] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
+  const debounced = useDebounce(keyword, 300);
+  const debouncedKeyword = isSearchPage ? debounced : keyword;
 
   const handleLogoClick = () => {
     navigate(ROUTES.HOME);
   };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > MIN_HEIGHT);
@@ -23,6 +28,12 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isSearchPage) {
+      navigate(`/products?keyword=${encodeURIComponent(debouncedKeyword)}`);
+    }
+  }, [debouncedKeyword, isSearchPage, navigate]);
 
   useEffect(() => {
     if (location.pathname !== '/products') {
