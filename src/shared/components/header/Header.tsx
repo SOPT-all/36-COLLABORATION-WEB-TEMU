@@ -15,6 +15,7 @@ const Header = () => {
   const [observeRef, isVisible] = useIntersect(true);
 
   const handleLogoClick = () => {
+    window.scrollTo(0, 0);
     navigate(ROUTES.HOME);
   };
 
