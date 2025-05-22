@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useGetSearchedProductList } from '@api/queries';
 import * as styles from '@pages/productList/ProductList.css';
@@ -10,9 +11,15 @@ import * as Icons from '@svg/index';
 const ProductList = () => {
   const [searchParams] = useSearchParams();
   const keyword = searchParams.get('keyword') ?? '';
-
   const { data, isLoading, isError } = useGetSearchedProductList(keyword);
   const productList = data?.searchedProductList ?? [];
+
+  const [visibleCount, setVisibleCount] = useState(9);
+  const visibleProducts = productList.slice(0, visibleCount);
+
+  const handleShowMore = () => {
+    setVisibleCount(prev => prev + 9);
+  };
 
   const renderMessage = (message: string) => (
     <Text tag="body_bold_18" color="black" className={styles.messageWrapper}>
@@ -33,7 +40,7 @@ const ProductList = () => {
 
         {!isLoading &&
           !isError &&
-          productList.map(product => (
+          visibleProducts.map(product => (
             <Card
               key={product.productId}
               size="xl"
@@ -48,7 +55,9 @@ const ProductList = () => {
           ))}
       </div>
 
-      {!isLoading && !isError && productList.length > 0 && (
+      {!isLoading &&
+       !isError &&
+       productList.length > visibleCount && (
         <div className={styles.buttonWrapper}>
           <ProductActionButton
             text="더보기"
@@ -57,6 +66,7 @@ const ProductList = () => {
             radius="lg"
             fontSize="sm"
             icon={<Icons.IcArrowDownWhite />}
+            onClick={handleShowMore}
           />
         </div>
       )}
