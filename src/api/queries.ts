@@ -8,7 +8,7 @@ import {
 } from '@api/api';
 
 import { QUERY_KEYS } from '@/constant/queryKey';
-import type { ProductListResponseTypes } from '@/pages/productList/types/response';
+import type { HomeProductListResponseTypes } from '@pages/home/types/response';
 
 export const useGetProductDetail = (productId: number) => {
   return useQuery({
@@ -26,7 +26,7 @@ export const useGetSearchedProductList = (keyword: string) => {
 };
 
 export const useGetProductList = () => {
-  return useSuspenseQuery<ProductListResponseTypes, Error>({
+  return useSuspenseQuery<HomeProductListResponseTypes, Error>({
     queryKey: [QUERY_KEYS.PRODUCTS],
     queryFn: () => getProductList(),
   });

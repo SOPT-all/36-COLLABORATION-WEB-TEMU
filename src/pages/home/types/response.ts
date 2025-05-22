@@ -1,5 +1,3 @@
-import type { Category } from '@/pages/home/components/constant/categorys';
-
 export interface GetPromotionResponseTypes {
   productId: number;
   productName: string;
@@ -12,7 +10,7 @@ export interface PromotionProductListResponse {
   promotionProductInfos: GetPromotionResponseTypes[];
 }
 
-export interface GetProductsResponseTypes {
+export interface ProductCardData {
   productId: number;
   productName: string;
   discountRate: number;
@@ -20,5 +18,12 @@ export interface GetProductsResponseTypes {
   productImage: string;
   reviewCount: number;
   productTag: string;
-  categoryList: Category[];
+  categoryList: string[];
+}
+
+export interface HomeProductListResponseTypes {
+  productMainInfos: ProductCardData[];
+  success: boolean;
+  code: number;
+  message: string;
 }

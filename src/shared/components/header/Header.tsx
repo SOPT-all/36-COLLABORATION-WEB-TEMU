@@ -6,21 +6,38 @@ import { PLACEHOLDER } from '@shared/components/header/constant';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ROUTES } from '@router/constant/routes';
 import { useIntersect } from '@shared/hooks/useIntersect';
+import useDebounce from '@shared/hooks/useDebounce';
+
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const isSearchPage = location.pathname === ROUTES.PRODUCT_LIST;
   const [keyword, setKeyword] = useState('');
 
   const [observeRef, isVisible] = useIntersect(true);
+
+  const debounced = useDebounce(keyword, 300);
+  const debouncedKeyword = isSearchPage ? debounced : keyword;
+
 
   const handleLogoClick = () => {
     window.scrollTo(0, 0);
     navigate(ROUTES.HOME);
   };
 
+
   useEffect(() => {
-    if (location.pathname !== '/products') {
+    if (isSearchPage) {
+      navigate(`/products?keyword=${encodeURIComponent(debouncedKeyword)}`);
+    }
+  }, [debouncedKeyword, isSearchPage, navigate]);
+
+  useEffect(() => {
+    const isProductSearchPage = location.pathname === ROUTES.PRODUCT_LIST;
+    const isProductDetailPage = /^\/products\/\d+$/.test(location.pathname);
+
+    if (!isProductSearchPage && !isProductDetailPage) {
       setKeyword('');
     }
   }, [location.pathname]);

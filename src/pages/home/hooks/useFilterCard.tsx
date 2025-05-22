@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Category } from '@/pages/home/components/constant/categorys';
-import type { ProductCardData } from '@/pages/productList/types/response';
+import type { ProductCardData } from '@pages/home/types/response';
 
 interface UseFilterCardProps {
   productList: ProductCardData[];
