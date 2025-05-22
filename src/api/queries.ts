@@ -16,9 +16,11 @@ export const useGetSearchedProductList = (keyword: string) => {
     enabled: !!keyword,
   });
 };
+
 export const useGetProductDetailReview = (productId: number) => {
   return useQuery({
     queryKey: [QUERY_KEYS.PRODUCTS_DETAIL_REVIEWS, productId],
     queryFn: () => getProductDetailReviewSection(productId),
+    enabled: !!productId,
   });
 };
