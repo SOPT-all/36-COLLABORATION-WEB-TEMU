@@ -21,5 +21,6 @@ globalStyle('#root', {
 });
 
 globalStyle('main', {
+  minHeight: '70vh',
   flexGrow: 1,
 });
