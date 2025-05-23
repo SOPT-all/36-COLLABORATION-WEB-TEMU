@@ -37,19 +37,20 @@ const ReviewFilterBar = ({
         </button>
       </div>
       <div className={styles.rightSide}>
-        <div className={styles.selectWrapper}>
-          <select>
+        <div className={styles.dropdownWrapper}>
+          <select className={styles.dropdownSelect}>
             <option value="전체">전체</option>
           </select>
-          <IcArrowDownGray width={16} height={16} />
+          <IcArrowDownGray width={16} height={16} className={styles.dropdownIcon} />
         </div>
-        <div className={styles.selectWrapper}>
+        <div className={styles.dropdownWrapper}>
           <select
             value={filterScore ?? ''}
             onChange={e => {
               const value = e.target.value;
               onChangeFilterScore(value === '' ? null : Number(value));
             }}
+            className={styles.dropdownSelect}
           >
             <option value="">별점</option>
             {REVIEW_FILTER.map(num => (
@@ -58,7 +59,7 @@ const ReviewFilterBar = ({
               </option>
             ))}
           </select>
-          <IcArrowDownGray width={16} height={16} />
+          <IcArrowDownGray width={16} height={16} className={styles.dropdownIcon} />
         </div>
       </div>
     </div>

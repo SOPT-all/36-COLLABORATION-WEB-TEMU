@@ -9,6 +9,7 @@ import ReviewPhoto from '@pages/productDetail/productReviewSection/components/re
 import ReviewSummary from '@pages/productDetail/productReviewSection/components/reviewSummary/ReviewSummary';
 import Divider from '@shared/components/divider/Divider';
 import NextPage from '@pages/productDetail/productReviewSection/components/nextPage/NextPage';
+import ErrorSearch from '@shared/components/Error/ErrorSearch';
 
 const ProductReviewSection = () => {
   const { id } = useParams<{ id: string }>();
@@ -39,7 +40,7 @@ const ProductReviewSection = () => {
       : productReviewDetails;
 
   if (isLoading) return <div>로딩 중...</div>;
-  if (isError) return <div>리뷰를 불러오는 중 에러가 발생했습니다.</div>;
+  if (isError) return <ErrorSearch text="리뷰가 없네요🥹" />;
 
   return (
     <div className={styles.container}>
