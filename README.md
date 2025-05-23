@@ -1,6 +1,9 @@
 # 🧡TEMU🧡
 ### AT SOPT 데스크탑 웹 2조 테무
 
+![테무 리디자인](https://github.com/user-attachments/assets/f356b08c-7d55-489b-9afe-50392ceb7aae)
+![테무_Keyfindings   Insights](https://github.com/user-attachments/assets/83be2f2b-6ed0-4b45-bcb3-8535cca4e9e4)
+
 <br/>
 
 
@@ -87,17 +90,36 @@ code review: 코드 리뷰 반영
 |-- .eslintrc.json
 |-- .prettierrc
 ```
+
+## 📦 초기세팅 역할 분배
+
+| 구분                                | 담당자 |
+| --------------------------------- | --- |
+| TanStackQuery 세팅                          | 박희선 |
+| path alias | 박희선 |
+| ci-cd, vercel 배포| 박희선 |
+| 협업 전반 설정 , Error, Loading               | 박희선 |
+| VITE svg                  | 엄지우 |
+| 스타일 커스텀 (theme.css)              | 엄지우 |
+| router 설정                       | 권동희 |
+| global 설정                       | 권동희 |
+| Eslint 설정                    | 장정훈  |
+| Prettier 설정                    | 장정훈  |
+
+
 ## 📦 뷰 & 컴포넌트 역할 분배
 
 | 구분                                | 담당자 |
 | --------------------------------- | --- |
 | 헤더 & 푸터                           | 박희선 |
 | 메인 페이지 (번쩍특가 상단까지 - 아이템 네비게이션 포함) | 박희선 |
+| 제품 상세정보 (상세보기탭/테이블/이미지뷰) | 박희선 |
 | 메인 페이지 (그 외 나머지)                  | 권동희 |
 | 검색 & 검색 결과 페이지                    | 엄지우 |
 | 제품 상세정보 (구성 포함 전체)                | 장정훈 |
 | 버튼 공통 컴포넌트                        | 장정훈 |
 | 카드 공통 컴포넌트                        | 권동희 |
+| Skeleton                       | 권동희 |
 | 텍스트, 헤드 컴포넌트                      | 엄지우 |
 | Divider 컴포넌트                      | 박희선 |
 
