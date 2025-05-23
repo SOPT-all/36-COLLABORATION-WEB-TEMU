@@ -29,6 +29,7 @@ const Header = () => {
 
   useEffect(() => {
     if (isSearchPage) {
+      window.scrollTo(0, 0);
       navigate(`/products?keyword=${encodeURIComponent(debouncedKeyword)}`);
     }
   }, [debouncedKeyword, isSearchPage, navigate]);
@@ -44,6 +45,7 @@ const Header = () => {
 
   const handleSearch = () => {
     if (!keyword.trim()) return;
+    window.scrollTo(0, 0);
     navigate(`/products?keyword=${encodeURIComponent(keyword)}`);
   };
 
@@ -79,8 +81,8 @@ const Header = () => {
             </div>
           </div>
           <div className={styles.rightWrapper}>
-            <IcUser width="4rem" height="4rem" />
-            <IcCartBlack width="4rem" height="4rem" />
+            <IcUser className={styles.rightLogo} width="4rem" height="4rem" />
+            <IcCartBlack className={styles.rightLogo} width="4rem" height="4rem" />
           </div>
         </div>
       </header>

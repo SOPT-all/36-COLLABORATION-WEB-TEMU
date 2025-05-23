@@ -39,6 +39,10 @@ export const rightWrapper = style({
   gap: '2.4rem',
 });
 
+export const rightLogo = style({
+  cursor: 'pointer',
+});
+
 export const logowrapper = style({
   display: 'flex',
   alignItems: 'center',
