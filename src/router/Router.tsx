@@ -1,9 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Home from '@pages/home/Home';
-import ProductList from '@pages/productList/ProductList';
-import ProductDetail from '@pages/productDetail/ProductDetail';
+import { lazy } from 'react';
 import { ROUTES } from '@router/constant/routes';
 import Layout from '@router/Layout';
+import NotFound from '@shared/components/NotFound/NotFound';
+
+const Home = lazy(() => import('@pages/home/Home'));
+const ProductList = lazy(() => import('@pages/productList/ProductList'));
+const ProductDetail = lazy(() => import('@pages/productDetail/ProductDetail'));
 
 const router = createBrowserRouter([
   {
@@ -20,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: ROUTES.PRODUCT_DETAIL,
         element: <ProductDetail />,
+      },
+      {
+        path: '*',
+        element: <NotFound />,
       },
     ],
   },

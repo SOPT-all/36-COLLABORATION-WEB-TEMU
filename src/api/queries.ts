@@ -1,4 +1,4 @@
-import { useQuery, useSuspenseQuery } from '@tanstack/react-query';
+import { useQuery, useSuspenseQuery, keepPreviousData } from '@tanstack/react-query';
 import {
   getProductDetail,
   getPromotionProductList,
@@ -14,6 +14,7 @@ export const useGetProductDetail = (productId: number) => {
   return useQuery({
     queryKey: [QUERY_KEYS.PRODUCTS_DETAIL, productId],
     queryFn: () => getProductDetail(productId),
+    placeholderData: keepPreviousData,
   });
 };
 
@@ -22,6 +23,7 @@ export const useGetSearchedProductList = (keyword: string) => {
     queryKey: [QUERY_KEYS.PRODUCTS_SEARCH, keyword],
     queryFn: () => getSearchedProductList(keyword),
     enabled: !!keyword,
+    placeholderData: keepPreviousData,
   });
 };
 
