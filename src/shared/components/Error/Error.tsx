@@ -9,7 +9,11 @@ import { ERROR_MESSAGE } from '@/constant/errorMessage';
 const Error = ({ error, resetErrorBoundary }: FallbackProps) => {
   const navigate = useNavigate();
 
-  const getErrorMessage = (error: Error): string => {
+  const getErrorMessage = (error: Error | null): string => {
+    if (!error || !error.message) {
+      return '문제가 발생했습니다. 다시 시도해주세요.';
+    }
+
     try {
       const parsed = JSON.parse(error.message);
       const { status, code } = parsed;

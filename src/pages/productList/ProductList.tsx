@@ -4,15 +4,15 @@ import { useGetSearchedProductList } from '@api/queries';
 import * as styles from '@pages/productList/ProductList.css';
 import FilterButton from '@pages/productList/components/filterButton/FilterButton';
 import Card from '@shared/components/card/Card';
-import Text from '@shared/components/text/Text';
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
 import * as Icons from '@svg/index';
 import Loading from '@shared/components/Loading/Loading';
+import ErrorSearch from '@shared/components/Error/ErrorSearch';
 
 const ProductList = () => {
   const [searchParams] = useSearchParams();
   const keyword = searchParams.get('keyword') ?? '';
-  const { data, isLoading, isError } = useGetSearchedProductList(keyword);
+  const { data, isLoading, isError, error } = useGetSearchedProductList(keyword);
   const productList = data?.searchedProductList ?? [];
 
   const [visibleCount, setVisibleCount] = useState(9);
@@ -24,23 +24,17 @@ const ProductList = () => {
 
   const shouldShowMoreButton = productList.length > visibleCount;
 
-  const renderMessage = (message: string) => (
-    <Text tag="body_bold_18" color="black" className={styles.messageWrapper}>
-      {message}
-    </Text>
-  );
+  if (isError) {
+    throw error;
+  }
 
   return (
     <div className={shouldShowMoreButton ? styles.container : styles.containerWithExtraMargin}>
       <FilterButton />
       {isLoading && <Loading />}
-      <div className={styles.listWrapper}>
-        {isError && renderMessage('에러가 발생했습니다.')}
-        {!isLoading &&
-          !isError &&
-          productList.length === 0 &&
-          renderMessage('검색 결과가 없습니다.')}
+      {!isLoading && !isError && productList.length === 0 && <ErrorSearch />}
 
+      <div className={styles.listWrapper}>
         {!isLoading &&
           !isError &&
           visibleProducts.map(product => (
