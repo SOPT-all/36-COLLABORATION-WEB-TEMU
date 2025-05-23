@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as styles from '@pages/productDetail/productTopSection/components/productImageGallery/ProductImageGallery.css';
 
 interface ProductImageGalleryProps {
@@ -7,6 +7,12 @@ interface ProductImageGalleryProps {
 
 const ProductImageGallery = ({ productImages }: ProductImageGalleryProps) => {
   const [selectedImage, setSelectedImage] = useState<string>(productImages[0]);
+
+  useEffect(() => {
+    if (productImages.length > 0) {
+      setSelectedImage(productImages[0]);
+    }
+  }, [productImages]);
 
   return (
     <div className={styles.galleryContainer}>
