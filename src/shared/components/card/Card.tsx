@@ -25,12 +25,14 @@ const Card = ({
   productTag,
 }: CardProps) => {
   const navigate = useNavigate();
+
   const handleCardClick = () => {
     if (productId) {
       window.scrollTo(0, 0);
       navigate(`/products/${productId}`);
     }
   };
+
   return (
     <div className={styles.cardWrapper({ size })} onClick={handleCardClick}>
       <img className={styles.cardImg({ size })} src={imageUrl} alt={`${productName} img`} />

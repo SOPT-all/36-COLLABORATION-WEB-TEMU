@@ -39,8 +39,8 @@ export const cardImg = recipe({
   },
   variants: {
     size: {
-      l: { height: '16.4rem' },
-      xl: { height: '17.4rem' },
+      l: { width: '19.4rem', height: '16.4rem' },
+      xl: { width: '35rem', height: '17.4rem' },
     },
   },
   defaultVariants: {

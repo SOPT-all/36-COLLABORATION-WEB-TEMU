@@ -5,6 +5,7 @@ export const container = style({
   display: 'flex',
 
   width: '100%',
+  height: '35.5rem',
 
   zIndex: vars.zIndex.category,
 });
@@ -12,6 +13,9 @@ export const container = style({
 export const titleWrapper = style({
   display: 'flex',
   flexDirection: 'column',
+  justifyContent: 'space-between',
+  height: '100%',
+  backgroundColor: vars.color.white,
 });
 
 export const titleRow = style({

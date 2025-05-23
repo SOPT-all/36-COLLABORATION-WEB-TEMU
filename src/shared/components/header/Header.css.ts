@@ -1,18 +1,25 @@
 import { vars } from '@shared/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
-export const container = style({
-  position: 'sticky',
+export const dividerContainer = style({
+  position: 'fixed',
   top: 0,
 
   display: 'flex',
+  flexDirection: 'column',
   justifyContent: 'center',
-  padding: '4.8rem 14rem 0.6rem 14rem',
+  alignItems: 'center',
+  width: '100%',
 
   backgroundColor: vars.color.white,
-  transition: 'padding 0.3s ease-in-out',
 
   zIndex: vars.zIndex.header,
+});
+
+export const container = style({
+  padding: '4.8rem 14rem 0.6rem 14rem',
+
+  transition: 'padding 0.3s ease-in-out',
 });
 
 export const scrolled = style({

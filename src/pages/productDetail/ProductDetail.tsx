@@ -10,6 +10,7 @@ import ProductTopSection from '@pages/productDetail/productTopSection/ProductTop
 import { useParams } from 'react-router-dom';
 import { useGetProductDetail } from '@api/queries';
 import Loading from '@shared/components/Loading/Loading';
+import ErrorSearch from '@shared/components/Error/ErrorSearch';
 
 const ProductDetail = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -19,7 +20,7 @@ const ProductDetail = () => {
   const { data, isLoading, isError } = useGetProductDetail(productId);
 
   if (isLoading) return <Loading />;
-  if (isError) return <div>상품 정보를 불러오는 중 에러가 발생했습니다.</div>;
+  if (isError) return <ErrorSearch text="에러가 발생했습니다" />;
 
   const { productDetails: productDetails, ...restData } = data!;
 
@@ -48,9 +49,13 @@ const ProductDetail = () => {
                 <DetailTable />
               </div>
               <div id="detail" className={styles.detailWrapper()}>
-                {productDetails.map((img, index) => (
-                  <img src={img} alt={`제품 상세 이미지 ${index + 1}`} width={800} key={index} />
-                ))}
+                {productDetails.length === 0 ? (
+                  <ErrorSearch text="상세 이미지가 없어요" />
+                ) : (
+                  productDetails.map((img, index) => (
+                    <img key={index} src={img} alt={`제품 상세 이미지 ${index + 1}`} width={800} />
+                  ))
+                )}
               </div>
             </div>
           </div>
