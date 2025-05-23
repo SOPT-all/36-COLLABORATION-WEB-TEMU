@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import * as styles from '@shared/components/Error/Error.css';
+import * as styles from '@shared/components/Error/ErrorSearch.css';
 import Head from '@shared/components/head/Head';
 import Text from '@shared/components/text/Text';
 import { ROUTES } from '@router/constant/routes';
