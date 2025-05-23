@@ -3,13 +3,17 @@ import * as styles from '@shared/components/Error/ErrorSearch.css';
 import Head from '@shared/components/head/Head';
 import { ROUTES } from '@router/constant/routes';
 
-const ErrorSearch = () => {
+interface ErrorSearchProps {
+  text: string;
+}
+
+const ErrorSearch = ({ text }: ErrorSearchProps) => {
   const navigate = useNavigate();
 
   return (
     <div className={styles.container}>
       <Head level="h2" tag="head_sb_20">
-        😞 검색 결과가 없습니다.
+        {text}
       </Head>
       <div className={styles.buttonWrapper}>
         <button type="button" className={styles.button} onClick={() => window.location.reload()}>
