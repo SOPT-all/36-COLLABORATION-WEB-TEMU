@@ -39,11 +39,26 @@ export const rightSide = style({
   gap: '1rem',
 });
 
-export const selectWrapper = style({
-  display: 'flex',
-  gap: '0.4rem',
-  padding: '0.6rem 1rem',
-  alignItems: 'center',
-  borderRadius: '8px',
+export const dropdownWrapper = style({
+  position: 'relative',
+  display: 'inline-block',
+  width: '6.5rem',
+});
+
+export const dropdownSelect = style({
+  width: '100%',
+  padding: '0.6rem 2rem 0.6rem 1rem',
   border: `1px solid ${vars.color.gray2}`,
+  borderRadius: '8px',
+  color: vars.color.gray7,
+  ...vars.font.body_regular_14,
+  cursor: 'pointer',
+});
+
+export const dropdownIcon = style({
+  position: 'absolute',
+  top: '50%',
+  right: '1rem',
+  transform: 'translateY(-50%)',
+  pointerEvents: 'none',
 });
