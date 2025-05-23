@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import * as styles from '@shared/components/Error/ErrorSearch.css';
 import Head from '@shared/components/head/Head';
-import Text from '@shared/components/text/Text';
 import { ROUTES } from '@router/constant/routes';
 
 const ErrorSearch = () => {
@@ -10,9 +9,8 @@ const ErrorSearch = () => {
   return (
     <div className={styles.container}>
       <Head level="h2" tag="head_sb_20">
-        😞 오류 발생
+        😞 검색 결과가 없습니다.
       </Head>
-      <Text tag="body_regular_18">검색 결과가 없습니다</Text>
       <div className={styles.buttonWrapper}>
         <button type="button" className={styles.button} onClick={() => window.location.reload()}>
           새로 고침
