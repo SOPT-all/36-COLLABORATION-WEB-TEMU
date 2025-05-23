@@ -39,7 +39,7 @@ const ProductReviewSection = () => {
       : productReviewDetails;
 
   if (isLoading) return <div>로딩 중...</div>;
-  if (isError) return <div>리뷰를 불러오는 중 에러가 발생했습니다.</div>;
+  if (isError) return <div>등록된 리뷰가 없습니다...</div>;
 
   return (
     <div className={styles.container}>
