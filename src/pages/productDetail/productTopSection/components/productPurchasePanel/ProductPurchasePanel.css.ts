@@ -135,12 +135,12 @@ export const productActionSectionDown = style({
 
 export const productColor = style({
   display: 'flex',
-  gap: '4.3rem',
+  gap: '4.5rem',
 });
 
 export const productQuantity = style({
   display: 'flex',
-  gap: '4.3rem',
+  gap: '4.5rem',
 });
 
 export const productStyle = style({
