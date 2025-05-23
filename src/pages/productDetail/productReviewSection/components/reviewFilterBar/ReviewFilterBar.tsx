@@ -3,7 +3,6 @@ import * as styles from '@pages/productDetail/productReviewSection/components/re
 import IcArrowDownGray from '@svg/ic_arrow_down_gray.svg?react';
 import type { SortType } from '@/pages/productDetail/productReviewSection/types/index';
 import { REVIEW_FILTER } from '@pages/productDetail/productTopSection/constants/REVIEW_FILTER';
-import clsx from 'clsx';
 
 interface ReviewFilterBarProps {
   sortType: SortType;
