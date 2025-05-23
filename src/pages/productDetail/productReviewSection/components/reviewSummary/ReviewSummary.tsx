@@ -1,8 +1,9 @@
 import Text from '@shared/components/text/Text';
 import * as styles from '@pages/productDetail/productReviewSection/components/reviewSummary/ReviewSummary.css';
 import Divider from '@shared/components/divider/Divider';
-import IcStar45 from '@svg/ic_star_4_5_sm.svg?react';
+import StarRating from '@shared/components/star/StarRating';
 import Head from '@shared/components/head/Head';
+import { toHalfFloor } from '../../utils/toHalfFloor';
 import type {
   ReviewResponseTypes,
   ReviewScoreDistributionResponseTypes,
@@ -32,7 +33,7 @@ const ReviewSummary = ({
         <div className={styles.rateContainerLeft}>
           <div className={styles.reviewAverage}>
             <Text tag="head_bold_60">{avgScore.toFixed(1)}</Text>
-            <IcStar45 width={168} height={32} />
+            <StarRating score={toHalfFloor(avgScore)} width={168} height={32} />
           </div>
           <Divider direction="vertical" />
         </div>
