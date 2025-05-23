@@ -32,7 +32,9 @@ const ProductList = () => {
     <div className={shouldShowMoreButton ? styles.container : styles.containerWithExtraMargin}>
       <FilterButton />
       {isLoading && <Loading />}
-      {!isLoading && !isError && productList.length === 0 && <ErrorSearch />}
+      {!isLoading && !isError && productList.length === 0 && (
+        <ErrorSearch text="😞 검색 결과가 없습니다." />
+      )}
 
       <div className={styles.listWrapper}>
         {!isLoading &&
