@@ -19,6 +19,7 @@ export const vars = createGlobalTheme(':root', {
     point_red: '#D9001B',
     point_orange: '#FF7710',
     point_orange2: '#FEEFE1',
+    point_orange3: '#e36500',
     point_green: '#0A8800',
   },
 
