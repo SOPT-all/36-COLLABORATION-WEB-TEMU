@@ -7,7 +7,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { ROUTES } from '@router/constant/routes';
 import { useIntersect } from '@shared/hooks/useIntersect';
 import useDebounce from '@shared/hooks/useDebounce';
-
+import HeaderMid from '@shared/components/headerMid/HeaderMid';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -20,12 +20,10 @@ const Header = () => {
   const debounced = useDebounce(keyword, 300);
   const debouncedKeyword = isSearchPage ? debounced : keyword;
 
-
   const handleLogoClick = () => {
     window.scrollTo(0, 0);
     navigate(ROUTES.HOME);
   };
-
 
   useEffect(() => {
     if (isSearchPage) {
@@ -59,32 +57,35 @@ const Header = () => {
         ref={observeRef}
         style={{ position: 'absolute', top: 0, height: '1px', width: '100%' }}
       />
-      <header className={clsx(styles.container, !isVisible && styles.scrolled)}>
-        <div className={styles.headerWrapper}>
-          <div className={styles.leftWrapper}>
-            <nav className={styles.logowrapper} onClick={handleLogoClick}>
-              <IcTemu width="5.2rem" height="5.2rem" />
-              <IcTemuLogo width="12.3rem" height="3.2rem" />
-            </nav>
-            <div className={styles.inputWrapper}>
-              <input
-                type="text"
-                value={keyword}
-                onChange={e => setKeyword(e.target.value)}
-                onKeyDown={handleKeyDown}
-                placeholder={PLACEHOLDER}
-                className={styles.input}
-              ></input>
-              <button type="button" onClick={handleSearch}>
-                <IcSearch width="2.4rem" height="2.4rem" />
-              </button>
+      <header className={styles.dividerContainer}>
+        <div className={clsx(styles.container, !isVisible && styles.scrolled)}>
+          <div className={styles.headerWrapper}>
+            <div className={styles.leftWrapper}>
+              <nav className={styles.logowrapper} onClick={handleLogoClick}>
+                <IcTemu width="5.2rem" height="5.2rem" />
+                <IcTemuLogo width="12.3rem" height="3.2rem" />
+              </nav>
+              <div className={styles.inputWrapper}>
+                <input
+                  type="text"
+                  value={keyword}
+                  onChange={e => setKeyword(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  placeholder={PLACEHOLDER}
+                  className={styles.input}
+                ></input>
+                <button type="button" onClick={handleSearch}>
+                  <IcSearch width="2.4rem" height="2.4rem" />
+                </button>
+              </div>
+            </div>
+            <div className={styles.rightWrapper}>
+              <IcUser className={styles.rightLogo} width="4rem" height="4rem" />
+              <IcCartBlack className={styles.rightLogo} width="4rem" height="4rem" />
             </div>
           </div>
-          <div className={styles.rightWrapper}>
-            <IcUser className={styles.rightLogo} width="4rem" height="4rem" />
-            <IcCartBlack className={styles.rightLogo} width="4rem" height="4rem" />
-          </div>
         </div>
+        {isVisible && <HeaderMid />}
       </header>
     </>
   );

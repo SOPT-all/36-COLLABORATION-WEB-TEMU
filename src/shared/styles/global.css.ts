@@ -23,4 +23,5 @@ globalStyle('#root', {
 globalStyle('main', {
   minHeight: '70vh',
   flexGrow: 1,
+  paddingTop: '17.16rem',
 });

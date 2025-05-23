@@ -1,6 +1,13 @@
 import { vars } from '@shared/styles/theme.css';
 import { style } from '@vanilla-extract/css';
 
+export const dividerContainer = style({
+  width: '100%',
+  borderBottom: `1px solid ${vars.color.gray1}`,
+
+  backgroundColor: vars.color.white,
+});
+
 export const container = style({
   display: 'flex',
   justifyContent: 'center',
