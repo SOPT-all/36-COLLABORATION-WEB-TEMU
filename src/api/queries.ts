@@ -14,6 +14,7 @@ export const useGetProductDetail = (productId: number) => {
   return useQuery({
     queryKey: [QUERY_KEYS.PRODUCTS_DETAIL, productId],
     queryFn: () => getProductDetail(productId),
+    placeholderData: keepPreviousData,
   });
 };
 
@@ -45,6 +46,5 @@ export const useGetProductDetailReview = (productId: number) => {
     queryKey: [QUERY_KEYS.PRODUCTS_DETAIL_REVIEWS, productId],
     queryFn: () => getProductDetailReviewSection(productId),
     enabled: !!productId,
-    placeholderData: keepPreviousData,
   });
 };

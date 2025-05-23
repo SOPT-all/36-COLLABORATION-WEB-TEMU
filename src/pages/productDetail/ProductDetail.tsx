@@ -9,6 +9,7 @@ import { IcArrowDownOrange } from '@svg/index';
 import ProductTopSection from '@pages/productDetail/productTopSection/ProductTopSection';
 import { useParams } from 'react-router-dom';
 import { useGetProductDetail } from '@api/queries';
+import Loading from '@shared/components/Loading/Loading';
 
 const ProductDetail = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -17,7 +18,7 @@ const ProductDetail = () => {
   const productId = Number(id);
   const { data, isLoading, isError } = useGetProductDetail(productId);
 
-  if (isLoading) return <div>로딩 중...</div>;
+  if (isLoading) return <Loading />;
   if (isError) return <div>상품 정보를 불러오는 중 에러가 발생했습니다.</div>;
 
   const { productDetails: productDetails, ...restData } = data!;

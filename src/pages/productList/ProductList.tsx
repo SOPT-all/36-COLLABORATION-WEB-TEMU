@@ -7,6 +7,7 @@ import Card from '@shared/components/card/Card';
 import Text from '@shared/components/text/Text';
 import ProductActionButton from '@shared/components/ProductActionButton/ProductActionButton';
 import * as Icons from '@svg/index';
+import Loading from '@shared/components/Loading/Loading';
 
 const ProductList = () => {
   const [searchParams] = useSearchParams();
@@ -30,14 +31,10 @@ const ProductList = () => {
   );
 
   return (
-    <div className={
-      shouldShowMoreButton
-        ? styles.container
-        : styles.containerWithExtraMargin
-    }>
+    <div className={shouldShowMoreButton ? styles.container : styles.containerWithExtraMargin}>
       <FilterButton />
+      {isLoading && <Loading />}
       <div className={styles.listWrapper}>
-        {isLoading && renderMessage('로딩 중...')}
         {isError && renderMessage('에러가 발생했습니다.')}
         {!isLoading &&
           !isError &&
@@ -61,9 +58,7 @@ const ProductList = () => {
           ))}
       </div>
 
-      {!isLoading &&
-       !isError &&
-       productList.length > visibleCount && (
+      {!isLoading && !isError && productList.length > visibleCount && (
         <div className={styles.buttonWrapper}>
           <ProductActionButton
             text="더보기"
